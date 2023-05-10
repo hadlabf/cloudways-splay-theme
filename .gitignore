@@ -1,0 +1,8 @@
+# Exclude .env file
+.env
+
+# Exclude .env.* files (e.g., .env.local, .env.dev, etc.)
+.env.*
+
+# Exclude .env-* files (e.g., .env-local, .env-dev, etc.)
+.env-*
