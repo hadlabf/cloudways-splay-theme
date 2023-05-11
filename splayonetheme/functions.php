@@ -561,6 +561,8 @@ if( !function_exists("wp_bootstrap_theme_styles") ) {
         wp_enqueue_style( 'splay-common-style' );
         wp_register_style( 'splay-main-style', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '1.0', 'all' );
         wp_enqueue_style( 'splay-main-style' );
+        wp_register_script( 'splay-animation', get_template_directory_uri() . '/js/animation.js', array('jquery'),'1.0.0', true  ); 
+        wp_enqueue_script( 'splay-animation' );
     }
 }
 add_action( 'wp_enqueue_scripts', 'wp_bootstrap_theme_styles' );
