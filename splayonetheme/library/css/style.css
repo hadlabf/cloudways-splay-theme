@@ -1,0 +1,422 @@
+/* 
+
+Version: 1.0.0
+
+*/
+
+/* HOME - Intro */
+#intro_section {
+  gap: var(--s4);
+  padding-block-end: var(--s4)
+}
+.intro_title {
+  font-size: 120px;
+  flex-grow: 1;
+  white-space: nowrap;
+}
+.intro_text {
+  max-width: 360px;
+}
+
+/* HOME - Awards */
+.award_image_carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  gap: var(--s4);
+  margin-top: var(--s6);
+}
+.award_image_carousel img{
+  max-height: 50px;
+  width: auto;
+}
+/* TODO: Images */
+
+/* HOME - Case thumbnails */
+
+.thumbnail_container {
+  gap: var(--s7);
+}
+.thumbnail_item {
+  margin-bottom: var(--s2);
+}
+.thumbnail_item p {
+  font-size: var(--f-md);
+}
+.thumbnail_container > .w-50 {
+  width: calc(50% - var(--s5)) !important;
+}
+
+.thumbnail_container > .w-50:nth-child(even) {
+  margin-top: var(--lg);
+}
+.news_scrool_wrapper {
+  height: calc(var(--s3) + 360px);
+  position: relative;
+}
+.news_scrool_feed {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  width: 1530px;
+  gap: var(--s3);
+  padding-bottom: var(--s3);
+}
+.news_item {
+  height: 360px;
+  width: 380px;
+  min-width: 380px;
+  border: 1px solid var(--color-primary);
+  padding: var(--s4); 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.home_news_section {
+  margin-bottom: calc(var(--lg) * 2);
+}
+/* ========================================*/
+/* =========== PAGE: OUR PEOPLE ===========*/
+.people_cards {
+  padding: var(--s6) 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.people_card {
+  position: relative;
+  padding: 0;
+  background-color: var(--bg-accent1);
+}
+.people_card img {
+  width: 100%;
+  height: auto;
+  opacity: 1;
+  transition: opacity 0.25s ease-in;
+}
+.people_card p {
+  font-size: var(--f-xs);
+  color: var(--color-secondary);
+}
+
+.people_card .front_page, 
+.people_card .back_page {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  padding: var(--s3);
+  font-size: var(--f-xs);
+  transition: opacity 0.15s ease-in;
+}
+
+.people_card .front_page {
+  opacity: 1;
+}
+.people_card .back_page {
+  opacity: 0;
+  
+}
+.people_card:hover .front_page, 
+.people_card:hover img {
+  opacity: 0;
+}
+
+.people_card:hover .back_page {
+  opacity: 1;
+}
+
+/* =======================================*/
+/* ============ PAGE: CONTACT ============*/
+.contact_page_header {
+  background-color: var(--bg-accent1);
+}
+.contact_page_header .head_nav_items a{
+  color: var(--color-secondary);
+}
+.contact_page  {
+  background-color: var(--bg-accent1);
+  display: flex;
+  flex-direction: row;
+}
+.contact_page * {
+  color: var(--color-secondary);
+}
+
+.contact_item {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: var(--s3);
+}
+.contact_item p {
+  font-size: var(--f-md);
+  margin-bottom: 0;
+}
+
+button.submit_button {
+  background-color: var(--bg-accent2) !important;
+  border-color: transparent !important;
+  color: var(--color-primary) !important;
+  font-size: var(--f-sm) !important;
+  padding: var(--s1) var(--s5);
+}
+
+
+.contact_form {
+  margin: var(--s5) 0;
+}
+.form_checkbox {
+  display: flex;
+  flex-direction: row;
+  gap: var(--s2);
+  align-items: baseline;
+  font-size: var(--f-md);
+}
+
+.form-group {
+  position:relative;  
+  margin-top: var(--s4);
+}
+
+.form-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-secondary);
+  z-index: 10;
+  font-size: var(--f-md);
+  transition: transform 150ms ease-out, font-size 150ms ease-out;
+}
+
+.focused .form-label {
+  transform: translateY(-125%);
+  font-size: .75em;
+  font-size: 14px;
+}
+
+.form-input {
+  position: relative;
+  padding: 12px 0px 5px 0;
+  width: 100%;
+  outline: 0;
+  border: 0;
+  box-shadow: 0 1px 0 0 #e5e5e5;
+  transition: box-shadow 150ms ease-out;
+  background: none;
+}
+
+.form-input:focus {
+  box-shadow: 0 2px 0 0 blue;
+}
+.form-input.filled {
+  box-shadow: 0 2px 0 0 lightgreen;
+}
+
+/* ABOUT PAGE ========== */
+.about_header {
+  position: relative;
+  height: 600px;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+}
+.about_header_image {
+  width: 100%;
+  height: auto;
+}
+.about_header_content {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.about_header_text {
+  font-size: 130px;
+  color: var(--color-secondary);
+  width: 100%;
+}
+.about_header_text#about_header_1 {
+  text-align: left;
+}
+.about_header_text#about_header_2 {
+  text-align: right;
+}
+
+.work_area_section {
+  background-color: var(--bg-accent1);
+}
+.work_area_section * {
+  color: var(--color-secondary);
+}
+.work_area_header {
+  font-size: 50px;
+}
+.work_area_content {
+  padding: var(--lg) 0;
+}
+.work_area_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.area_item {
+  border: 1px solid var(--color-secondary);
+  border-left: none;
+  border-top: none;
+  padding: var(--s4);
+}
+.area_item_wrapper:nth-child(3n+1) .area_item {
+  border-left: 1px solid var(--color-secondary);
+}
+.area_item_wrapper:nth-child(-n+3) .area_item {
+  border-top: 1px solid var(--color-secondary);
+}
+.area_item #topic {
+  font-size: var(--f-lg);
+}
+
+/* QUOTE */
+.quote_section {
+  padding-top: var(--s5);
+  padding-bottom: var(--s5);
+}
+.quote_section p, 
+.quote_section a,
+.quote_text  {
+  font-family: "Adieu-Light";
+  font-size: 35px;
+  margin-bottom: var(--s4);
+}
+.quote_text {
+  font-style: italic;
+}
+
+/* SELECTED CLIENTS */
+.about_clients_logos {
+  padding-bottom: var(--lg);
+}
+.selected_clients_section img {
+  height: auto;
+  width: 130px !important;
+}
+
+/* ========= TALENT PAGE ========= */
+.why_us_section .area_item{
+  height: 100%;
+}
+
+.why_us_section .area_item,
+.why_us_section .area_item_wrapper:nth-child(3n+1) .area_item,
+.why_us_section .area_item_wrapper:nth-child(-n+3) .area_item  {
+  border-color: var(--color-primary);
+}
+/* Can we not just use -> why_us_section. area_item_wrapper .area_item with !important */
+
+.podcast_items  {
+  border: 0.5px solid var(--color-secondary)
+}
+.podcast_items .area_item_wrapper {
+  width: calc(100% / 3);
+  border: 0.5px solid var(--color-secondary)
+}
+
+
+.podcast_items .hover_card .front_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--f-xs);
+}
+
+/********** PAGE CASE/WORK ARCHIVE **********/
+.case_single_image_wrapper {
+  width: 100%;
+  max-height: 620px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.case_single_page .service_tag {
+  padding-right: var(--s2);
+}
+.case_single_page .service_tag:after {
+  content: "|";
+  padding-left: var(--s2);
+
+}
+.case_single_page .service_tag:last-child:after {
+  content: "";
+}
+.case_archive  {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.case_archive .case_item {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-bottom: var(--lg);
+}
+.case_archive .case_item:nth-child(odd) {
+  padding-right: var(--s3);
+}
+.case_archive .case_item:nth-child(even) {
+  padding-left: var(--s3);
+}
+.kpi_1, .kpi_2 {
+  margin-top: -12px;
+  font-family: "Adieu-Light";
+}
+.kpi_1 {
+  font-size: 180px;
+}
+.kpi_2 {
+  font-size: 110px;
+}
+.profiles_hover_card {
+  position: relative;
+  overflow: hidden;
+}
+.profiles_hover_content {
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
+  color: var(--color-secondary);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--s3);
+}
+.profiles_hover_card:hover .profiles_hover_content {
+  background-color: rgba(0, 0, 0, 0.20);
+  opacity: 1;
+}
+/********** PAGE NEWS ARTICLES ARCHIVE **********/
+.news_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.news_list .news_article_item {
+  padding: var(--s4);
+  height: 360px;
+  border: 1px solid var(--color-primary); 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+
+

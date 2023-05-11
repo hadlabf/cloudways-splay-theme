@@ -107,3 +107,4 @@ function splay_register_scripts() {
 
 add_action('wp_enqueue_scripts', 'splay_register_scripts');
 
+?>
