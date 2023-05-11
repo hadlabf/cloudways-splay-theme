@@ -33,38 +33,35 @@
 		<![endif]-->	
 	</head>
 	
-	<body <?php body_class(); ?>>
-				
-		<header role="banner">
-				
-			<div class="navbar navbar-default navbar-fixed-top">
-				<div class="container">
-          
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
+	<body class="<?php echo $args['header_style']; ?>">
+    <?php if ($args['logo_color'] === "white") :
+        $color = 'white' ;
+    else :
+        $color = 'black';
+    endif;
+    ?>
+    <header>
+    <div class="content">
+        <div class="row m-0 header_wrapper">
+            <div class="d-flex flex-direction-row flex-wrap-nowrap head_nav_items">
+                <div class="menu_icon_wrapper">
+                    add menu icon
+                </div>
+                <a href="<?php echo site_url('/cases');?>">Work</a>
+                <a href="<?php echo site_url('/news-articles');?>">News</a>
+                <a href="<?php echo site_url('/talent');?>">Talent</a>
+                <a href="<?php echo site_url('/our-people');?>">People</a>
+                <a href="<?php echo site_url('/about');?>">About us</a>
+                <a href="<?php echo site_url('/contact');?>">Contact</a>
+            </div>
+            <div class="menu_icon_wrapper">
+                <a class="" href="<?php echo site_url('/');?>">
+                    <img class="menu_icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-<?php echo $color;?>.png"/>
+                </a>
+            </div>
+    </div>
+    </div>
+    </header>
+	<div class="page">
+            
 
-						<a class="navbar-brand" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
-					</div>
-
-					<div class="collapse navbar-collapse navbar-responsive-collapse">
-						<?php wp_bootstrap_main_nav(); // Adjust using Menus in Wordpress Admin ?>
-
-						<?php //if(of_get_option('search_bar', '1')) {?>
-						<form class="navbar-form navbar-right" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-							<div class="form-group">
-								<input name="s" id="s" type="text" class="search-query form-control" autocomplete="off" placeholder="<?php _e('Search','wpbootstrap'); ?>">
-							</div>
-						</form>
-						<?php //} ?>
-					</div>
-
-				</div> <!-- end .container -->
-			</div> <!-- end .navbar -->
-		
-		</header> <!-- end header -->
-		
-		<div class="container">

@@ -42,7 +42,6 @@
     </div>
     </div>
     </header>
-    <div>
-        <div class="page">
+    <div class="page">
             
 
