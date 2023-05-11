@@ -4,27 +4,89 @@ WP-Bootstrap - Pages
 
 */
 
-
-
-
-#featured-carousel .item{
-	width: 970px;
-	height: 600px;
+/********** PAGE NEWS ARTICLES ARCHIVE **********/
+.news_list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+  
+.news_list .news_article_item {
+	padding: var(--s4);
+	height: 360px;
+	border: 1px solid var(--color-primary); 
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	cursor: pointer;
 }
 
-.carousel-caption p{
-	display: none;
-}
-
-.page-template-page-homepage-php #main article{
-	border-bottom: none;
-}
-
-.page-template-page-homepage-php .hero-unit,
-.blog .hero-unit{
-	padding: 1em;
-}
-
-.hero-unit h1 {
-	font-size: 3em;
-}
+/********** PAGE CASE/WORK ARCHIVE **********/
+.case_single_image_wrapper {
+	width: 100%;
+	max-height: 620px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+  .case_single_page .service_tag {
+	padding-right: var(--s2);
+  }
+  .case_single_page .service_tag:after {
+	content: "|";
+	padding-left: var(--s2);
+  
+  }
+  .case_single_page .service_tag:last-child:after {
+	content: "";
+  }
+  .case_archive  {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+  }
+  .case_archive .case_item {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	padding-bottom: var(--lg);
+  }
+  .case_archive .case_item:nth-child(odd) {
+	padding-right: var(--s3);
+  }
+  .case_archive .case_item:nth-child(even) {
+	padding-left: var(--s3);
+  }
+  .kpi_1, .kpi_2 {
+	margin-top: -12px;
+	font-family: "Adieu-Light";
+  }
+  .kpi_1 {
+	font-size: 180px;
+  }
+  .kpi_2 {
+	font-size: 110px;
+  }
+  .profiles_hover_card {
+	position: relative;
+	overflow: hidden;
+  }
+  .profiles_hover_content {
+	opacity: 0;
+	transition: all ease-in-out 0.3s;
+	color: var(--color-secondary);
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: var(--s3);
+  }
+  .profiles_hover_card:hover .profiles_hover_content {
+	background-color: rgba(0, 0, 0, 0.20);
+	opacity: 1;
+  }
