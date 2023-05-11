@@ -43,7 +43,7 @@
     <header>
     <div class="content">
         <div class="row m-0 header_wrapper">
-            <div class="d-flex flex-direction-row flex-wrap-nowrap head_nav_items">
+            <div class="d-flex flex-direction-row w-100 flex-wrap-nowrap head_nav_items">
                 <div class="menu_icon_wrapper">
 					<img class="menu_icon" src="<?php echo get_template_directory_uri(); ?>/images/menu-icon-<?php echo $color;?>.png"/>
                 </div>

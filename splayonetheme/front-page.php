@@ -36,7 +36,7 @@
                                 'displayed_width' => $displayed_width,
                                 'image_url' => $case_thumbnail_url,
                                 )
-                                );
+                            );
                             if( $displayed_width === 'small'){
                                 get_template_part('includes/cases/thumbnail', 'small', $case_thumbnail_data );
                             }
