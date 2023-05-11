@@ -59,7 +59,7 @@ Version: 1.0.0
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
-  width: 1530px;
+  width: 100vw;
   gap: var(--s3);
   padding-bottom: var(--s3);
 }
