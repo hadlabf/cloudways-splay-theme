@@ -62,7 +62,7 @@
             
             <?php
                     $news_args = array(
-                        'post_type' => 'news_articles', 
+                        'post_type' => 'news-articles', 
                         'posts_per_page' => -1,
                     );
                     $news_query = new WP_Query($news_args);
