@@ -14,17 +14,14 @@
                     // Custom query to retrieve Cases post type posts
                     $cases_args = array(
                         'post_type' => 'cases', // Profiles post type slug
-                        'posts_per_page' => -1, // Number of posts to retrieve (-1 for all posts)
+                        'posts_per_page' => 4,
                     );
                     $cases_query = new WP_Query($cases_args);
 
-                    // Check if there are any Profiles posts
                     if ($cases_query->have_posts()) {
-                        // Loop through the Profiles posts
                         while ($cases_query->have_posts()) {
                             $cases_query->the_post();
 
-                            // Retrieve custom field values for last name, first name, and hobby
                             $case_customer = get_post_meta(get_the_ID(), 'case_customer', true);
                             $case_name = get_post_meta(get_the_ID(), 'case_name', true);
                             $displayed_width = get_post_meta(get_the_ID(), 'home_case_displayed_width', true);
@@ -63,7 +60,7 @@
             <?php
                     $news_args = array(
                         'post_type' => 'news-articles', 
-                        'posts_per_page' => -1,
+                        'posts_per_page' => -1, // Number of posts to retrieve (-1 for all posts)
                     );
                     $news_query = new WP_Query($news_args);
 
