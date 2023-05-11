@@ -19,9 +19,10 @@
 							$title = get_field('news_title');
 							$text = get_field('news_text');
 							$date = get_field('news_date');
+							$link = get_field('news_link');
 							?>
 							<div style="margin-bottom: 15px;" class="col-3">
-								<a href="<?php the_permalink();?>" class="news_article_item">
+								<a target="_blank" href="<?php echo $link;?>" class="news_article_item">
 									<div>
 										<p class="font-weight-bold adieu_light text_2"><?php echo $date; ?></p>
 										<p class="text-uppercase text_2 "><?php echo $title; ?></p>
