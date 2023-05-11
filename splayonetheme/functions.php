@@ -556,7 +556,7 @@ if( !function_exists("wp_bootstrap_theme_styles") ) {
         wp_enqueue_style( 'wpbs-style' );
         wp_register_style( 'splay-common-style', get_stylesheet_directory_uri() . '/library/css/common.css', array(), '1.0', 'all' );
         wp_enqueue_style( 'splay-common-style' );
-        wp_register_style( 'splay-main-style', get_stylesheet_directory_uri() . '/library/css/styles.css', array(), '1.0', 'all' );
+        wp_register_style( 'splay-main-style', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '1.0', 'all' );
         wp_enqueue_style( 'splay-main-style' );
     }
 }

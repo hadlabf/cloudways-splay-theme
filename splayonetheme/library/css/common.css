@@ -7,19 +7,19 @@ Version: 1.0.0
 /* ======== FONTS ========= */
 @font-face {
     font-family: "Adieu-Black";
-    src: url(assets/fonts/Adieu/Adieu-Black.woff), url(assets/fonts/Adieu/Adieu-Black.woff2), url(assets/fonts/Adieu/Adieu-Black.otf);
+    src: url(../../assets/fonts/Adieu/Adieu-Black.woff), url(../../assets/fonts/Adieu/Adieu-Black.woff2), url(../../assets/fonts/Adieu/Adieu-Black.otf);
   }
   @font-face {
     font-family: "Adieu-Bold";
-    src: url(assets/fonts/Adieu/Adieu-Bold.woff), url(assets/fonts/Adieu/Adieu-Bold.woff2), url(/assets/fonts/Adieu/Adieu-Bold.otf);
+    src: url(../../assets/fonts/Adieu/Adieu-Bold.woff), url(../../assets/fonts/Adieu/Adieu-Bold.woff2), url(../../assets/fonts/Adieu/Adieu-Bold.otf);
   }
   @font-face {
     font-family: "Adieu-Regular";
-    src: url(assets/fonts/Adieu/Adieu-Regular.woff), url(assets/fonts/Adieu/Adieu-Regular.woff2), url(assets/fonts/Adieu/Adieu-Regular.otf);
+    src: url(../../assets/fonts/Adieu/Adieu-Regular.woff), url(../../assets/fonts/Adieu/Adieu-Regular.woff2), url(../../assets/fonts/Adieu/Adieu-Regular.otf);
   }
   @font-face {
     font-family: "Adieu-Light";
-    src: url(assets/fonts/Adieu/Adieu-Light.woff), url(assets/fonts/Adieu/Adieu-Light.woff2), url(assets/fonts/Adieu/Adieu-Light.otf);
+    src: url(../../assets/fonts/Adieu/Adieu-Light.woff), url(../../assets/fonts/Adieu/Adieu-Light.woff2), url(../../assets/fonts/Adieu/Adieu-Light.otf);
   }
   :root {
     --font-primary: "Adieu-Bold";

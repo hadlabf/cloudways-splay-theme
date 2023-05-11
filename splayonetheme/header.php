@@ -45,7 +45,7 @@
         <div class="row m-0 header_wrapper">
             <div class="d-flex flex-direction-row flex-wrap-nowrap head_nav_items">
                 <div class="menu_icon_wrapper">
-                    add menu icon
+					<img class="menu_icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/menu-icon-<?php echo $color;?>.png"/>
                 </div>
                 <a href="<?php echo site_url('/cases');?>">Work</a>
                 <a href="<?php echo site_url('/news-articles');?>">News</a>
