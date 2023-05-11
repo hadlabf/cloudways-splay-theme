@@ -14,7 +14,7 @@
                     // Custom query to retrieve Cases post type posts
                     $cases_args = array(
                         'post_type' => 'cases', // Profiles post type slug
-                        'posts_per_page' => 5,
+                        'posts_per_page' => 4,
                     );
                     $cases_query = new WP_Query($cases_args);
 
