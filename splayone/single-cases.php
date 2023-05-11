@@ -116,7 +116,7 @@
 					<div style="padding-bottom: 30px;" class="col-md-3 col-4">
 						<div class="profiles_hover_card">
 							<?php if ($profile_image_url) { ?>
-								<img src="<?php echo esc_url($profile_image_url); ?>" alt="<?php echo $profile_name?>">
+								<img src="<?php echo esc_url($profile_image_url); ?>" alt="<?php echo $profile_name; ?>">
 							<?php } ?>
 							<div class="profiles_hover_content">
 								<p class="text_2 mb-0 bold_2"><?php echo esc_html($profile_name); ?></p>
