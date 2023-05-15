@@ -1,14 +1,14 @@
 {
   "name": "wp_bootstrap",
   "version": "3.2.0",
-  "author": "Chris Barnes <barnes.chris@gmail.com>",
-  "homepage": "http://cbarn.es",
+  "author": "Hadla Bergman <hadla.bergman@gmail.com>",
+  "homepage": "https://github.com/hadlabf/cloudways-splay-theme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/320press/wordpress-bootstrap.git"
+    "url": "https://github.com/hadlabf/cloudways-splay-theme.git"
   },
   "bugs": {
-    "url": "https://github.com/320press/wordpress-bootstrap/issues"
+    "url": "https://github.com/hadlabf/cloudways-splay-theme/issues"
   },
   "licenses": [
     {

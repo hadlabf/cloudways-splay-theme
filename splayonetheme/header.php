@@ -39,7 +39,7 @@
 		<![endif]-->	
 	</head>
 	
-	<body class="<?php echo $args['header_style']; ?>">
+<body class="<?php echo $args['header_style']; ?>">
     <?php if ($args['logo_color'] === "white") :
         $color = 'white' ;
     else :
@@ -47,27 +47,42 @@
     endif;
     ?>
     <header>
-    <div class="content">
-        <div class="row m-0 header_wrapper">
-            <div class="d-flex flex-direction-row w-100 flex-wrap-nowrap head_nav_items">
-                <div class="menu_icon_wrapper">
-					<img class="menu_icon" src="<?php echo get_template_directory_uri(); ?>/images/menu-icon-<?php echo $color;?>.png"/>
-                </div>
-                <a href="<?php echo site_url('/cases');?>">Work</a>
-                <a href="<?php echo site_url('/news-articles');?>">News</a>
-                <a href="<?php echo site_url('/talent');?>">Talent</a>
-                <a href="<?php echo site_url('/our-people');?>">People</a>
-                <a href="<?php echo site_url('/about');?>">About us</a>
-                <a href="<?php echo site_url('/contact');?>">Contact</a>
-            </div>
-            <div class="menu_icon_wrapper">
-                <a class="" href="<?php echo site_url('/');?>">
-                    <img class="menu_icon" src="<?php echo get_template_directory_uri(); ?>/images/logo-<?php echo $color;?>.png"/>
-                </a>
-            </div>
-    </div>
-    </div>
+		<div class="content">
+			<div class="row m-0 header_wrapper">
+				<div class="d-flex flex-direction-row w-100 flex-wrap-nowrap head_nav_items">
+					<div class="menu_icon_wrapper">
+						<button class="hamburger_menu_toggle">
+							<img class="menu_icon" src="<?php echo get_template_directory_uri(); ?>/images/menu-icon-<?php echo $color;?>.png"/>
+						</button>
+					</div>
+					<a href="<?php echo site_url('/cases');?>">Work</a>
+					<a href="<?php echo site_url('/news-articles');?>">News</a>
+					<a href="<?php echo site_url('/talent');?>">Talent</a>
+					<a href="<?php echo site_url('/our-people');?>">People</a>
+					<a href="<?php echo site_url('/about');?>">About us</a>
+					<a href="<?php echo site_url('/contact');?>">Contact</a>
+				</div>
+				<div class="menu_icon_wrapper">
+					<a class="" href="<?php echo site_url('/');?>">
+						<img class="menu_icon" src="<?php echo get_template_directory_uri(); ?>/images/logo-<?php echo $color;?>.png"/>
+					</a>
+				</div>
+			</div>
+		</div>
     </header>
+	<div class="hamburger_menu">
+		<div class="content">
+			<nav class="secondary-menu">
+				<?php
+				wp_nav_menu( array(
+					'theme_location' => 'ham_nav',
+					'menu_class' => 'ham_menu_ul',
+				) );
+				?>
+			</nav>
+			<button class="hamburger_menu_toggle">X</button>
+		</div>
+	</div>
 	<div class="page">
             
 

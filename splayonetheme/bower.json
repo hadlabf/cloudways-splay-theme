@@ -1,11 +1,11 @@
 {
-  "name": "wordpress-bootstrap",
+  "name": "cloudways-splay-theme",
   "version": "3.3.1",
-  "homepage": "https://github.com/320press/wordpress-bootstrap",
+  "homepage": "https://github.com/hadlabf/cloudways-splay-theme",
   "authors": [
-    "chrisbarnes <barnes.chris@gmail.com>"
+    "hadlabf <hadla.bergman@gmail.com>"
   ],
-  "description": "A simple WordPress theme based on Bootstrap.",
+  "description": "A custom WordPress Theme for Splay One",
   "moduleType": [
     "node"
   ],

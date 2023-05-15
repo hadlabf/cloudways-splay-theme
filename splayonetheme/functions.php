@@ -1,11 +1,5 @@
 <?php
 
-// Add Translation Option
-load_theme_textdomain( 'wpbootstrap', TEMPLATEPATH.'/languages' );
-$locale = get_locale();
-$locale_file = TEMPLATEPATH . "/languages/$locale.php";
-if ( is_readable( $locale_file ) ) require_once( $locale_file );
-
 // Clean up the WordPress Head
 if( !function_exists( "wp_bootstrap_head_cleanup" ) ) {  
   function wp_bootstrap_head_cleanup() {
@@ -66,7 +60,8 @@ if( !function_exists( "wp_bootstrap_theme_support" ) ) {
     
     register_nav_menus(                      // wp3+ menus
       array( 
-        'main_nav' => 'The Main Menu',   // main nav in header
+        'main_nav' => 'Main Menu',   // main nav in header
+        'ham_nav' => 'Hamburger Menu',   // nav in hamburger menu
         'footer_links' => 'Footer Links' // secondary nav in footer
       )
     );  
@@ -225,64 +220,27 @@ function wp_bootstrap_register_sidebars() {
 } // don't remove this bracket!
 add_action( 'widgets_init', 'wp_bootstrap_register_sidebars' );
 
-/************* COMMENT LAYOUT *********************/
-		
-// Comment Layout
-function wp_bootstrap_comments($comment, $args, $depth) {
-   $GLOBALS['comment'] = $comment; ?>
-	<li <?php comment_class(); ?>>
-		<article id="comment-<?php comment_ID(); ?>" class="clearfix">
-			<div class="comment-author vcard clearfix">
-				<div class="avatar col-sm-3">
-					<?php echo get_avatar( $comment, $size='75' ); ?>
-				</div>
-				<div class="col-sm-9 comment-text">
-					<?php printf('<h4>%s</h4>', get_comment_author_link()) ?>
-					<?php edit_comment_link(__('Edit','wpbootstrap'),'<span class="edit-comment btn btn-sm btn-info"><i class="glyphicon-white glyphicon-pencil"></i>','</span>') ?>
-                    
-                    <?php if ($comment->comment_approved == '0') : ?>
-       					<div class="alert-message success">
-          				<p><?php _e('Your comment is awaiting moderation.','wpbootstrap') ?></p>
-          				</div>
-					<?php endif; ?>
-                    
-                    <?php comment_text() ?>
-                    
-                    <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('F jS, Y'); ?> </a></time>
-                    
-					<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-                </div>
-			</div>
-		</article>
-    <!-- </li> is added by wordpress automatically -->
-<?php
-} // don't remove this bracket!
+// Disable comments
+function disable_comments() {
+  // Remove comment support from posts and pages
+  remove_post_type_support('post', 'comments');
+  remove_post_type_support('page', 'comments');
 
-// Display trackbacks/pings callback function
-function list_pings($comment, $args, $depth) {
-       $GLOBALS['comment'] = $comment;
-?>
-        <li id="comment-<?php comment_ID(); ?>"><i class="icon icon-share-alt"></i>&nbsp;<?php comment_author_link(); ?>
-<?php 
+  // Close comments on existing posts and pages
+  $posts = get_posts(array('post_type' => 'any', 'numberposts' => -1));
+  foreach ($posts as $post) {
+    if (comments_open($post->ID)) {
+      update_post_meta($post->ID, '_closed', '1');
+      update_post_meta($post->ID, '_close_comments_for_old_posts', '1');
+    }
+  }
 
+  // Hide existing comments
+  add_filter('comments_template', '__return_false');
+  add_filter('comments_open', '__return_false');
+  add_filter('get_comments_number', '__return_false');
 }
-
-/************* SEARCH FORM LAYOUT *****************/
-
-/****************** password protected post form *****/
-
-add_filter( 'the_password_form', 'wp_bootstrap_custom_password_form' );
-
-function wp_bootstrap_custom_password_form() {
-	global $post;
-	$label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-	$o = '<div class="clearfix"><form class="protected-post-form" action="' . get_option('siteurl') . '/wp-login.php?action=postpass" method="post">
-	' . '<p>' . __( "This post is password protected. To view it please enter your password below:" ,'wpbootstrap') . '</p>' . '
-	<label for="' . $label . '">' . __( "Password:" ,'wpbootstrap') . ' </label><div class="input-append"><input name="post_password" id="' . $label . '" type="password" size="20" /><input type="submit" name="Submit" class="btn btn-primary" value="' . esc_attr__( "Submit",'wpbootstrap' ) . '" /></div>
-	</form></div>
-	';
-	return $o;
-}
+add_action('after_setup_theme', 'disable_comments');
 
 /*********** update standard wp tag cloud widget so it looks better ************/
 
@@ -600,121 +558,28 @@ if( !function_exists( "wp_bootstrap_theme_js" ) ) {
 }
 add_action( 'wp_enqueue_scripts', 'wp_bootstrap_theme_js' );
 
-// Get <head> <title> to behave like other themes
-function wp_bootstrap_wp_title( $title, $sep ) {
-  global $paged, $page;
 
-  if ( is_feed() ) {
-    return $title;
-  }
-
-  // Add the site name.
-  $title .= get_bloginfo( 'name' );
-
-  // Add the site description for the home/front page.
-  $site_description = get_bloginfo( 'description', 'display' );
-  if ( $site_description && ( is_home() || is_front_page() ) ) {
-    $title = "$title $sep $site_description";
-  }
-
-  // Add a page number if necessary.
-  if ( $paged >= 2 || $page >= 2 ) {
-    $title = "$title $sep " . sprintf( __( 'Page %s', 'wpbootstrap' ), max( $paged, $page ) );
-  }
-
-  return $title;
-}
-add_filter( 'wp_title', 'wp_bootstrap_wp_title', 10, 2 );
-
-// Related Posts Function (call using wp_bootstrap_related_posts(); )
-function wp_bootstrap_related_posts() {
-  echo '<ul id="bones-related-posts">';
-  global $post;
-  $tags = wp_get_post_tags($post->ID);
-  if($tags) {
-    foreach($tags as $tag) { $tag_arr .= $tag->slug . ','; }
-        $args = array(
-          'tag' => $tag_arr,
-          'numberposts' => 5, /* you can change this to show more */
-          'post__not_in' => array($post->ID)
-      );
-        $related_posts = get_posts($args);
-        if($related_posts) {
-          foreach ($related_posts as $post) : setup_postdata($post); ?>
-              <li class="related_post"><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
-          <?php endforeach; } 
-      else { ?>
-            <li class="no_related_post">No Related Posts Yet!</li>
-    <?php }
-  }
-  wp_reset_query();
-  echo '</ul>';
-}
-
-// Numeric Page Navi (built into the theme by default)
-function wp_bootstrap_page_navi($before = '', $after = '') {
-  global $wpdb, $wp_query;
-  $request = $wp_query->request;
-  $posts_per_page = intval(get_query_var('posts_per_page'));
-  $paged = intval(get_query_var('paged'));
-  $numposts = $wp_query->found_posts;
-  $max_page = $wp_query->max_num_pages;
-  if ( $numposts <= $posts_per_page ) { return; }
-  if(empty($paged) || $paged == 0) {
-    $paged = 1;
-  }
-  $pages_to_show = 7;
-  $pages_to_show_minus_1 = $pages_to_show-1;
-  $half_page_start = floor($pages_to_show_minus_1/2);
-  $half_page_end = ceil($pages_to_show_minus_1/2);
-  $start_page = $paged - $half_page_start;
-  if($start_page <= 0) {
-    $start_page = 1;
-  }
-  $end_page = $paged + $half_page_end;
-  if(($end_page - $start_page) != $pages_to_show_minus_1) {
-    $end_page = $start_page + $pages_to_show_minus_1;
-  }
-  if($end_page > $max_page) {
-    $start_page = $max_page - $pages_to_show_minus_1;
-    $end_page = $max_page;
-  }
-  if($start_page <= 0) {
-    $start_page = 1;
-  }
-    
-  echo $before.'<ul class="pagination">'."";
-  if ($paged > 1) {
-    $first_page_text = "&laquo";
-    echo '<li class="prev"><a href="'.get_pagenum_link().'" title="' . __('First','wpbootstrap') . '">'.$first_page_text.'</a></li>';
-  }
-    
-  $prevposts = get_previous_posts_link( __('&larr; Previous','wpbootstrap') );
-  if($prevposts) { echo '<li>' . $prevposts  . '</li>'; }
-  else { echo '<li class="disabled"><a href="#">' . __('&larr; Previous','wpbootstrap') . '</a></li>'; }
-  
-  for($i = $start_page; $i  <= $end_page; $i++) {
-    if($i == $paged) {
-      echo '<li class="active"><a href="#">'.$i.'</a></li>';
-    } else {
-      echo '<li><a href="'.get_pagenum_link($i).'">'.$i.'</a></li>';
-    }
-  }
-  echo '<li class="">';
-  next_posts_link( __('Next &rarr;','wpbootstrap') );
-  echo '</li>';
-  if ($end_page < $max_page) {
-    $last_page_text = "&raquo;";
-    echo '<li class="next"><a href="'.get_pagenum_link($max_page).'" title="' . __('Last','wpbootstrap') . '">'.$last_page_text.'</a></li>';
-  }
-  echo '</ul>'.$after."";
-}
 
 // Remove <p> tags from around images
 function wp_bootstrap_filter_ptags_on_images( $content ){
   return preg_replace( '/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content );
 }
 add_filter( 'the_content', 'wp_bootstrap_filter_ptags_on_images' );
+
+
+
+// Hamberger Menu Toggle
+function custom_functions_enqueue_scripts() {
+  wp_register_script(
+	  'splay-custom-functions-script',
+	  get_template_directory_uri() . '/js/functions.js',
+	  array( 'jquery' ),
+	  '1.0',
+	  true
+	);
+	wp_enqueue_script( 'splay-custom-functions-script' );
+}
+add_action( 'wp_enqueue_scripts', 'custom_functions_enqueue_scripts' );
 
 ?>
 

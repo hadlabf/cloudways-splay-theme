@@ -354,3 +354,40 @@ Version: 1.0.0
     border-bottom: 1px solid var(--color-primary);
   
 }
+
+/* HAMBURGER MENU */
+header {
+  position: relative;
+}
+
+.hamburger_menu_toggle {
+  background: transparent;
+  border: none;
+}
+/* CONTENT - HAMBURGER MENU */
+.hamburger_menu {
+  display: none;
+}
+
+.hamburger_menu.open {
+  position: absolute;
+  top: 0;
+  display: block;
+  background-color: var(--bg-accent1);
+  width: 100vw;
+  height: 100vh;
+}
+
+.ham_menu_ul {
+  background-color: var(--bg-accent1);
+  list-style-type: none;
+}
+
+.ham_menu_ul li {
+  font-size: 50px;
+  font-family: "Adieu-Bold";
+  color: var(--color-secondary);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
