@@ -418,6 +418,6 @@ ul.ham_menu_wrapper > li {
   cursor: pointer;
 }
 
-ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li:hover > a {
+ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li:hover > a, .hamburger_menu_toggle.close_btn:hover {
   color: var(--bg-accent2) !important;
 }
