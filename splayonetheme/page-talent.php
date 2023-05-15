@@ -68,8 +68,8 @@ Template Name: Talent Page
                     <div class="col-11">
                         <p class="large_title mb-4"><?php echo the_field('talent_contact_cta_text'); ?></p>
                         <div class="talk_to_container">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon.jpg"/>
-                            <a target="_blank" href="mailto:<?php echo the_field('talent_contact_person_email');?>" class="cta_link pl-3">Talk to <?php echo the_field('talent_contact_person'); ?></a>
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-black.png"/>
+                            <a target="_blank" href="mailto:<?php echo the_field('talent_contact_person_email');?>" class="cta_link">Talk to <?php echo the_field('talent_contact_person'); ?></a>
                         </div>
                     </div>
                 </div>

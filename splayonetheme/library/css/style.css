@@ -295,9 +295,15 @@ button.submit_button {
 .about_clients_logos {
   padding-bottom: var(--lg);
 }
-.selected_clients_section img {
+.about_clients_logos img {
   height: auto;
-  width: 130px !important;
+  max-width: 130px !important;
+}
+.about_clients_section .cta_link {
+  font-size: 22px;
+}
+.about_clients_section .talk_to_container img {
+  height: 24px;
 }
 
 /* ========= TALENT PAGE ========= */

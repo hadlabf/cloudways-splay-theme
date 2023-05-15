@@ -437,6 +437,7 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li:hover >
   font-size: 35px;
   text-decoration: underline;
   margin-bottom: 0 !important;
+  padding-left: var(--s2);
 }
 .talk_to_container img {
   height: 30px;

@@ -57,8 +57,8 @@ Template Name: About Page
                         <div class="quote_text"><?php echo the_field('about_quote'); ?></div>
                         <p><?php echo the_field('about_quoted_from'); ?>, <?php echo the_field('about_quote_role'); ?></p>
                         <div class="talk_to_container">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon.jpg"/>
-                            <a target="_blank" href="mailto:<?php echo the_field('about_quote_email');?>" class="cta_link pl-2"><?php echo the_field('about_quote_button'); ?></a>
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-black.png"/>
+                            <a target="_blank" href="mailto:<?php echo the_field('about_quote_email');?>" class="cta_link"><?php echo the_field('about_quote_button'); ?></a>
                         </div>
                     </div>
                     <div class="col-4">
@@ -67,7 +67,7 @@ Template Name: About Page
                 </div>
             </div>
 
-            <div class="section_type_3">
+            <div class="section_type_3 about_clients_section">
                 <div class="content">
                     <div class="section_padding_3">
                         <div class="about_clients_logos">
@@ -88,10 +88,9 @@ Template Name: About Page
                             <div class="col-7">
                                 <p class="text_2"><?php echo the_field('about_clients_text')?></p>
                                 <div class="talk_to_container">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon.jpg"/>
-                                    <a target="_blank" href="<?php echo site_url('/contact');?>" class="text_2 cta_link adieu_regular pl-2"><?php echo the_field('about_clients_button'); ?></a>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-white.png"/>
+                                    <a target="_blank" href="<?php echo site_url('/contact');?>" class="cta_link"><?php echo the_field('about_clients_button'); ?></a>
                                 </div>
-                                <a class="text_2 cta_link adieu_regular"><?php echo the_field('about_quote_button'); ?></a>
                             </div>
                         </div>
                     </div>
