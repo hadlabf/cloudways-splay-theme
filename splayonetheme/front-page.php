@@ -2,9 +2,7 @@
     <section>
         <div class="page_container">
             
-            <div class="content">
-                <?php get_template_part('includes/section', 'intro'); ?>
-            </div>
+            <?php get_template_part('includes/section', 'intro'); ?>
 
             <?php get_template_part('includes/section', 'awards' ); ?>
 

@@ -55,7 +55,7 @@
 							<img class="menu_icon" src="<?php echo get_template_directory_uri(); ?>/images/menu-icon-<?php echo $color;?>.png"/>
 						</button>
 					</div>
-					<nav class="splay_menu pl-4">
+					<nav class="splay_menu pl-5">
 						<?php
 							wp_nav_menu( array(
 								'theme_location' => 'main_nav',
