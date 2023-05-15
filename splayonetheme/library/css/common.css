@@ -436,6 +436,7 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li:hover >
   font-family: "Adieu-Light";
   font-size: 35px;
   text-decoration: underline;
+  margin-bottom: 0 !important;
 }
 .talk_to_container img {
   height: 30px;

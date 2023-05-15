@@ -56,7 +56,10 @@ Template Name: About Page
                     <div class="col-8">
                         <div class="quote_text"><?php echo the_field('about_quote'); ?></div>
                         <p><?php echo the_field('about_quoted_from'); ?>, <?php echo the_field('about_quote_role'); ?></p>
-                        <a class="cta_link"><?php echo the_field('about_quote_button'); ?></a>
+                        <div class="talk_to_container">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon.jpg"/>
+                            <a target="_blank" href="mailto:<?php echo the_field('about_quote_email');?>" class="cta_link pl-2"><?php echo the_field('about_quote_button'); ?></a>
+                        </div>
                     </div>
                     <div class="col-4">
                        <img src="<?php echo esc_url($profile_image['url']); ?>" />
