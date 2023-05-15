@@ -52,7 +52,7 @@ Template Name: About Page
                 </div>
             </div>
             <div class="content">
-                <div class="row quote_section">
+                <div class="row quote_section section_padding_sm">
                     <div class="col-8">
                         <div class="quote_text"><?php echo the_field('about_quote'); ?></div>
                         <p><?php echo the_field('about_quoted_from'); ?>, <?php echo the_field('about_quote_role'); ?></p>

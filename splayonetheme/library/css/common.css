@@ -325,7 +325,10 @@ Version: 1.0.0
   padding-top: var(--s6);
   padding-bottom: var(--xl);
 }
-
+.section_padding_sm {
+  padding-top: var(--s5);
+  padding-bottom: var(--s5);
+}
 .section_padding_3 {
   padding-top: var(--lg);
   padding-bottom: var(--lg);
@@ -420,4 +423,22 @@ ul.ham_menu_wrapper > li {
 
 ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li:hover > a, .hamburger_menu_toggle.close_btn:hover {
   color: var(--bg-accent2) !important;
+}
+
+/* TALK TO */
+.talk_to_container  {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.talk_to_container a {
+  font-family: "Adieu-Light";
+  font-size: 35px;
+  text-decoration: underline;
+}
+.talk_to_container img {
+  height: 30px;
+  width: auto;
+  padding-top: 6px;
 }

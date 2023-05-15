@@ -279,10 +279,6 @@ button.submit_button {
 }
 
 /* QUOTE */
-.quote_section {
-  padding-top: var(--s5);
-  padding-bottom: var(--s5);
-}
 .quote_section p, 
 .quote_section a,
 .quote_text  {
@@ -322,6 +318,17 @@ button.submit_button {
 .why_us_section .area_item_wrapper:nth-child(3n+1) .area_item,
 .why_us_section .area_item_wrapper:nth-child(-n+3) .area_item  {
   border-color: var(--color-primary);
+}
+
+.get_in_contact_section {
+  padding-top: var(--s5);
+  padding-bottom: var(--s5);
+}
+.get_in_contact_section p,
+.quote_text  {
+  font-family: "Adieu-Light";
+  font-size: 35px;
+  margin-bottom: var(--s4);
 }
 
 .podcast_items  {

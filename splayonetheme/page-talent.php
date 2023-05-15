@@ -64,10 +64,13 @@ Template Name: Talent Page
                 </div>
             </div>
             <div class="content">
-                <div class="row quote_section">
+                <div class="row section_padding_sm">
                     <div class="col-11">
-                        <p class="large_title"><?php echo the_field('talent_contact_cta_text'); ?></p>
-                        <a target="_blank" href="mailto:<?php echo the_field('talent_contact_person_email');?>" class="cta_link">Talk to <?php echo the_field('talent_contact_person'); ?></a>
+                        <p class="large_title mb-4"><?php echo the_field('talent_contact_cta_text'); ?></p>
+                        <div class="talk_to_container">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon.jpg"/>
+                            <a target="_blank" href="mailto:<?php echo the_field('talent_contact_person_email');?>" class="cta_link pl-3">Talk to <?php echo the_field('talent_contact_person'); ?></a>
+                        </div>
                     </div>
                 </div>
             </div>
