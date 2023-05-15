@@ -8,11 +8,20 @@
 
             <div class="content">
                 <div class="thumbnail_container d-flex flex-row flex-wrap">
-                    <?php
-                    // Custom query to retrieve Cases post type posts
+                <?php
                     $cases_args = array(
                         'post_type' => 'cases', // Profiles post type slug
                         'posts_per_page' => 4,
+                        'meta_key' => 'case_thumbnail_order',
+                        'orderby' => 'meta_value_num',
+                        'order' => 'ASC',
+                        'meta_query' => array(
+                            array(
+                                'key' => 'case_thumbnail_order',
+                                'compare' => 'EXISTS',
+                                'type' => 'NUMERIC'
+                            )
+                        )
                     );
                     $cases_query = new WP_Query($cases_args);
 
@@ -23,6 +32,7 @@
                             $case_customer = get_post_meta(get_the_ID(), 'case_customer', true);
                             $case_name = get_post_meta(get_the_ID(), 'case_name', true);
                             $displayed_width = get_post_meta(get_the_ID(), 'home_case_displayed_width', true);
+                            $case_thumbnail_order = get_post_meta(get_the_ID(), 'case_thumbnail_order', true);
                             $case_thumbnail_id = get_post_meta(get_the_ID(), 'case_thumbnail', true); // Image attachment ID
                             $case_thumbnail_url = wp_get_attachment_image_src($case_thumbnail_id, 'full')[0]; // Image URL
 
@@ -47,7 +57,7 @@
                         }
                         wp_reset_postdata();
                     } 
-                ?>
+                    ?>
 
                 </div>
             </div>
