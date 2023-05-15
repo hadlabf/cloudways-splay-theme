@@ -49,18 +49,21 @@
     <header>
 		<div class="content">
 			<div class="row m-0 header_wrapper">
-				<div class="d-flex flex-direction-row w-100 flex-wrap-nowrap head_nav_items">
+				<div class="d-flex flex-direction-row w-100 flex-wrap-nowrap">
 					<div class="menu_icon_wrapper">
 						<button class="hamburger_menu_toggle">
 							<img class="menu_icon" src="<?php echo get_template_directory_uri(); ?>/images/menu-icon-<?php echo $color;?>.png"/>
 						</button>
 					</div>
-					<a href="<?php echo site_url('/cases');?>">Work</a>
-					<a href="<?php echo site_url('/news-articles');?>">News</a>
-					<a href="<?php echo site_url('/talent');?>">Talent</a>
-					<a href="<?php echo site_url('/our-people');?>">People</a>
-					<a href="<?php echo site_url('/about');?>">About us</a>
-					<a href="<?php echo site_url('/contact');?>">Contact</a>
+					<nav class="splay_menu pl-4">
+						<?php
+							wp_nav_menu( array(
+								'theme_location' => 'main_nav',
+								'menu_class' => 'main_menu_wrapper head_nav_items',
+							) );
+						?>
+					</nav>
+				
 				</div>
 				<div class="menu_icon_wrapper">
 					<a class="" href="<?php echo site_url('/');?>">
@@ -73,7 +76,7 @@
 	<div class="hamburger_menu">
 		<div class="content">
 			<button class="hamburger_menu_toggle close_btn">X</button>
-			<nav class="secondary-menu">
+			<nav class="splay_menu">
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'ham_nav',

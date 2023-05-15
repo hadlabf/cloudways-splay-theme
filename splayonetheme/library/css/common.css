@@ -355,6 +355,24 @@ Version: 1.0.0
   
 }
 
+/* MENU */
+.splay_menu ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.splay_menu ul > li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+/* MAIN MENU */
+ul.main_menu_wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-bottom: 0;
+}
 /* HAMBURGER MENU */
 header {
   position: relative;
@@ -365,7 +383,7 @@ header {
   border: none;
 
 }
-.hamburger_menu_toggle.close_btn, .ham_menu_wrapper > ul > li > a {
+.hamburger_menu_toggle.close_btn, ul.ham_menu_wrapper > li > a {
   font-size: 50px;
   font-family: "Adieu-Bold";
   color: var(--color-secondary) !important;
@@ -390,18 +408,13 @@ header {
   padding-top: 70px;
 }
 
-.ham_menu_wrapper > ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.ham_menu_wrapper > ul > li {
+ul.ham_menu_wrapper > li {
   list-style-type: none;
   margin: 0;
   padding: 0;
   cursor: pointer;
 }
 
-.ham_menu_wrapper > ul > li.current_page_item > a, .ham_menu_wrapper > ul > li:hover > a {
+ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li:hover > a {
   color: var(--bg-accent2) !important;
 }
