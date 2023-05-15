@@ -72,17 +72,17 @@
     </header>
 	<div class="hamburger_menu">
 		<div class="content">
+			<button class="hamburger_menu_toggle close_btn">X</button>
 			<nav class="secondary-menu">
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'ham_nav',
-					'menu_class' => 'ham_menu_ul',
+					'menu_class' => 'ham_menu_wrapper',
 				) );
 				?>
 			</nav>
-			<button class="hamburger_menu_toggle">X</button>
 		</div>
 	</div>
-	<div class="page">
+	<div class="page splay_page">
             
 

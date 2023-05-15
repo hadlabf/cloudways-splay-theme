@@ -1,5 +1,5 @@
 </div> <!-- end .page -->
-<footer class="<?php echo $args['footer_style']; ?>">
+<footer class="<?php echo $args['footer_style']; ?> splay_footer">
     <div class="content">
         <div class="row">
             <div class="col col-sm-8">
