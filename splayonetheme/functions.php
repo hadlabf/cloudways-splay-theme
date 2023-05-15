@@ -1,5 +1,4 @@
 <?php
-
 // Clean up the WordPress Head
 if( !function_exists( "wp_bootstrap_head_cleanup" ) ) {  
   function wp_bootstrap_head_cleanup() {
@@ -558,15 +557,11 @@ if( !function_exists( "wp_bootstrap_theme_js" ) ) {
 }
 add_action( 'wp_enqueue_scripts', 'wp_bootstrap_theme_js' );
 
-
-
 // Remove <p> tags from around images
 function wp_bootstrap_filter_ptags_on_images( $content ){
   return preg_replace( '/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content );
 }
 add_filter( 'the_content', 'wp_bootstrap_filter_ptags_on_images' );
-
-
 
 // Hamberger Menu Toggle
 function custom_functions_enqueue_scripts() {
@@ -580,6 +575,5 @@ function custom_functions_enqueue_scripts() {
 	wp_enqueue_script( 'splay-custom-functions-script' );
 }
 add_action( 'wp_enqueue_scripts', 'custom_functions_enqueue_scripts' );
-
 ?>
 
