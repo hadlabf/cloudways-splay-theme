@@ -2,7 +2,7 @@
 <div class="section_secondary">
     <div class="content">
         <h1 class="adieu_bold sp_header"><?php echo the_field('home_award_header'); ?></h1>
-        <p class="sp_text"><?php echo the_field('home_award_text'); ?></p>
+        <p class="col-10 mx-auto sp_text"><?php echo the_field('home_award_text'); ?></p>
         <div class="d-flex justify-content-center">
             <a href="<?php echo site_url('/about');?>" class="primary_button"><?php echo the_field('home_award_button'); ?></a>
         </div>
