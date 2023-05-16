@@ -8,6 +8,7 @@
             <button class="secondary_button category_button" data-category="category-case-finland">Finland</button>
             <button class="secondary_button category_button" data-category="category-case-norway">Norway</button>
             <button class="secondary_button category_button" data-category="category-case-denmark">Denmark</button>
+            <button class="secondary_button category_button" data-category="category-case-contact">Contact</button>
         </div>
         <div class="case_archive">
             <!-- Case items will be dynamically loaded here (find html in functions.php) -->

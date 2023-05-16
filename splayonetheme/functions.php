@@ -586,11 +586,13 @@ function filter_cases() {
 
   // Output the retrieved case items
   if ($cases_query->have_posts()) {
+    echo $cases_query["category_name"];
     while ($cases_query->have_posts()) {
     $cases_query->the_post();
     $customer = get_field('case_customer');
     $name = get_field('case_name');
     $image = get_field('case_thumbnail');
+    echo $customer;
     ?>
     <a href="<?php the_permalink();?>" class="case_item">
         <img src="<?php echo $image['url'];?>"/>
