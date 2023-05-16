@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <section>
-    <div class="page_container">
+    <div class="page_container top_page_padding">
 
 		<div class="content pt-3">
 			<div class="w-50">

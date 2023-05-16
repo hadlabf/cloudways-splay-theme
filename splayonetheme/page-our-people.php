@@ -6,7 +6,7 @@ Template Name: Our People Page
 
 <?php get_header(); ?>
     <section>
-        <div class="page_container">
+        <div class="page_container top_page_padding">
            
             <div class="content">
                 <h1 class="page_title"><?php the_title(); ?> </h1>

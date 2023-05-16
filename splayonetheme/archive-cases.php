@@ -1,6 +1,6 @@
 <?php get_header(); ?>
     <section>
-    <div class="page_container pb-5">
+    <div class="page_container top_page_padding pb-5">
     <div class="content">
         <h1 class="page_title">Work</h1>
         <div class="category_filtering_buttons">

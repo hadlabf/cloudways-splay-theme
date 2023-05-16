@@ -1,6 +1,6 @@
 <?php get_header(); ?>
     <section>
-        <div class="page_container">
+        <div class="page_container top_page_padding">
             
             <?php get_template_part('includes/section', 'intro'); ?>
 

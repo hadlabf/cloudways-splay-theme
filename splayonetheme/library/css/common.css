@@ -73,26 +73,26 @@ a, a:hover, a:focus, a:active  {
     padding: 0 var(--s4);
   }
 }
-.splay_page {
+.top_page_padding {
   padding-top: 50px;
 }
 @media (max-width: 1300px) {
-  .splay_page {
+  .top_page_padding {
     padding-top: 40px;
   }
 }
 @media (max-width: 1100px) {
-  .splay_page {
+  .top_page_padding {
     padding-top: 35px;
   }
 }
 @media (max-width: 800px) {
-  .splay_page {
+  .top_page_padding {
     padding-top: 30px;
   }
 }
 @media (max-width: 600px) {
-  .splay_page {
+  .top_page_padding {
     padding-top: 20px;
   }
 }
