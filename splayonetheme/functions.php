@@ -567,5 +567,45 @@ function custom_functions_enqueue_scripts() {
 	wp_enqueue_script( 'splay-custom-functions-script' );
 }
 add_action( 'wp_enqueue_scripts', 'custom_functions_enqueue_scripts' );
+
+
+add_action('wp_ajax_filter_cases', 'filter_cases');
+add_action('wp_ajax_nopriv_filter_cases', 'filter_cases');
+
+function filter_cases() {
+  // Retrieve selected category from the AJAX request
+  $selectedCategory = $_POST['category'];
+
+  // Modify your WP_Query based on the selected category
+  $cases_args = array(
+    'post_type' => 'cases',
+    'posts_per_page' => -1,
+    'category_name' => $selectedCategory,
+  );
+  $cases_query = new WP_Query($cases_args);
+
+  // Output the retrieved case items
+  if ($cases_query->have_posts()) {
+    while ($cases_query->have_posts()) {
+    $cases_query->the_post();
+    $customer = get_field('case_customer');
+    $name = get_field('case_name');
+    $image = get_field('case_thumbnail');
+    ?>
+    <a href="<?php the_permalink(); ?>" class="case_item">
+      <img src="<?php echo $image['url']; ?>"/>
+      <div class="d-flex flex-row flex-wrap align-items-baseline">
+        <p class="text_2 adieu_regular pr-5 mb-0"><?php echo $customer; ?></p>
+        <p class="text_2 adieu_light"><?php echo $name; ?></p>
+      </div>
+    </a>
+  <?php
+    }
+    wp_reset_postdata();
+  } else {
+    echo 'No cases found.';
+  }
+    exit;
+}
 ?>
 

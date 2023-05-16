@@ -1,3 +1,4 @@
+// Hamburger menu
 const hamburgerMenuToggleButtons = document.querySelectorAll('.hamburger_menu_toggle');
 const hamburgerMenu = document.querySelector('.hamburger_menu');
 const splayPage = document.querySelector('.splay_page');

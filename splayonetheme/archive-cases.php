@@ -1,33 +1,54 @@
 <?php get_header(); ?>
     <section>
-        <div class="page_container pb-5">
-            
-<!-- SECTION: INTRO -->
-            <div class="content">
-                <h1 class="page_title">Work </h1>
-            
-
-            <div class="case_archive">
-                <?php if ( have_posts() ) : 
-                while ( have_posts() ) : the_post(); 
-                $customer = get_field('case_customer');
-                $name = get_field('case_name');
-                $image = get_field('case_thumbnail');
-                ?>
-                <a href="<?php the_permalink();?>" class="case_item">
-                    <img src="<?php echo $image['url'];?>"/>
-                    <div class="d-flex flex-row flex-wrap align-items-baseline">
-                        <p class="text_2 adieu_regular pr-5 mb-0"><?php echo $customer; ?></p>
-                        <p class="text_2 adieu_light"><?php echo $name; ?></p>
-                    </div>
-                </a>
-                
-                <?php endwhile; endif;?>
-            </div>
-            </div>
-
+    <div class="page_container pb-5">
+    <div class="content">
+        <h1 class="page_title">Work!</h1>
+        <div class="category_filtering_buttons">
+            <button class="secondary_button category_button active" data-category="sweden">Sweden</button>
+            <button class="secondary_button category_button" data-category="finland">Finland</button>
+            <button class="secondary_button category_button" data-category="norway">Norway</button>
+            <button class="secondary_button category_button" data-category="denmark">Denmark</button>
+            <button class="secondary_button category_button" data-category="contact">Denmark</button>
         </div>
-    </section>
+        <div class="case_archive">
+            <!-- Case items will be dynamically loaded here (find html in functions.php) -->
+        </div>
+    </div>
+</div>
+
+<script>
+jQuery(function($) {
+    $('.category_button').on('click', function(e) {
+        e.preventDefault();
+        $('.category_button').removeClass('active');
+        $(this).addClass('active');
+        var selectedCategory = $(this).data('category');
+
+        // Send AJAX request to the server
+        filterCases(selectedCategory);
+    });
+
+    // Function to load cases based on selected category
+    function filterCases(selectedCategory) {
+        // Send AJAX request to the server
+        $.ajax({
+            url: '<?php echo admin_url('admin-ajax.php'); ?>',
+            method: 'POST',
+            data: {
+                action: 'filter_cases',
+                category: selectedCategory
+            },
+            success: function(response) {
+                // Update the case archive container with the retrieved case items
+                $('.case_archive').html(response);
+            }
+        });
+    }
+    // Load cases from Sweden by default
+    filterCases('sweden');
+});
+</script>
+</section>
 
 
 
