@@ -2,13 +2,12 @@
     <section>
     <div class="page_container pb-5">
     <div class="content">
-        <h1 class="page_title">Work!</h1>
+        <h1 class="page_title">Work</h1>
         <div class="category_filtering_buttons">
-            <button class="secondary_button category_button active" data-category="sweden">Sweden</button>
-            <button class="secondary_button category_button" data-category="finland">Finland</button>
-            <button class="secondary_button category_button" data-category="norway">Norway</button>
-            <button class="secondary_button category_button" data-category="denmark">Denmark</button>
-            <button class="secondary_button category_button" data-category="contact">Denmark</button>
+            <button class="secondary_button category_button active" data-category="category-case-sweden">Sweden</button>
+            <button class="secondary_button category_button" data-category="category-case-finland">Finland</button>
+            <button class="secondary_button category_button" data-category="category-case-norway">Norway</button>
+            <button class="secondary_button category_button" data-category="category-case-denmark">Denmark</button>
         </div>
         <div class="case_archive">
             <!-- Case items will be dynamically loaded here (find html in functions.php) -->
@@ -45,7 +44,7 @@ jQuery(function($) {
         });
     }
     // Load cases from Sweden by default
-    filterCases('sweden');
+    filterCases('category-case-sweden');
 });
 </script>
 </section>
