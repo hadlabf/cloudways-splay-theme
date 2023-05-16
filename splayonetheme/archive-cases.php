@@ -40,6 +40,7 @@ jQuery(function($) {
             },
             success: function(response) {
                 // Update the case archive container with the retrieved case items
+                console.log(response, "here");
                 $('.case_archive').html(response);
             }
         });
