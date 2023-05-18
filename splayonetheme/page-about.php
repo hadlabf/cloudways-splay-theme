@@ -36,18 +36,54 @@ Template Name: About Page
                     <p class="work_area_header adieu_light"><?php echo the_field('about_work_area_title'); ?></p>
                     <div class="work_area_list">
                         <?php  
+                            $popup_image_1 = get_field('about_work_area_image_1');
+                            $popup_image_2 = get_field('about_work_area_image_2');
                             if(have_rows('about_work_area_list') ):
                                 while( have_rows('about_work_area_list') ) : the_row(); ?>
                                     <div class="col-6 col-sm-4 p-0 area_item_wrapper">
                                         <div class="area_item">
-                                            <p id="topic" class="adieu_light"><?php echo the_sub_field('about_work_area_topic'); ?></p>
-                                            <p id="description"><?php echo the_sub_field('about_work_area_description'); ?></p>
+                                            <div class="area_item_text_content">
+                                                <p id="topic" class="adieu_light"><?php echo the_sub_field('about_work_area_topic'); ?></p>
+                                                <p id="description"><?php echo the_sub_field('about_work_area_description'); ?></p>
+                                            </div>
+                                            <img class="popup_image_1" src="<?php echo $popup_image_1['url']; ?>" alt="Splay One">
+                                            <img class="popup_image_2" src="<?php echo $popup_image_2['url']; ?>" alt="Splay One">
                                         </div>
                                     </div>
                                 <?php                         
                                 endwhile;                            
                             endif;
                         ?>
+                        <script>
+                           jQuery(document).ready(function ($) {
+                                $('.area_item_wrapper').hover(
+                                    function () {
+                                        $(this).addClass('item_hovered');
+                                        var hoveredIndex = $(this).index() + 1; // Get the index of the hovered element
+                                        var $secondSibling;
+                                        var $forthSibling;
+                                        if (hoveredIndex >= 5) {
+                                            $secondSibling = $(this).prevAll().eq(1);
+                                            $forthSibling = $(this).prevAll().eq(3);
+                                        } else {
+                                            $secondSibling = $(this).nextAll().eq(1);
+                                            $forthSibling = $(this).nextAll().eq(3);
+                                        }
+                                        if (!$secondSibling.length || !$forthSibling.length) {
+                                            $secondSibling = $(this).siblings().eq(1);
+                                            $forthSibling = $(this).siblings().eq(3);
+                                        }
+                                        $secondSibling.addClass('popup_active_one');
+                                        $forthSibling.addClass('popup_active_two');
+                                    },
+                                    function () {
+                                        $(this).removeClass('item_hovered');
+                                        $(this).siblings().removeClass('popup_active_one');
+                                        $(this).siblings().removeClass('popup_active_two');
+                                    }
+                                );
+                            });
+                        </script>
                     </div>
                 </div>
             </div>

@@ -11,3 +11,5 @@ for (const button of hamburgerMenuToggleButtons) {
     splayFooter.classList.toggle('hidden');
   });
 }
+
+

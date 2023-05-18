@@ -83,7 +83,6 @@ function wp_bootstrap_main_nav() {
   );
 }
 
-
 // this is the fallback for header menu
 function wp_bootstrap_main_nav_fallback() { 
   /* you can put a default here if you like */ 
