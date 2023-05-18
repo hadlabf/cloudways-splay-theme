@@ -87,21 +87,6 @@ Template Name: About Page
                     </div>
                 </div>
             </div>
-            <div class="content">
-                <div class="row quote_section section_padding_sm">
-                    <div class="col-8">
-                        <div class="quote_text"><?php echo the_field('about_quote'); ?></div>
-                        <p><?php echo the_field('about_quoted_from'); ?>, <?php echo the_field('about_quote_role'); ?></p>
-                        <div class="talk_to_container">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-black.png"/>
-                            <a target="_blank" href="mailto:<?php echo the_field('about_quote_email');?>" class="cta_link"><?php echo the_field('about_quote_button'); ?></a>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                       <img src="<?php echo esc_url($profile_image['url']); ?>" />
-                    </div>
-                </div>
-            </div>
 
             <div class="section_type_3 about_clients_section">
                 <div class="content">
@@ -115,7 +100,7 @@ Template Name: About Page
                         </div>
                         <div class="row">
                             <div class="col-5">
-                                <p class="subtitle_1"><?php echo the_field('about_clients_title')?></p>
+                                <p class="subtitle_1 adieu_light"><?php echo the_field('about_clients_title')?></p>
                             </div>
                             <div class="col-7">
                                 <p class="text_2"><?php echo the_field('about_clients_text')?></p>
@@ -128,6 +113,23 @@ Template Name: About Page
                     </div>
                 </div>
             </div>
+
+            <div class="content">
+                <div class="row quote_section section_padding_sm">
+                    <div class="col-7 mr-auto">
+                        <div class="quote_text"><?php echo the_field('about_quote'); ?></div>
+                        <p><?php echo the_field('about_quoted_from'); ?>, <?php echo the_field('about_quote_role'); ?></p>
+                        <div class="talk_to_container">
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-black.png"/>
+                            <a target="_blank" href="<?php echo the_field('about_teamtailor_url');?>" class="cta_link"><?php echo the_field('about_quote_button'); ?></a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                       <img src="<?php echo esc_url($profile_image['url']); ?>" />
+                    </div>
+                </div>
+            </div>
+
         </div>
         
     </section>
