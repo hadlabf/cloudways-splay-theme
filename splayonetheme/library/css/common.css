@@ -217,20 +217,20 @@ button:focus, button:active {
   border: 1px solid var(--bg-secondary);
   color: var(--color-primary);
 }
-.primary_button:hover, .secondary_button:hover, .category_button.active {
+.primary_button:hover, .secondary_button:hover {
   background-color: var(--bg-secondary);
   border: 1px solid var(--color-secondary);
   color: var(--color-secondary);
 }
 .category_button:hover, .category_button.active {
   background-color: var(--bg-accent1) !important;
-  border: 1px solid var(--color-primary) !important;
+  border: 1px solid var(--bg-accent1) !important;
   color: var(--color-secondary) !important;
 }
 .category_button {
   border-radius: 8px !important;
   font-size: var(--f-lg);
-  padding: 2px 20px;
+  padding: 4px 20px;
 }
 .category_filtering_buttons {
   display: flex;
