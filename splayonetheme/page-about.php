@@ -69,16 +69,12 @@ Template Name: About Page
 
             <div class="section_type_3 about_clients_section">
                 <div class="content">
-                    <div class="section_padding_3">
-                        <div class="about_clients_logos">
+                    <div class="padding_bottom_lg padding_top_sm">
+                        <div class="padding_bottom_lg">
                             <?php 
-                            $images = get_field('about_clients_logos');
-                            if( $images ): ?>
-                                <div class="row">
-                                    <?php foreach( $images as $image ): ?>
-                                        <div class="col-2"><img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" /></div>
-                                    <?php endforeach; ?>
-                                </div>
+                            $image = get_field('about_clients_logos_collage');
+                            if( $image ): ?>
+                                <div class="w-100"><img class="w-100 h-auto" src="<?php echo esc_url($image['url']); ?>" alt="Client logos" /></div>
                             <?php endif; ?>
                         </div>
                         <div class="row">

@@ -219,7 +219,6 @@ button.submit_button {
 /* ABOUT PAGE ========== */
 .about_header {
   position: relative;
-  height: 600px;
   display: flex;
   overflow: hidden;
   align-items: center;
@@ -293,13 +292,6 @@ button.submit_button {
 }
 
 /* SELECTED CLIENTS */
-.about_clients_logos {
-  padding-bottom: var(--lg);
-}
-.about_clients_logos img {
-  height: auto;
-  max-width: 130px !important;
-}
 .about_clients_section .cta_link {
   font-size: 22px;
 }
