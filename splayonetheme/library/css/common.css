@@ -292,6 +292,7 @@ button:focus, button:active {
     height: 15px;
     width: auto;
   }
+
   /* ======== FOOTER ======== */
   .footer_style_secondary {
     background-color: var(--bg-secondary);
@@ -401,6 +402,15 @@ body.customize-support {
 }
 
 /* MENU */
+.close_icon {
+  height: 36px;
+  width: auto;
+  transition: scale 0.2s ease-in-out;
+  margin-bottom: 18px;
+}
+.close_icon:hover {
+  scale: 1.1;
+}
 .splay_menu ul {
   list-style-type: none;
   padding-left: 0;
@@ -456,6 +466,7 @@ header {
 ul.ham_menu_wrapper > li {
   list-style-type: none;
   margin: 0;
+  margin-bottom: var(--s2);
   padding: 0;
   cursor: pointer;
 }

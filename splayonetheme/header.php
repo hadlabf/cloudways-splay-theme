@@ -75,7 +75,7 @@
     </header>
 	<div class="hamburger_menu">
 		<div class="content">
-			<button class="hamburger_menu_toggle close_btn">X</button>
+			<button class="hamburger_menu_toggle close_btn"><img class="close_icon" src="<?php echo get_template_directory_uri(); ?>/images/close-icon-white.png"/></button>
 			<nav class="splay_menu">
 				<?php
 				wp_nav_menu( array(
