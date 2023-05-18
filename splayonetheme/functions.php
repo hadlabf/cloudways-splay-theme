@@ -83,27 +83,12 @@ function wp_bootstrap_main_nav() {
   );
 }
 
-function wp_bootstrap_footer_links() { 
-  // Display the WordPress menu if available
-  wp_nav_menu(
-    array(
-      'menu' => 'footer_links', /* menu name */
-      'theme_location' => 'footer_links', /* where in the theme it's assigned */
-      'container_class' => 'footer-links clearfix', /* container class */
-      'fallback_cb' => 'wp_bootstrap_footer_links_fallback' /* menu fallback */
-    )
-  );
-}
 
 // this is the fallback for header menu
 function wp_bootstrap_main_nav_fallback() { 
   /* you can put a default here if you like */ 
 }
 
-// this is the fallback for footer menu
-function wp_bootstrap_footer_links_fallback() { 
-  /* you can put a default here if you like */ 
-}
 
 // Shortcodes
 require_once('library/shortcodes.php');

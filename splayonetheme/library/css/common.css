@@ -444,23 +444,22 @@ header {
   color: var(--color-secondary) !important;
 }
 /* CONTENT - HAMBURGER MENU */
-.hamburger_menu {
-  display: none;
-}
-
 .splay_page.hidden, .splay_footer.hidden {
   display: none;
 }
-
-.hamburger_menu.open {
-  position: absolute;
-  top: 0;
+.hamburger_menu {
+  padding-top: 38px;
+  position: fixed;
   z-index: 100;
-  display: block;
-  background-color: var(--bg-accent1);
+  top: 0;
+  left: -100vw;
   width: 100vw;
   height: 100vh;
-  padding-top: 70px;
+  background-color: var(--bg-accent1);
+  transition: left 0.3s ease-in-out;
+}
+.hamburger_menu.open {
+  left: 0;
 }
 
 ul.ham_menu_wrapper > li {
@@ -471,7 +470,7 @@ ul.ham_menu_wrapper > li {
   cursor: pointer;
 }
 
-ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li:hover > a, .hamburger_menu_toggle.close_btn:hover {
+ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current-menu-item > a, ul.ham_menu_wrapper > li:hover > a, .hamburger_menu_toggle.close_btn:hover {
   color: var(--bg-accent2) !important;
 }
 
