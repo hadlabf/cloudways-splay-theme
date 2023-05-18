@@ -34,23 +34,78 @@ Template Name: About Page
             <div class="work_area_section">
                 <div class="content work_area_content">
                     <p class="work_area_header adieu_light"><?php echo the_field('about_work_area_title'); ?></p>
-                    <?php 
+                    <!-- <?php 
                         $popup_image_1 = get_field('about_work_area_image_1');
                         $popup_image_2 = get_field('about_work_area_image_2');
-                        $have_rows_list = have_rows('about_work_area_list');
+                        $list = get_field('about_work_area_list');
                         $topic = get_sub_field('about_work_area_topic');
                         $description = get_sub_field('about_work_area_description');
                         $work_area_array = array( 
                             'popup_image_1' => $popup_image_1,
                             'popup_image_2' => $popup_image_2,
-                            'have_rows_list' => $have_rows_list,
+                            'list' => $list,
                             'topic' => $topic,
                             'description' => $description,
 
                         );
                         get_template_part('includes/animated', 'boxes', $work_area_array );
-                    ?>
-                    
+                    ?> -->
+                    <div class="work_area_list">
+                        <?php  
+                            $popup_image_1 = get_field('about_work_area_image_1');
+                            $popup_image_2 = get_field('about_work_area_image_2');
+                            if(have_rows('about_work_area_list') ):
+                                while( have_rows('about_work_area_list') ) : the_row(); ?>
+                                    <div class="col-6 col-sm-4 p-0 area_item_wrapper">
+                                        <div class="area_item">
+                                            <div class="area_item_text_content">
+                                                <p id="topic" class="adieu_light"><?php echo the_sub_field('about_work_area_topic'); ?></p>
+                                                <p id="description"><?php echo the_sub_field('about_work_area_description'); ?></p>
+                                            </div>
+                                            <img class="popup_image_1" src="<?php echo $popup_image_1['url']; ?>" alt="Splay One">
+                                            <img class="popup_image_2" src="<?php echo $popup_image_2['url']; ?>" alt="Splay One">
+                                        </div>
+                                    </div>
+                                <?php                         
+                                endwhile;                            
+                            endif;
+                        ?>
+                        <script>
+                           jQuery(document).ready(function ($) {
+                                $('.area_item_wrapper').hover(
+                                    function () {
+                                        $(this).addClass('item_hovered');
+                                        var hoveredIndex = $(this).index() + 1; 
+                                        var thresholdIndex = Math.ceil($('.area_item_wrapper').length / 2); 
+
+                                        var $secondSibling;
+                                        var $forthSibling;
+
+                                        if (hoveredIndex >= thresholdIndex) {
+                                            $secondSibling = $(this).prevAll().eq(1);
+                                            $forthSibling = $(this).prevAll().eq(3);
+                                        } else {
+                                            $secondSibling = $(this).nextAll().eq(1);
+                                            $forthSibling = $(this).nextAll().eq(3);
+                                        }
+
+                                        if (!$secondSibling.length || !$forthSibling.length) {
+                                            $secondSibling = $(this).siblings().eq(1);
+                                            $forthSibling = $(this).siblings().eq(3);
+                                        }
+
+                                        $secondSibling.addClass('popup_active_one');
+                                        $forthSibling.addClass('popup_active_two');
+                                    },
+                                    function () {
+                                        $(this).removeClass('item_hovered');
+                                        $(this).siblings().removeClass('popup_active_one');
+                                        $(this).siblings().removeClass('popup_active_two');
+                                    }
+                                );
+                            });
+                        </script>
+                    </div>
                 </div>
             </div>
 
