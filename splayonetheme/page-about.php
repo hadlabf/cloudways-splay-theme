@@ -59,20 +59,25 @@ Template Name: About Page
                                 $('.area_item_wrapper').hover(
                                     function () {
                                         $(this).addClass('item_hovered');
-                                        var hoveredIndex = $(this).index() + 1; // Get the index of the hovered element
+                                        var hoveredIndex = $(this).index() + 1; 
+                                        var thresholdIndex = Math.ceil($('.area_item_wrapper').length / 2); 
+
                                         var $secondSibling;
                                         var $forthSibling;
-                                        if (hoveredIndex >= 5) {
+
+                                        if (hoveredIndex >= thresholdIndex) {
                                             $secondSibling = $(this).prevAll().eq(1);
                                             $forthSibling = $(this).prevAll().eq(3);
                                         } else {
                                             $secondSibling = $(this).nextAll().eq(1);
                                             $forthSibling = $(this).nextAll().eq(3);
                                         }
+
                                         if (!$secondSibling.length || !$forthSibling.length) {
                                             $secondSibling = $(this).siblings().eq(1);
                                             $forthSibling = $(this).siblings().eq(3);
                                         }
+
                                         $secondSibling.addClass('popup_active_one');
                                         $forthSibling.addClass('popup_active_two');
                                     },
