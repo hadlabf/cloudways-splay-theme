@@ -41,18 +41,23 @@ Template Name: Talent Page
 <!-- SECTION: WHY US? -->
             <div class="why_us_section">
                 <div class="content work_area_content">
+                    
                     <p class="work_area_header adieu_light w-100 text-center pb-3"><?php echo the_field('talent_why_us_title'); ?></p>
                     <div class="work_area_list">
                         <?php  
+                            $popup_image_1 = get_field('talent_popup_image_1');
+                            $popup_image_2 = get_field('talent_popup_image_2');
+                    
                             if(have_rows('talent_why_us_list') ):
-                                while( have_rows('talent_why_us_list') ) : the_row(); ?>
-                                    <div class="col-6 col-sm-4 p-0 area_item_wrapper">
-                                        <div class="area_item">
-                                            <p id="topic" class="adieu_light"><?php echo the_sub_field('talent_why_us_title'); ?></p>
-                                            <p class="text_2"><?php echo the_sub_field('talent_why_us_text'); ?></p>
-                                        </div>
-                                    </div>
-                                <?php                         
+                                while( have_rows('talent_why_us_list') ) : the_row();
+                                    $work_area_array = array( 
+                                        'popup_image_1' => $popup_image_1,
+                                        'popup_image_2' => $popup_image_2,
+                                        'topic' => get_sub_field('talent_why_us_title'),
+                                        'description' => get_sub_field('talent_why_us_text'),
+                                    );
+                                    
+                                    get_template_part('includes/animated', 'box', $work_area_array );                       
                                 endwhile;                            
                             endif;
                         ?>
@@ -61,9 +66,12 @@ Template Name: Talent Page
                                 <p id="topic" class="adieu_light">and so much more!</p>
                             </div>
                         </div>
+                        <?php get_template_part('includes/animated-boxes-script') ?>
                     </div>
+
                 </div>
             </div>
+
             <div class="content">
                 <div class="row section_padding_sm">
                     <div class="col-11">
