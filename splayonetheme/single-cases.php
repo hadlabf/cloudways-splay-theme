@@ -3,7 +3,7 @@
 	$customer = get_field('case_customer');
 	$name = get_field('case_name');
 	$header_image = get_field('case_header_image');
-	$header_video = get_field('case_header_video');
+	$vimeo_id = get_field('case_vimeo_id');
 	$description = get_field('case_description');
 	$vertical_images = get_field('case_vertical_images');
 	$text = get_field('case_section_text');
@@ -11,20 +11,19 @@
 	$profile_header = get_field('case_section_profile_header');
 	$profile_description = get_field('case_section_profile_description');
 ?>
-<?php if (!empty($header_image)) : ?>
+<?php if( !empty( $header_image ) ): ?>
 	<div class="case_single_image_wrapper">
 		<img class="w-100 h-auto" src="<?php  echo $header_image["url"]; ?>" alt="<?php echo esc_attr($header_image['alt']); ?>" />
 	</div>
-<?php elseif (!empty($header_video)) : ?>
-	<div class="video-container h-100">
-        <?php 
-            $video_url = get_field('home_intro_video_url');
-            // Parse the YouTube video ID from the URL
-            preg_match('/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=))([\w-]{10,12})/', $header_video, $matches);
-            $youtube_id = $matches[1];
-        ?>
-        <iframe width="100%" height="755px" src="https://www.youtube.com/embed/<?php echo $youtube_id; ?>?autoplay=1&loop=1" frameborder="0" allowfullscreen></iframe>
-    </div>
+<?php endif; ?>
+<?php 
+if( !empty( $vimeo_id ) ): ?>
+	<div>
+		<div style="padding:43.06% 0 0 0;position:relative;width:100%;max-width:100vw;">
+			<iframe src="https://player.vimeo.com/video/<?php echo esc_html($vimeo_id); ?>?autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;controls=0&amp;showinfo=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="REEL_WEB_2023_v2"></iframe>
+		</div>
+		<script src="https://player.vimeo.com/api/player.js"></script>
+	</div>
 <?php endif; ?>
 <div class="case_single_page border_bottom_primary">
 	<div class="content section_padding_3">
