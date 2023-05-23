@@ -11,7 +11,11 @@ $description = $args['description'];
             <p id="topic" class="adieu_light"><?php echo $topic; ?></p>
             <p id="description"><?php echo $description; ?></p>
         </div>
-        <img class="popup_image_1" src="<?php echo $popup_image_1['url']; ?>" alt="Splay One">
-        <img class="popup_image_2" src="<?php echo $popup_image_2['url']; ?>" alt="Splay One">
+        <?php if( !empty( $popup_image_1 ) ): ?>
+            <img class="popup_image_1" src="<?php echo $popup_image_1['url']; ?>" alt="Splay One">
+        <?php endif; ?>
+        <?php if( !empty( $popup_image_2 ) ): ?>
+            <img class="popup_image_2" src="<?php echo $popup_image_2['url']; ?>" alt="Splay One">
+        <?php endif; ?>
     </div>
 </div>
