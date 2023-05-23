@@ -34,6 +34,7 @@ Template Name: About Page
             <div class="work_area_section">
                 <div class="content work_area_content">
                     <p class="work_area_header adieu_light"><?php echo the_field('about_work_area_title'); ?></p>
+                    <p class="w-50 text_2 pb-3"><?php echo the_field('about_work_area_section_description'); ?></p>
                     <div class="work_area_list">
                         <?php  
                             $popup_image_1 = get_field('about_work_area_image_1');
@@ -47,7 +48,7 @@ Template Name: About Page
                                         'topic' => get_sub_field('about_work_area_topic'),
                                         'description' => get_sub_field('about_work_area_description'),
                                     );
-                                    
+
                                     get_template_part('includes/animated', 'box', $work_area_array );                       
                                 endwhile;                            
                             endif;
