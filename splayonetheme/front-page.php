@@ -60,6 +60,14 @@
                     ?>
 
                 </div>
+                <div class="section_padding_sm d-flex flex-column justify-content-center align-items-center gap_7">
+                    <?php 
+                    $client_logo_collage = get_field("home_client_logo_collage");
+                    if ( !empty($client_logo_collage) ) : ?>
+                        <img class="w-auto" style="max-height:180px;" src="<?php echo $client_logo_collage["url"]; ?>" alt="Client Logos" />
+                    <?php endif; ?>
+                    <a href="<?php echo site_url('/cases');?>" class="secondary_button">More work</a>
+                </div>
             </div>
 
             <?php get_template_part('includes/section', 'contact' ); ?>
@@ -86,14 +94,31 @@
                                         $news_text = get_post_meta(get_the_ID(), 'news_text', true);
                                         $news_date = get_post_meta(get_the_ID(), 'news_date', true);
                                         $news_link = get_post_meta(get_the_ID(), 'news_link_url', true);
+                                        $news_image_id = get_post_meta(get_the_ID(), 'news_image', true); // Image attachment ID
+					                    $news_image_url = wp_get_attachment_image_src($news_image_id, 'full')[0]; // Image URL
                                         ?>
-                                            <a target="_blank" href="<?php echo $news_link;?>" class="news_item">
-                                                <div>
-                                                    <p class="font-weight-bold adieu_light text_2"><?php echo $news_date; ?></p>
-                                                    <p class="text-uppercase text_2 "><?php echo $news_title; ?></p>
+                                            <div class="news_item">
+                                                
+                                                <div class="front_page">
+                                                    <div>
+                                                        <p class="font-weight-bold adieu_light text_2"><?php echo $news_date; ?></p>
+                                                        <p class="text-uppercase text_2 "><?php echo $news_title; ?></p>
+                                                    </div>
+                                                    <p class="text_2"><?php echo $news_text; ?></p>
                                                 </div>
-                                                <p class="text_2"><?php echo $news_text; ?></p>
-                                            </a>
+                                                <div class="back_page">
+                                                    
+                                                    <div class="button_wrapper">
+                                                        <div class="h-100 d-flex justify-content-center align-items-center">
+                                                            <a href="<?php echo $news_link;?>" target="_blank" class="secondary_button">Read more</a>
+                                                        </div>
+                                                    </div>
+                                                    <?php if ( !empty($news_image_url)) : ?>
+                                                        <img src="<?php echo $news_image_url; ?>" alt="News Image" />
+                                                    <?php endif; ?>
+                                                </div>
+
+                                            </div>
                                         <?php
                                     }
                                     wp_reset_postdata();

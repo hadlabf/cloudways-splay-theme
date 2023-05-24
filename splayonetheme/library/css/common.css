@@ -40,7 +40,7 @@ Version: 1.0.0
   --f-sm: 16px;
   --f-md: 18px;
   --f-lg: 20px;
-  --f-xl: 28px;
+  --f-xl: 26px;
   --f-h4: 40px;
   --f-h3: 74px;
   --f-h2: 97px;
@@ -159,6 +159,9 @@ a, a:hover, a:focus, a:active  {
 }
 .adieu_light {
   font-family: "Adieu-Light";
+}
+.gap_7 {
+  gap: var(--s7);
 }
 p {
   font-size: var(--f-sm);
