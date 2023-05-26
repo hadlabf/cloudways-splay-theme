@@ -1,6 +1,6 @@
 {
   "name": "cloudways-splay-theme",
-  "version": "3.3.1",
+  "version": "3.6.0",
   "homepage": "https://github.com/hadlabf/cloudways-splay-theme",
   "authors": [
     "hadlabf <hadla.bergman@gmail.com>"
@@ -24,6 +24,6 @@
   "dependencies": {
     "modernizer": "~2.8.2",
     "font-awesome": "~4.2.0",
-    "bootstrap": "~3.3.1"
+    "bootstrap": "~3.6.0"
   }
 }

@@ -39,8 +39,8 @@ Template Name: Talent Page
             </div>
 
 <!-- SECTION: WHY US? -->
-            <div class="why_us_section work_area_section">
-                <div class="content work_area_content">
+            <div class="why_us_section work_area_section content">
+                <div class="work_area_content">
                     <p class="work_area_header adieu_light"><?php echo the_field('talent_why_us_title'); ?></p>
                     <p class="w-50 text_2 pb-3"><?php echo the_field('talent_why_us_section_description'); ?></p>
                     <div class="work_area_list">
