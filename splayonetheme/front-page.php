@@ -102,15 +102,15 @@
                                                 <div class="front_page">
                                                     <div>
                                                         <p class="font-weight-bold adieu_light text_2"><?php echo $news_date; ?></p>
-                                                        <p class="text-uppercase text_2 "><?php echo $news_title; ?></p>
+                                                        <p class="text-uppercase text_2 text_ellipsis_3"><?php echo $news_title; ?></p>
                                                     </div>
-                                                    <p class="text_2"><?php echo $news_text; ?></p>
+                                                    <p class="text_2 text_ellipsis_4"><?php echo $news_text; ?></p>
                                                 </div>
                                                 <div class="back_page">
                                                     
                                                     <div class="button_wrapper">
                                                         <div class="h-100 d-flex justify-content-center align-items-center">
-                                                            <a href="<?php echo $news_link;?>" target="_blank" class="secondary_button">Read more</a>
+                                                            <a href="<?php echo $news_link;?>" target="_blank" class="secondary_button <?php if ( empty($news_image_url)) : echo "no_image"; endif;?>">Read more</a>
                                                         </div>
                                                     </div>
                                                     <?php if ( !empty($news_image_url)) : ?>

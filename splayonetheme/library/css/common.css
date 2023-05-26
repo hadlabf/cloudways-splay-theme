@@ -174,7 +174,19 @@ img {
   width: 100%;
   height: auto;
 }
-
+.text_ellipsis_3, .text_ellipsis_4 {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.text_ellipsis_3 {
+  -webkit-line-clamp: 3;
+}
+.text_ellipsis_4 {
+  -webkit-line-clamp: 4;
+}
 input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
@@ -466,7 +478,7 @@ header {
   position: fixed;
   z-index: 100;
   top: 0;
-  left: -100vw;
+  left: -150vw;
   width: 100vw;
   height: 100vh;
   background-color: var(--bg-accent1);
