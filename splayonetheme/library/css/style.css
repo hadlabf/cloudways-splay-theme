@@ -313,6 +313,7 @@ button.submit_button {
 }
 .area_item #topic {
   font-size: var(--f-lg);
+  font-family: "Adieu-Light";
 }
 .area_item #description {
   display: none;
@@ -322,6 +323,10 @@ button.submit_button {
 }
 .item_hovered .area_item {
   background-color: var(--bg-primary);
+}
+.item_hovered .area_item #topic {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
 }
 .item_hovered #topic, .item_hovered #description, .item_hovered p {
   color: var(--color-primary);
