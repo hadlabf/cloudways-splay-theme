@@ -83,7 +83,7 @@
                     if ($news_query->have_posts()) {
                         ?>
                         <div class="content home_news_section">
-                            <p class="title_2">News</p>
+                            <p class="title_3">News</p>
                             <div class="news_scrool_wrapper">
                                 <div class="news_scrool_feed">
                                     <?php
