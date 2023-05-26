@@ -148,6 +148,10 @@ a, a:hover, a:focus, a:active  {
   font-size: 70px;
   font-family: "Adieu-Regular";
 }
+.title_3 {
+  font-size: var(--f-h4);
+  font-family: "Adieu-Regular";
+}
 .adieu_black {
   font-family: "Adieu-Black";
 }
@@ -286,7 +290,7 @@ button:focus, button:active {
   }
   .head_nav_items a{
     color: var(--color-primary);
-    font-size: var(--f-md);
+    font-size: var(--f-sm);
   }
   .menu_icon_wrapper {
     display:flex;
