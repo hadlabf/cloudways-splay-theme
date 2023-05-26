@@ -49,7 +49,7 @@
     <header>
 		<div class="content">
 			<div class="row m-0 header_wrapper">
-				<div class="d-flex flex-direction-row w-100 flex-wrap-nowrap">
+				<div style="flex-grow:1;" class="d-flex flex-direction-row flex-wrap-nowrap">
 					<div class="menu_icon_wrapper">
 						<button class="hamburger_menu_toggle">
 							<img class="menu_icon" src="<?php echo get_template_directory_uri(); ?>/images/menu-icon-<?php echo $color;?>.png"/>

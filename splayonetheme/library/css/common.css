@@ -286,6 +286,7 @@ button:focus, button:active {
   }
   .head_nav_items a{
     color: var(--color-primary);
+    font-size: var(--f-md);
   }
   .menu_icon_wrapper {
     display:flex;
