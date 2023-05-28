@@ -5,7 +5,7 @@
             <div class="col col-sm-8">
                 <div class="row mb-4">
                     <div class="col">
-                        <p class="font-weight-bold">Follow us</p>
+                        <p class="bold_1">Follow us</p>
                     </div>
                     <div class="col d-flex flex-column">
                         <a target="_blank" href="https://se.linkedin.com/company/splay-one" class="cta_link">LinkedIn</a>
@@ -16,7 +16,7 @@
                 </div>
                 <div class="row mb-4">
                     <div class="col">
-                        <p class="font-weight-bold">Create with us</p>
+                        <p class="bold_1">Create with us</p>
                     </div>
                     <div class="col d-flex flex-column">
                         <p class="mb-0">For new business enquiries contact</p>
@@ -25,7 +25,7 @@
                 </div>
                 <div class="row mb-4">
                     <div class="col">
-                        <p class="font-weight-bold">Work with us</p>
+                        <p class="bold_1">Work with us</p>
                     </div>
                     <div class="col d-flex flex-column">
                         <p class="mb-0">For career opportunities, visit</p>

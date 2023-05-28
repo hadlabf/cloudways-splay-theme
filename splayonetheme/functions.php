@@ -591,5 +591,18 @@ function filter_cases() {
     }
     exit;
 }
+
+add_action('admin_head', 'my_custom_fonts');
+// Possible add in future: body, td, textarea, input, select {font-family: "Poppins", sans-serif;}
+function my_custom_fonts() {
+  echo '<style>
+    .message_to_admin > .acf-input {
+      font-size: 14px !important;
+    } 
+    .message_to_admin > .acf-input strong {
+      font-size: 18px !important;
+    } 
+  </style>';
+}
 ?>
 

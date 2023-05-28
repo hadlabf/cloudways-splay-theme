@@ -128,7 +128,7 @@ a, a:hover, a:focus, a:active  {
   font-weight: 500;
 }
 .small_title {
-  font-size: var(--f-xl);
+  font-size: var(--f-lg);
   font-family: "Adieu-Light";
 }
 .large_title {
@@ -164,8 +164,8 @@ a, a:hover, a:focus, a:active  {
 .adieu_light {
   font-family: "Adieu-Light";
 }
-.gap_7 {
-  gap: var(--s7);
+.gap_lg {
+  gap: 90px;
 }
 p {
   font-size: var(--f-sm);
@@ -187,6 +187,21 @@ img {
 .text_ellipsis_4 {
   -webkit-line-clamp: 4;
 }
+@media (max-width: 650px) {
+  .text_2, .small_title {
+    font-size: var(--f-md);
+  }
+  .text_1 {
+    font-size: var(--f-xs);
+  }
+  .text_ellipsis_4 {
+    -webkit-line-clamp: 6;
+  }
+  .gap_lg {
+    gap: 75px;
+  }
+}
+/* FORM */
 input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
@@ -326,8 +341,7 @@ button:focus, button:active {
   }
   footer {
     border-top: 1px solid var(--color-primary);
-    padding-top: 125px;
-    padding-bottom: 60px;
+    padding: 125px 0;
   }
   footer *{
     font-size: var(--f-md);
@@ -409,6 +423,10 @@ button:focus, button:active {
   }
 }
 /* ERRORS */
+.message_to_admin * {
+  font-weight: 500;
+  font-size: 24px;
+}
 .error_card {
   background: var(--bg-secondary);
   padding: var(--s5);
@@ -478,7 +496,7 @@ header {
   position: fixed;
   z-index: 100;
   top: 0;
-  left: -150vw;
+  left: calc(-100vw - 1000px);
   width: 100vw;
   height: 100vh;
   background-color: var(--bg-accent1);
