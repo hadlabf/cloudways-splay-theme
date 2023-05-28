@@ -7,7 +7,7 @@
             <?php get_template_part('includes/section', 'awards' ); ?>
 
             <div class="content">
-                <div class="thumbnail_container d-flex flex-row flex-wrap">
+            <div class="thumbnail_container d-flex flex-row flex-wrap">
                 <?php
                     $cases_args = array(
                         'post_type' => 'cases', // Profiles post type slug
@@ -16,12 +16,18 @@
                         'orderby' => 'meta_value_num',
                         'order' => 'ASC',
                         'meta_query' => array(
+                            'relation' => 'AND',
+                            array(
+                                'key' => 'case_thumbnail_order',
+                                'value' => array(1, 2, 3, 4, 5),
+                                'compare' => 'IN',
+                                'type' => 'NUMERIC',
+                            ),
                             array(
                                 'key' => 'case_thumbnail_order',
                                 'compare' => 'EXISTS',
-                                'type' => 'NUMERIC'
-                            )
-                        )
+                            ),
+                        ),
                     );
                     $cases_query = new WP_Query($cases_args);
 
@@ -39,33 +45,28 @@
                             $case_thumbnail_data = array( 
                                 'class' => 'featured-home',
                                 'data'  => array(
-                                'client' => $case_customer,
-                                'case_name' => $case_name,
-                                'displayed_width' => $displayed_width,
-                                'image_url' => $case_thumbnail_url,
+                                    'client' => $case_customer,
+                                    'case_name' => $case_name,
+                                    'displayed_width' => $displayed_width,
+                                    'image_url' => $case_thumbnail_url,
                                 )
                             );
-                            echo $case_thumbnail_order;
 
-                            // if ( !empty($case_thumbnail_order)) {
-                                if( $displayed_width === 'small'){
-                                    echo $case_thumbnail_order;
-                                    get_template_part('includes/cases/thumbnail', 'small', $case_thumbnail_data );
-                                }
-                                if( $displayed_width === 'fullscreen'){
-                                    get_template_part('includes/cases/thumbnail', 'fullscreen', $case_thumbnail_data);
-                                }
-                                if( $displayed_width === 'medium'){
-                                    get_template_part('includes/cases/thumbnail', 'medium', $case_thumbnail_data);
-                                }
-                            // }
+                            if ($displayed_width === 'small') {
+                                get_template_part('includes/cases/thumbnail', 'small', $case_thumbnail_data);
+                            }
+                            if ($displayed_width === 'fullscreen') {
+                                get_template_part('includes/cases/thumbnail', 'fullscreen', $case_thumbnail_data);
+                            }
+                            if ($displayed_width === 'medium') {
+                                get_template_part('includes/cases/thumbnail', 'medium', $case_thumbnail_data);
+                            }
                         }
                         wp_reset_postdata();
-                    } 
-                    ?>
-
+                    }?>
                 </div>
-                <div class="section_padding_sm d-flex flex-column justify-content-center align-items-center">
+
+                <div class="padding_bottom_sm padding_top_lg d-flex flex-column justify-content-center align-items-center">
                     <?php 
                     $client_logo_collage = get_field("home_client_logo_collage");
                     if ( !empty($client_logo_collage) ) : ?>

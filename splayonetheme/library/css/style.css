@@ -47,9 +47,6 @@ Version: 1.0.0
   width: calc(50% - var(--s5)) !important;
 }
 
-.thumbnail_container > .col-md-8:nth-child(even) {
-  margin-left: auto;
-}
 .thumbnail_container > .w-50:nth-child(even) {
   margin-top: var(--lg);
 }

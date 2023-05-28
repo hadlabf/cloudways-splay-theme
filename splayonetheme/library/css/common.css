@@ -395,8 +395,14 @@ button:focus, button:active {
 .section_type_3 * {
   color: var(--color-secondary);
 }
-.padding_top_sm {
+.padding_top_xs {
   padding-top: var(--s3);
+}
+.padding_top_lg {
+  padding-top: var(--lg);
+}
+.padding_bottom_sm {
+  padding-bottom: var(--s5);
 }
 .padding_bottom_lg {
   padding-bottom: var(--lg);

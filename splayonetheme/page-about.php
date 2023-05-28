@@ -61,7 +61,7 @@ Template Name: About Page
 
                 <div class="section_type_3 about_clients_section">
                     <div class="content">
-                        <div class="padding_bottom_lg padding_top_sm">
+                        <div class="padding_bottom_lg padding_top_xs">
                             <div class="pb-5">
                                 <?php 
                                 $image = get_field('about_clients_logos_collage');
