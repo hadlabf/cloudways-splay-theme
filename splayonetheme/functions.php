@@ -591,7 +591,7 @@ function filter_cases() {
     }
     exit;
 }
-
+// WP ADMIN CUSTOMIZATION
 add_action('admin_head', 'my_custom_fonts');
 // Possible add in future: body, td, textarea, input, select {font-family: "Poppins", sans-serif;}
 function my_custom_fonts() {
@@ -604,5 +604,25 @@ function my_custom_fonts() {
     } 
   </style>';
 }
+
+// Add custom column to the cases table
+function add_case_thumbnail_order_column($columns) {
+  $columns['case_thumbnail_order'] = 'Thumbnail Order';
+  return $columns;
+}
+add_filter('manage_cases_posts_columns', 'add_case_thumbnail_order_column');
+
+// Populate custom column with field value
+function populate_case_thumbnail_order_column($column, $post_id) {
+  if ($column === 'case_thumbnail_order') {
+      $thumbnail_order = get_field('case_thumbnail_order', $post_id);
+      
+      if ($thumbnail_order !== 'not_featured') {
+          echo $thumbnail_order;
+      }
+  }
+}
+add_action('manage_cases_posts_custom_column', 'populate_case_thumbnail_order_column', 10, 2);
+
 ?>
 
