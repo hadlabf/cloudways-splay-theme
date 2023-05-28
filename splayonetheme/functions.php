@@ -553,6 +553,21 @@ function custom_functions_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'custom_functions_enqueue_scripts' );
 
 
+add_action('wp_ajax_filter_people', 'filter_people');
+add_action('wp_ajax_nopriv_filter_people', 'filter_people');
+
+
+function filter_people() {
+  // Retrieve selected country from the AJAX request
+  $selectedCountry = strtolower(trim($_POST['country']));
+
+  return $selectedCountry;
+  
+  exit;
+}
+
+
+
 add_action('wp_ajax_filter_cases', 'filter_cases');
 add_action('wp_ajax_nopriv_filter_cases', 'filter_cases');
 

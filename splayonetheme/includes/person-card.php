@@ -1,4 +1,4 @@
-<div class="col-md-3 col-sm-3 col-6 people_card">
+<div class="col-md-3 col-sm-3 col-6 people_card person-card">
     <img class="people_img" src="<?php echo $args['data']['profile_picture']['url'];?>" />
     
     <div class="front_page">

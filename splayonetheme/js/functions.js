@@ -13,3 +13,10 @@ for (const button of hamburgerMenuToggleButtons) {
 }
 
 
+function getActiveButtonData() {
+  var activeButton = $('.category_button.active');
+  if (activeButton.length > 0) {
+      return activeButton.attr('data-country');
+  }
+  return null; // No active button found
+}
