@@ -11,7 +11,7 @@
                 <?php
                     $cases_args = array(
                         'post_type' => 'cases', // Profiles post type slug
-                        'posts_per_page' => 4,
+                        'posts_per_page' => 5,
                         'meta_key' => 'case_thumbnail_order',
                         'orderby' => 'meta_value_num',
                         'order' => 'ASC',
