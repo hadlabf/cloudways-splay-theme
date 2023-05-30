@@ -553,20 +553,52 @@ function custom_functions_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'custom_functions_enqueue_scripts' );
 
 
+
 add_action('wp_ajax_filter_people', 'filter_people');
 add_action('wp_ajax_nopriv_filter_people', 'filter_people');
 
-
 function filter_people() {
-  // Retrieve selected country from the AJAX request
-  $selectedCountry = strtolower(trim($_POST['country']));
+    // Retrieve selected category from the AJAX request
+    $selectedCategory = $_POST['category'];
 
-  return $selectedCountry;
-  
-  exit;
+    // Modify your WP_Query based on the selected category
+    $cases_args = array(
+        'post_type' => 'people',
+        'posts_per_page' => -1,
+        'category_name' => $selectedCategory,
+    );
+    $cases_query = new WP_Query($cases_args);
+
+    // Output the retrieved case items
+    if ($cases_query->have_posts()) {
+        while ($cases_query->have_posts()) {
+            $cases_query->the_post();
+            $full_name = get_field('people_full_name');
+            $role = get_field('people_role');
+            $country = get_field('people_country');
+            $phone = get_field('people_phone');
+            $email = get_field('people_email');
+            $profile_picture = get_field('people_profile_picture');
+            
+            $people_data = array( 
+                'class' => 'featured-home',
+                'data'  => array(
+                'full_name' => $full_name,
+                'role' => $role,
+                'country' => $country,
+                'phone' => $phone,
+                'email' => $email,
+                'profile_picture' => $profile_picture,
+                )
+                );
+                get_template_part('includes/person', 'card', $people_data );
+        }
+        wp_reset_postdata();
+    } else {
+        echo 'No people found in the selected category.';
+    }
+    exit;
 }
-
-
 
 add_action('wp_ajax_filter_cases', 'filter_cases');
 add_action('wp_ajax_nopriv_filter_cases', 'filter_cases');

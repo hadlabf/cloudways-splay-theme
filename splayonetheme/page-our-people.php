@@ -57,7 +57,7 @@ Template Name: Our People Page
     </div>
 </section>
 
-<script>
+<!-- <script>
     jQuery(function($) {
         $('.category_button').on('click', function(e) {
             e.preventDefault();
@@ -70,7 +70,7 @@ Template Name: Our People Page
         });
 
         });
-</script>
+</script> -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
