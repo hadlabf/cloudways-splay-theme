@@ -72,7 +72,7 @@
                     if ( !empty($client_logo_collage) ) : ?>
                         <img class="w-auto mb-3" style="max-height:180px;" src="<?php echo $client_logo_collage["url"]; ?>" alt="Client Logos" />
                     <?php endif; ?>
-                    <a href="<?php echo site_url('/cases');?>" class="secondary_button mt-5">More work</a>
+                    <a href="<?php echo site_url('/cases');?>" class="secondary_button blue_ mt-5">More work</a>
                 </div>
             </div>
 
@@ -106,10 +106,10 @@
                                             
                                             <div class="front_page">
                                                 <div>
-                                                    <p class="font-weight-bold adieu_light text_2"><?php echo $news_date; ?></p>
-                                                    <p class="text-uppercase text_2 text_ellipsis_3"><?php echo $news_title; ?></p>
+                                                    <p class="font-weight-bold adieu_black text_2"><?php echo $news_date; ?></p>
+                                                    <p class="text_2 bold_1 text_ellipsis_3"><?php echo $news_title; ?></p>
                                                 </div>
-                                                <p class="text_2 text_ellipsis_4"><?php echo $news_text; ?></p>
+                                                <p class="text_1 text_ellipsis_4"><?php echo $news_text; ?></p>
                                             </div>
                                             <div class="back_page">
                                                 

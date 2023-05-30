@@ -7,15 +7,9 @@
             <a href="<?php echo site_url('/about');?>" class="primary_button"><?php echo the_field('home_award_button'); ?></a>
         </div>
         <?php 
-            $images = get_field('home_award_gallery');
-            if( $images ): ?>
-                <div class="award_image_carousel row">
-                    <?php foreach( $images as $image ): ?>
-                        <div class="">
-                            <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+            $image = get_field('home_award_logo_collage');
+            if( !empty($image) ): ?>
+                <img style="max-height:100px;width:auto;" src="<?php echo esc_url($image['url']) ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
         <?php endif; ?>
     </div>
 </div>

@@ -47,8 +47,8 @@ Version: 1.0.0
   width: calc(50% - var(--s5)) !important;
 }
 
-.thumbnail_container > .w-50:nth-child(even) {
-  margin-top: var(--lg);
+.thumbnail_container > .w-50:nth-child(odd) {
+  margin-top: 125px;
 }
 @media (max-width: 725px) {
   .thumbnail_container {
@@ -103,8 +103,14 @@ Version: 1.0.0
   justify-content: space-between;
   height: 100%;
 }
-.news_item:hover .front_page, 
+.news_item:hover .front_page {
+  display: none;
+}
 .news_item .back_page {
+  opacity: 0;
+  transition: opacity 0.25s ease-in;
+}
+.news_item .back_page .button_wrapper {
   display: none;
 }
 
@@ -114,8 +120,10 @@ Version: 1.0.0
   align-items: center;
   position: relative;
   height: 100%;
+  opacity: 1;
 }
 .news_item:hover .back_page .button_wrapper {
+  display: block;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -499,7 +507,7 @@ button.submit_button {
 /********** PAGE CASE/WORK ARCHIVE **********/
 .case_single_image_wrapper {
   width: 100%;
-  max-height: 620px;
+  max-height: 700px;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -566,6 +574,11 @@ button.submit_button {
   background-color: rgba(0, 0, 0, 0.20);
   opacity: 1;
 }
+
+.vertical_image_wrapper > img {
+  width: calc(33% - 30px) !important;
+}
+
 @media (max-width: 700px) {
   .case_archive  {
     min-height: 200px;

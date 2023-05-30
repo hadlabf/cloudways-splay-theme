@@ -75,10 +75,6 @@ Version: 1.0.0
 @media (max-width: 900px) {
   :root {
     /* DONE */
-    --f-sm: 15px;
-    --f-md: 16px;
-    --f-lg: 18px;
-    --f-xl: 20px;
     --f-h4: 36px;
     --f-h3: 50px;
     --f-h2: 74px;
@@ -91,11 +87,6 @@ Version: 1.0.0
 @media (max-width: 725px) {
   :root {
     /* DONE */
-    --f-xs: 13px;
-    --f-sm: 15px;
-    --f-md: 16px;
-    --f-lg: 17px;
-    --f-xl: 18.5px;
     --f-h4: 28px;
     --f-h3: 42px;
     --f-h2: 60px;
@@ -105,14 +96,22 @@ Version: 1.0.0
     padding-top: 20px;
   }
 }
+@media (max-width: 600px) {
+  :root {
+    --f-sm: 15px;
+    --f-md: 16px;
+    --f-lg: 18px;
+    --f-xl: 20px;
+  }
+}
 @media (max-width: 400px) {
   :root {
     /* DONE */
     --f-xs: 13px;
-    --f-sm: 14px;
-    --f-md: 15.5px;
-    --f-lg: 16px;
-    --f-xl: 17px;
+    --f-sm: 15px;
+    --f-md: 16px;
+    --f-lg: 17px;
+    --f-xl: 18.5px;
     --f-h4: 24px;
     --f-h3: 36px;
     --f-h2: 50px;
@@ -183,7 +182,7 @@ a, a:hover, a:focus, a:active  {
 }
 .page_title {
   font-size: var(--f-h1);
-  font-family: "Adieu-Bold";
+  font-family: "Adieu-Black";
   margin-top: 0;
 }
 .title_1 {
@@ -234,7 +233,7 @@ img {
   -webkit-line-clamp: 4;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 500px) {
   .text_ellipsis_4 {
     -webkit-line-clamp: 6;
   }
@@ -282,7 +281,7 @@ button:focus, button:active {
   font-size: var(--f-xl);
   transition: background-color 0.15s ease-in-out;
 }
-.primary_button {
+.primary_button, .secondary_button.blue_:hover {
   background-color: var(--bg-accent1);
   border: 1px solid var(--bg-accent1);
   color: var(--color-secondary);
@@ -364,7 +363,7 @@ button:focus, button:active {
   }
   .head_nav_items a{
     color: var(--color-primary);
-    font-size: var(--f-sm);
+    font-size: 15px;
   }
   .menu_icon_wrapper {
     display:flex;
@@ -388,7 +387,7 @@ button:focus, button:active {
   }
   footer {
     border-top: 1px solid var(--color-primary);
-    padding: 125px 0;
+    padding: 100px 0;
   }
   footer *{
     font-size: var(--f-md);

@@ -27,24 +27,24 @@ if( !empty( $vimeo_id ) ): ?>
 <?php endif; ?>
 <div class="case_single_page border_bottom_primary">
 	<div class="content section_padding_3">
-		<h1 class="large_title bold_1 pb-5">Case</h1>
+		<h1 class="large_title adieu_bold pb-5"><?php echo $name?></h1>
 		<div class="d-flex flex-row row">
 			<div class="d-flex flex-column col-4">
-				<p class="text_2 bold_1 mb-1">Client:</p>
-				<p class="text_2 bold_1"><?php echo $customer; ?></p>
+				<p class="text_1 bold_1 mb-1">Client:</p>
+				<p class="text_1 bold_1"><?php echo $customer; ?></p>
 			</div>
 			<div class="d-flex flex-column col-8">
-				<p class="text_2 bold_1 mb-1">Services:</p>
+				<p class="text_1 bold_1 mb-1">Services:</p>
 				<div class="d-flex flex-row">
 					<?php if(have_rows('case_service_tag_list') ):
 							while( have_rows('case_service_tag_list') ) : the_row(); ?>
-								<p class="text_2 bold_1 service_tag"><?php echo the_sub_field('case_service_tag'); ?></p>
+								<p class="text_1 bold_1 service_tag"><?php echo the_sub_field('case_service_tag'); ?></p>
 							<?php                         
 							endwhile;                            
 						endif;
 					?>
 				</div>
-				<p class="text_2"><?php echo $description; ?></p>
+				<p class="text_1"><?php echo $description; ?></p>
 			</div>
 		</div>
 	</div>
@@ -54,7 +54,7 @@ if( !empty( $vimeo_id ) ): ?>
 
 <div class="content section_padding_3">
 	<div class="d-flex flex-column">
-		<div class="d-flex flex-row justify-content-between">
+		<div class="vertical_image_wrapper d-flex flex-row justify-content-between">
 			<?php if( $vertical_images ) : foreach( $vertical_images as $image ): ?>
             	<img class="h-100 w-auto" src="<?php  echo $image["url"]; ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
             <?php endforeach; endif;?>
@@ -67,7 +67,7 @@ if( !empty( $vimeo_id ) ): ?>
 <?php echo get_template_part('includes/section', 'profiles' ); ?>
 <div class="content section_padding_3">
 	<p class="subtitle_1 adieu_light"><?php echo $profile_header; ?></p>
-	<p class="text_2 w_70"><?php echo $profile_description; ?></p>
+	<p class="text_1 w_70"><?php echo $profile_description; ?></p>
 	
 
 	<div class="row">

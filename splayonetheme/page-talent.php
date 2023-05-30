@@ -30,8 +30,8 @@ Template Name: Talent Page
                 <?php endif; ?>
             <div class="content">
                 <div class="row pb-5">
-                    <div class="col col-sm-6 title_1 adieu_light"><?php echo the_field('talent_header'); ?></div>
-                    <div class="col col-sm-6 text_2"><?php echo the_field('talent_text'); ?></div>
+                    <div class="col col-sm-6 title_1 adieu_light mr-auto"><?php echo the_field('talent_header'); ?></div>
+                    <div class="col col-sm-5 text_1 pt-4"><?php echo the_field('talent_text'); ?></div>
                 </div>
                 <div class="w-100 text-right">
                     <p class="title_2 adieu_light"><?php echo the_field('about_header_3'); ?></p>
@@ -42,7 +42,7 @@ Template Name: Talent Page
             <div class="why_us_section work_area_section content">
                 <div class="work_area_content">
                     <p class="work_area_header adieu_light"><?php echo the_field('talent_why_us_title'); ?></p>
-                    <p class="w-50 text_2 pb-3"><?php echo the_field('talent_why_us_section_description'); ?></p>
+                    <p class="w-50 text_1 pb-5"><?php echo the_field('talent_why_us_section_description'); ?></p>
                     <div class="work_area_list">
                         <?php  
                             $popup_image_1 = get_field('talent_popup_image_1');
@@ -61,11 +61,6 @@ Template Name: Talent Page
                                 endwhile;                            
                             endif;
                         ?>
-                        <div class="col-6 col-sm-4 p-0 area_item_wrapper">
-                            <div class="area_item d-flex align-items-end justify-content-end">
-                                <p id="topic" class="adieu_light">and so much more!</p>
-                            </div>
-                        </div>
                         <?php get_template_part('includes/animated-boxes-script') ?>
                     </div>
 
