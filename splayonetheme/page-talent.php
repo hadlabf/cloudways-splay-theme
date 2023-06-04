@@ -118,32 +118,47 @@ Template Name: Talent Page
 
 <!-- SECTION: TALENTS -->
             <div class="content section_padding_1">
-                <h1 class="page_title"><?php echo the_field('talent_people_section_title'); ?> </h1>
+                <h1 class="large_title adieu_black">Influencers</h1>
+                <p class="text_1"><?php echo the_field('talent_people_section_description'); ?> </p>
 
                 <div class="people_cards">
                     <?php 
-                        if( have_rows('talent_people_list') ):
-                             while( have_rows('talent_people_list') ) : the_row();
-                                $full_name = get_sub_field('talent_people_full_name');
-                                $role = get_sub_field('talent_people_role');
-                                $country = get_sub_field('talent_people_country');
-                                $phone = get_sub_field('talent_people_phone');
-                                $email = get_sub_field('talent_people_email');
-                                $profile_picture = get_sub_field('talent_people_profile_picture');
-                                    
-                                $people_data = array( 
-                                    'class' => 'featured-home',
-                                    'data'  => array(
-                                    'full_name' => $full_name,
-                                    'role' => $role,
-                                    'country' => $country,
-                                    'phone' => $phone,
-                                    'email' => $email,
-                                    'profile_picture' => $profile_picture,
-                                     )
-                                     );
-                                    
-                                get_template_part('includes/person', 'card', $people_data );
+                        if( have_rows('talent_influencers_list') ):
+                             while( have_rows('talent_influencers_list') ) : the_row();
+                                $full_name = get_sub_field('talent_influencers_full_name');
+                                $role = get_sub_field('talent_influencers_role');
+                                $country = get_sub_field('talent_influencers_country');
+                                $profile_picture = get_sub_field('talent_influencers_profile_picture');
+                                ?>
+                                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 people_card person-card">
+                                        <img class="people_img" src="<?php echo $profile_picture['url'];?>" />
+                                        
+                                        <div class="front_page">
+                                            <p class="mb-0 bold_1"><?php echo $full_name; ?></p>
+                                            <p><?php echo $role; ?></p>
+                                        </div>
+
+                                        <div class="back_page">
+                                            <div>
+                                                <p class="mb-0 bold_1"><?php echo $full_name; ?></p>
+                                                <p><?php echo $role; ?></p>
+                                            </div>
+                                            <div>
+                                                <?php 
+                                                if( have_rows('talent_influencers_link_list') ):
+                                                    while( have_rows('talent_influencers_link_list') ) : the_row();
+                                                        $influencer_link = get_sub_field('talent_influencers_link_list_url');
+                                                        $influencer_link_label = get_sub_field('talent_influencers_link_list_label');
+                                                        ?>
+                                                        <a target="_blank" href="<?php echo esc_url($influencer_link);?>">
+                                                            <?php echo $influencer_link_label; ?>
+                                                        </a>
+                                                <?php endwhile; endif; ?>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <?php
                             endwhile;                            
                         else :
                         endif;
@@ -151,7 +166,7 @@ Template Name: Talent Page
                 </div>
 
                 <div class="mt-3 w-100 d-flex justify-content-center">
-                    <button class="secondary_button"><?php echo the_field('talent_people_section_button'); ?></button>
+                    <button class="secondary_button blue_">Load More</button>
                 </div>
             </div>
 

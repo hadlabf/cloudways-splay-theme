@@ -181,7 +181,7 @@ a, a:hover, a:focus, a:active  {
   font-family: "Adieu-Light";
 }
 .large_title {
-  font-size: 80px !important;
+  font-size: var(--f-h3) !important;
   font-family: "Adieu-Light";
 }
 .page_title {
