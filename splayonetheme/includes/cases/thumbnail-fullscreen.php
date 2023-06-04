@@ -1,4 +1,4 @@
-<div class="d-flex flex-column w-100 thumbnail_item">
+<a href="<?php the_permalink();?>" class="d-flex flex-column w-100 thumbnail_item">
     <?php if (!empty($args['data']['image_url'])) : ?>
         <img class="case_img" src="<?php echo esc_url($args['data']['image_url']);?>" alt="<?php echo $args['data']['case_name']; ?>"/>
     <?php endif; ?>
@@ -7,4 +7,4 @@
         <p class="small_title adieu_light"><?php echo $args['data']['case_name']; ?></p>
     </div>
 
-</div>
+</a>
