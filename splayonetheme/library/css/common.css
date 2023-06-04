@@ -285,7 +285,13 @@ button:focus, button:active {
   font-size: var(--f-xl);
   transition: background-color 0.15s ease-in-out;
 }
-.primary_button, .secondary_button.blue_:hover {
+.primary_button:disabled, .secondary_button:disabled, .secondary_button.blue_:disabled {
+  background-color: var(--bg-accent1);
+  border: 1px solid var(--bg-accent1);
+  color: var(--color-secondary);
+  opacity: 0.8;
+}
+.primary_button, .secondary_button.blue_:hover:not([disabled]) {
   background-color: var(--bg-accent1);
   border: 1px solid var(--bg-accent1);
   color: var(--color-secondary);
@@ -295,12 +301,12 @@ button:focus, button:active {
   border: 1px solid var(--bg-secondary);
   color: var(--color-primary);
 }
-.primary_button:hover, .secondary_button:hover {
+.primary_button:hover:not([disabled]), .secondary_button:hover:not([disabled]) {
   background-color: var(--bg-secondary);
   border: 1px solid var(--color-secondary);
   color: var(--color-secondary);
 }
-.category_button:hover, .category_button.active {
+.category_button:hover:not([disabled]), .category_button.active {
   background-color: var(--bg-accent1) !important;
   border: 1px solid var(--bg-accent1) !important;
   color: var(--color-secondary) !important;
