@@ -709,31 +709,31 @@ add_action('manage_cases_posts_custom_column', 'populate_case_thumbnail_order_co
 //     }
 // }
 
-function load_more_news_posts() {
-  $page = $_POST['page']; // Get the value of the page parameter
-  $posts_per_page = 4; // Set the number of posts to display per page
-  $offset = ( $page - 1 ) * $posts_per_page; // Calculate the offset
+// function load_more_news_posts() {
+//   $page = $_POST['page']; // Get the value of the page parameter
+//   $posts_per_page = 4; // Set the number of posts to display per page
+//   $offset = ( $page - 1 ) * $posts_per_page; // Calculate the offset
 
-  // Query additional posts based on the offset and posts_per_page
-  $query = new WP_Query( array(
-      'post_type' => 'news',
-      'posts_per_page' => $posts_per_page,
-      'offset' => $offset
-  ) );
-  echo "OFFSET HERE: " . $offset;
-  // Loop through the queried posts and generate the HTML markup
-  if ( $query->have_posts() ) {
-      while ( $query->have_posts() ) {
-          $query->the_post();
-          // Generate the HTML markup for each post
-      }
-  }
+//   // Query additional posts based on the offset and posts_per_page
+//   $query = new WP_Query( array(
+//       'post_type' => 'news',
+//       'posts_per_page' => $posts_per_page,
+//       'offset' => $offset
+//   ) );
+//   echo "OFFSET HERE: " . $offset;
+//   // Loop through the queried posts and generate the HTML markup
+//   if ( $query->have_posts() ) {
+//       while ( $query->have_posts() ) {
+//           $query->the_post();
+//           // Generate the HTML markup for each post
+//       }
+//   }
 
-  wp_reset_postdata();
-  die();
-}
-add_action( 'wp_ajax_load_more_news_posts', 'load_more_news_posts' );
-add_action( 'wp_ajax_nopriv_load_more_news_posts', 'load_more_news_posts' );
+//   wp_reset_postdata();
+//   die();
+// }
+// add_action( 'wp_ajax_load_more_news_posts', 'load_more_news_posts' );
+// add_action( 'wp_ajax_nopriv_load_more_news_posts', 'load_more_news_posts' );
 
 
 // function limit_news_archive_posts_per_page( $query ) {
@@ -742,5 +742,36 @@ add_action( 'wp_ajax_nopriv_load_more_news_posts', 'load_more_news_posts' );
 //   }
 // }
 // add_action( 'pre_get_posts', 'limit_news_archive_posts_per_page' );
+
+function load_more_news() {
+  $args = array(
+      'post_type' => 'news-articles',
+      'posts_per_page' => 8,
+      'orderby' => 'date',
+      'order' => 'DESC',
+      'paged' => $_POST['page']
+  );
+  $query = new WP_Query( $args );
+  if ( $query->have_posts() ) : 
+      while ( $query->have_posts() ) : $query->the_post(); 
+          $title = get_field('news_title');
+          $text = get_field('news_text');
+          $date = get_field('news_date');
+          $link = get_field('news_link');
+  ?>
+  <div style="margin-bottom: 15px;" class="col-3">
+      <a target="_blank" href="<?php echo $link;?>" class="news_article_item">
+          <div>
+              <p class="font-weight-bold adieu_black text_2"><?php echo $date; ?></p>
+              <p class="bold_1 text_1"><?php echo $title; ?></p>
+          </div>
+          <p class="text_1"><?php echo $text; ?></p>
+      </a>
+  </div>
+  <?php endwhile; endif;
+  wp_die();
+}
+add_action('wp_ajax_load_more_news', 'load_more_news');
+add_action('wp_ajax_nopriv_load_more_news', 'load_more_news');
 ?>
 
