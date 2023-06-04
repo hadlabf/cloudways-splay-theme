@@ -708,11 +708,39 @@ add_action('manage_cases_posts_custom_column', 'populate_case_thumbnail_order_co
 //         wp_send_json_success($posts);
 //     }
 // }
-function limit_news_archive_posts_per_page( $query ) {
-  if ( $query->is_archive() && $query->is_main_query() && is_post_type_archive( 'news-articles' ) ) {
-      $query->set( 'posts_per_page', 4 ); // Set the number of posts to display
+
+function load_more_news_posts() {
+  $page = $_POST['page']; // Get the value of the page parameter
+  $posts_per_page = 4; // Set the number of posts to display per page
+  $offset = ( $page - 1 ) * $posts_per_page; // Calculate the offset
+
+  // Query additional posts based on the offset and posts_per_page
+  $query = new WP_Query( array(
+      'post_type' => 'news',
+      'posts_per_page' => $posts_per_page,
+      'offset' => $offset
+  ) );
+  echo "OFFSET HERE: " . $offset;
+  // Loop through the queried posts and generate the HTML markup
+  if ( $query->have_posts() ) {
+      while ( $query->have_posts() ) {
+          $query->the_post();
+          // Generate the HTML markup for each post
+      }
   }
+
+  wp_reset_postdata();
+  die();
 }
-add_action( 'pre_get_posts', 'limit_news_archive_posts_per_page' );
+add_action( 'wp_ajax_load_more_news_posts', 'load_more_news_posts' );
+add_action( 'wp_ajax_nopriv_load_more_news_posts', 'load_more_news_posts' );
+
+
+// function limit_news_archive_posts_per_page( $query ) {
+//   if ( $query->is_archive() && $query->is_main_query() && is_post_type_archive( 'news-articles' ) ) {
+//       $query->set( 'posts_per_page', 4 ); // Set the number of posts to display
+//   }
+// }
+// add_action( 'pre_get_posts', 'limit_news_archive_posts_per_page' );
 ?>
 
