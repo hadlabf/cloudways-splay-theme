@@ -286,10 +286,7 @@ button:focus, button:active {
   transition: background-color 0.15s ease-in-out;
 }
 .primary_button:disabled, .secondary_button:disabled, .secondary_button.blue_:disabled {
-  background-color: var(--bg-accent1);
-  border: 1px solid var(--bg-accent1);
-  color: var(--color-secondary);
-  opacity: 0.8;
+  opacity: 0.7;
 }
 .primary_button, .secondary_button.blue_:hover:not([disabled]) {
   background-color: var(--bg-accent1);
