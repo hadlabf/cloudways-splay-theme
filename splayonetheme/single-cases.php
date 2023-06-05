@@ -1,4 +1,8 @@
 <?php get_header(); ?>
+<!-- 
+	1. Header
+	2. Intro
+ -->
 <?php 
 	$customer = get_field('case_customer');
 	$name = get_field('case_name');
@@ -11,6 +15,8 @@
 	$profile_header = get_field('case_section_profile_header');
 	$profile_description = get_field('case_section_profile_description');
 ?>
+
+<!-- 1. HEADER -->
 <?php if( !empty( $header_image ) ): ?>
 	<div class="case_single_image_wrapper">
 		<img class="w-100 h-auto" src="<?php  echo $header_image["url"]; ?>" alt="<?php echo esc_attr($header_image['alt']); ?>" />
@@ -25,6 +31,8 @@ if( !empty( $vimeo_id ) ): ?>
 		<script src="https://player.vimeo.com/api/player.js"></script>
 	</div>
 <?php endif; ?>
+
+<!-- 2. INTRO -->
 <div class="case_single_page border_bottom_primary">
 	<div class="content section_padding_3">
 		<h1 class="large_title adieu_bold pb-5"><?php echo $name?></h1>
@@ -50,8 +58,11 @@ if( !empty( $vimeo_id ) ): ?>
 	</div>
 </div>
 
+<!-- 3. KPI -->
+<?php get_template_part('includes/section', 'kpi', $channel_stats );?>
+<!-- 4. VIDEOS -->
 
-
+<!-- 5. VERTICAL IMAGES -->
 <div class="content section_padding_3">
 	<div class="d-flex flex-column">
 		<div class="vertical_image_wrapper d-flex flex-row justify-content-between">

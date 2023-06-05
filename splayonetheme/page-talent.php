@@ -121,14 +121,15 @@ Template Name: Talent Page
                 <h1 class="large_title adieu_black">Influencers</h1>
                 <p class="text_1"><?php echo the_field('talent_people_section_description'); ?> </p>
 
-                <div class="people_cards">
+                <div class="case_archive people_cards">
                     <?php 
                         if( have_rows('talent_influencers_list') ):
                              while( have_rows('talent_influencers_list') ) : the_row();
                                 $full_name = get_sub_field('talent_influencers_full_name');
                                 $role = get_sub_field('talent_influencers_role');
                                 $country = get_sub_field('talent_influencers_country');
-                                $profile_picture = get_sub_field('talent_influencers_profile_picture');
+                                $profile_picture = get_sub_field('talent_people_profile_picture');
+                                // $profile_picture = get_sub_field('talent_influencers_profile_picture');
                                 ?>
                                     <div class="col-lg-3 col-md-4 col-sm-6 col-6 people_card person-card">
                                         <img class="people_img" src="<?php echo $profile_picture['url'];?>" />

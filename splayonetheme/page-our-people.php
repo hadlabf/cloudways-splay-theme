@@ -57,21 +57,6 @@ Template Name: Our People Page
     </div>
 </section>
 
-<!-- <script>
-    jQuery(function($) {
-        $('.category_button').on('click', function(e) {
-            e.preventDefault();
-            $('.category_button').removeClass('active');
-            $(this).addClass('active');
-            var selectedCountry = $(this).data('country');
-
-            // Send AJAX request to the server
-            filterPeople(selectedCountry);
-        });
-
-        });
-</script> -->
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
   $(document).ready(function() {
