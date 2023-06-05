@@ -73,7 +73,6 @@ Template Name: Our People Page
       url: 'get_active_button_data.php',
       data: { activeButtonData: getActiveButtonData() },
       success: function(response) {
-        console.log('Active button data-country value: ' + response);
         $('#countryName').text(response); // Update the text of the <p> tag
 
         // Assign the value to a PHP variable
