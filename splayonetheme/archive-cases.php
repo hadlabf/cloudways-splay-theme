@@ -51,4 +51,4 @@ jQuery(function($) {
 
 
 
-<?php get_footer(); ?>
+<?php get_footer( null, [ 'footer_style' => 'footer_style_secondary' ] ); ?>

@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    <div class="section_secondary mb-0">
+    <div class="section_secondary not_fullsize mb-0">
         <div class="content">
             <h1 class="adieu_bold sp_header">We are always looking for new workfriends.</h1>
             <div class="d-flex justify-content-center">
@@ -60,4 +60,4 @@
 
 
 
-<?php get_footer(); ?>
+<?php get_footer( null, [ 'footer_style' => 'footer_style_secondary' ] ); ?>
