@@ -32,7 +32,6 @@ if( !empty( $vimeo_id ) ): ?>
 		<div style="padding:43.06% 0 0 0;position:relative;width:100%;max-width:100vw;">
 			<iframe src="https://player.vimeo.com/video/<?php echo esc_html($vimeo_id); ?>?autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;controls=0&amp;showinfo=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="REEL_WEB_2023_v2"></iframe>
 		</div>
-		<script src="https://player.vimeo.com/api/player.js"></script>
 	</div>
 <?php endif; ?>
 
@@ -66,21 +65,22 @@ if( !empty( $vimeo_id ) ): ?>
 <?php get_template_part('includes/section', 'kpi', $channel_stats );?>
 
 <!-- 4. VIDEOS -->
+
+
 <?php if( have_rows('case_videos_list')  ) : ?>
 <div class="content padding_top_lg">
-	<div class="d-flex flex-row">
-		<?php while( have_rows('case_videos_list') ): 
+	<div class="row">
+		<?php while( have_rows('case_videos_list') ): the_row();
 			$video_list_vimeo_id = get_sub_field('case_videos_list_vimeo_id');
 			$video_list_title = get_sub_field('case_videos_list_title');
 		?>
-			<div class="d-flex flex-column">
+			<div class="col text-center">
 				<div>
 					<div style="padding:43.06% 0 0 0;position:relative;width:100%;max-width:100vw;">
 						<iframe src="https://player.vimeo.com/video/<?php echo esc_html($video_list_vimeo_id); ?>?autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;controls=0&amp;showinfo=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="REEL_WEB_2023_v2"></iframe>
 					</div>
-					<script src="https://player.vimeo.com/api/player.js"></script>
 				</div>
-				<p class="text_1 bold_1"><?php echo $video_list_title; ?></p>
+				<p class="text_1 bold_1 pt-3"><?php echo $video_list_title; ?></p>
 			</div>
          <?php endwhile; ?>
 	</div>
@@ -130,5 +130,5 @@ if( !empty( $vimeo_id ) ): ?>
 	</div>
 </div>
 <?php endif;?>
-
+<script src="https://player.vimeo.com/api/player.js"></script>
 <?php get_footer(); ?>
