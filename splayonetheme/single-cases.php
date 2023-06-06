@@ -15,8 +15,9 @@
 	$vertical_images = get_field('case_vertical_images');
 	$text = get_field('case_section_text');
 	$large_image = get_field('case_large_image');
-	$profile_header = get_field('case_section_profile_header');
-	$profile_description = get_field('case_section_profile_description');
+	$profile_header = get_field('case_profile_section_header');
+	$profile_description = get_field('case_profile_section_description');
+	$profile_section_link = get_field('case_profile_section_link_text');
 ?>
 
 <!-- 1. HEADER -->
@@ -66,7 +67,7 @@ if( !empty( $vimeo_id ) ): ?>
 
 <!-- 4. VIDEOS -->
 <?php if( have_rows('case_videos_list')  ) : ?>
-<div class="content section_padding_3">
+<div class="content padding_top_lg">
 	<div class="d-flex flex-row">
 		<?php while( have_rows('case_videos_list') ): 
 			$video_list_vimeo_id = get_sub_field('case_videos_list_vimeo_id');
@@ -87,7 +88,7 @@ if( !empty( $vimeo_id ) ): ?>
 <?php endif;?>
 
 <!-- 5. VERTICAL IMAGES -->
-<div class="content section_padding_3">
+<div class="content padding_top_lg">
 	<div class="d-flex flex-column">
 		<div class="vertical_image_wrapper d-flex flex-row justify-content-between">
 			<?php if( $vertical_images ) : foreach( $vertical_images as $image ): ?>
@@ -99,62 +100,35 @@ if( !empty( $vimeo_id ) ): ?>
 </div>
 
 <img src="<?php echo $large_image["url"];?>" />
-<?php echo get_template_part('includes/section', 'profiles' ); ?>
+
+<!-- 6. PROFILES -->
+<?php if( have_rows('case_profile_list') ): ?>
 <div class="content section_padding_3">
 	<p class="subtitle_1 adieu_light"><?php echo $profile_header; ?></p>
 	<p class="text_1 w_70"><?php echo $profile_description; ?></p>
-	
-
-	<div class="row">
-		<?php
-			// Custom query to retrieve Profiles post type posts
-			$profiles_args = array(
-				'post_type' => 'profiles', // Profiles post type slug
-				'posts_per_page' => -1, // Number of posts to retrieve (-1 for all posts)
-			);
-			$profiles_query = new WP_Query($profiles_args);
-
-			// Check if there are any Profiles posts
-			if ($profiles_query->have_posts()) {
-				// Loop through the Profiles posts
-				while ($profiles_query->have_posts()) {
-					$profiles_query->the_post();
-
-					// Retrieve custom field values for last name, first name, and hobby
-					$profile_name = get_post_meta(get_the_ID(), 'profile_name', true);
-					$profile_platform = get_post_meta(get_the_ID(), 'profile_platform', true);
-					$profile_platform = get_post_meta(get_the_ID(), 'profile_platform', true);
-					$profile_platform_link = get_post_meta(get_the_ID(), 'profile_platform_link', true);
-					$profile_image_id = get_post_meta(get_the_ID(), 'profile_image', true); // Image attachment ID
-					$profile_image_url = wp_get_attachment_image_src($profile_image_id, 'full')[0]; // Image URL
-
-					// Display the custom field values in the archive component
-					?>
-					<div style="padding-bottom: 30px;" class="col-md-3 col-4">
-						<div class="profiles_hover_card">
-							<?php if ($profile_image_url) { ?>
-								<img src="<?php echo esc_url($profile_image_url); ?>" alt="<?php echo $profile_name; ?>">
-							<?php } ?>
-							<div class="profiles_hover_content">
-								<p class="text_2 mb-0 bold_2"><?php echo esc_html($profile_name); ?></p>
-								<a target="_blank" href="<?php echo esc_html($profile_platform_link); ?>" class="text_2"><?php echo esc_html($profile_platform); ?></a>
-							</div>
-						</div>
-					</div>
-					<?php
-				}
-
-				// Reset the post data
-				wp_reset_postdata();
-			} else {
-				// No Profiles posts found
-				echo 'No Profiles found.';
-			}
-		?>
+	<div class="pt-5 profiles_grid">	
+		<?php while( have_rows('case_profile_list') ) : the_row();
+			$full_name = get_sub_field('case_profile_full_name');
+			$link = get_sub_field('case_profile_link_url');
+			$link_label = get_sub_field('case_profile_link_label');
+			$profile_picture = get_sub_field('case_profile_profile_picture');
+			?> 
+			<div class="profiles_hover_card">
+				<?php if ($profile_picture) { ?>
+					<img src="<?php echo $profile_picture['url'];?>" alt="<?php echo $full_name; ?>">
+				<?php } ?>
+				<div class="profiles_hover_content">
+					<p class="text_1 mb-0 bold_2"><?php echo esc_html($full_name); ?></p>
+					<a target="_blank" href="<?php echo esc_url($link);?>" class="text_1"><?php echo $link_label; ?></a>
+				</div>
+			</div>
+		<?php endwhile; ?>
+	</div>
+	<div class="talk_to_container">
+		<img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-black.png"/>
+		<a target="_blank" href="<?php echo site_url('/influencers');?>" class="cta_link"><?php echo $profile_section_link; ?></a>
 	</div>
 </div>
-
-
-
+<?php endif;?>
 
 <?php get_footer(); ?>

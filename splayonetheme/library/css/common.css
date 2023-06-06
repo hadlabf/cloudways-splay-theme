@@ -454,6 +454,9 @@ button:focus, button:active {
 .padding_top_xs {
   padding-top: var(--s3);
 }
+.padding_top_sm {
+  padding-top: var(--s5);
+}
 .padding_top_lg {
   padding-top: var(--lg);
 }

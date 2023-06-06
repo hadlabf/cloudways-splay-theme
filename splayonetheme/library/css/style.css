@@ -197,7 +197,7 @@ Version: 1.0.0
   opacity: 1;
   transition: opacity 0.25s ease-in;
 }
-.people_card p {
+.people_card p, .people_card a {
   font-size: var(--f-xs);
   color: var(--color-secondary);
 }
@@ -552,10 +552,55 @@ button.submit_button {
 .kpi_2 {
   font-size: 110px;
 }
-.profiles_hover_card {
-  position: relative;
-  overflow: hidden;
+@media (max-width: 1220px) {
+  .kpi_1 {
+    font-size: 140px;
+  }
+  .kpi_2 {
+    font-size: 90px;
+  }
 }
+@media (max-width: 1024px) {
+  .kpi_1 {
+    font-size: 120px;
+  }
+  .kpi_2 {
+    font-size: 80px;
+  }
+}
+@media (max-width: 800px) {
+  .kpi_1 {
+    font-size: 85px;
+  }
+  .kpi_2 {
+    font-size: 55px;
+  }
+}
+
+
+.profiles_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.profiles_hover_card {
+  aspect-ratio: 1/ 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+
+}
+
+.profiles_hover_card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+
+}
+
 .profiles_hover_content {
   opacity: 0;
   transition: all ease-in-out 0.3s;
