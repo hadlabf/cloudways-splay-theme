@@ -8,8 +8,8 @@
 		
 		<?php if (!empty($large_value)) : ?>
 			<div class="d-flex flex-column">
-				<p class="text_2 mb-0"><?php echo $large_label;?>:</p>
-				<p class="kpi_1"><?php echo $large_value;?></p>
+				<p class="text_2 mb-0"><?php echo $large_label;?></p>
+				<p style="line-height:1.2;" class="kpi_1"><?php echo $large_value;?></p>
 			</div>
 		<?php endif; ?>
 

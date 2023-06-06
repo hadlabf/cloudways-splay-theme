@@ -55,7 +55,7 @@ if( !empty( $vimeo_id ) ): ?>
 						endif;
 					?>
 				</div>
-				<p class="text_1"><?php echo $description; ?></p>
+				<div class="text_1"><?php echo $description; ?></div>
 			</div>
 		</div>
 	</div>
@@ -94,7 +94,7 @@ if( !empty( $vimeo_id ) ): ?>
             	<img class="h-100 w-auto" src="<?php  echo $image["url"]; ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
             <?php endforeach; endif;?>
 		</div>
-		<p class="text_2 section_padding_1 w_70"><?php echo $text;?></p>
+		<div class="text_2 section_padding_1 w_70"><?php echo $text;?></div>
 	</div>
 </div>
 

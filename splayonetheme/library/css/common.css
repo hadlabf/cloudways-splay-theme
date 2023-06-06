@@ -160,10 +160,10 @@ a, a:hover, a:focus, a:active  {
   text-decoration: underline !important;
   color: inherit;
 }
-.text_1 {
+.text_1, .text_1 p {
   font-size: var(--f-md);
 }
-.text_2 {
+.text_2, .text_2 p {
   font-size: var(--f-xl);
 }
 .bold_1 {
@@ -244,6 +244,9 @@ img {
   .gap_lg {
     gap: 75px;
   }
+}
+strong {
+  font-weight: 600;
 }
 /* FORM */
 input[type="checkbox"] {
