@@ -117,17 +117,46 @@ Template Name: Talent Page
             </div>
 
 <!-- SECTION: TALENTS -->
+<?php
+$norway_present = false;
+$sweden_present = false;
+$denmark_present = false;
+$finland_present = false;
+
+if (have_rows('talent_influencers_list')) :
+    while (have_rows('talent_influencers_list')) : the_row();
+        $country = get_sub_field('talent_influencers_country');
+        if ($country === 'norway') {
+            $norway_present = true;
+        } elseif ($country === 'sweden') {
+            $sweden_present = true;
+        } elseif ($country === 'denmark') {
+            $denmark_present = true;
+        } elseif ($country === 'finland') {
+            $finland_present = true;
+        }
+    endwhile;
+endif;
+?>
             <div class="content section_padding_1">
                 <h1 class="large_title adieu_black">Influencers</h1>
                 <p class="text_1"><?php echo the_field('talent_people_section_description'); ?> </p>
                 <div class="category_filtering_buttons">
-                    <button class="secondary_button category_button active" data-country="sweden">Sweden</button>
-                    <button class="secondary_button category_button" data-country="denmark">Denmark</button>
-                    <button class="secondary_button category_button" data-country="norway">Norway</button>
-                    <button class="secondary_button category_button" data-country="finland">Finland</button>
+                    <?php if ($sweden_present): ?>
+                        <button class="secondary_button category_button active" data-country="sweden">Sweden</button>
+                    <?php endif; ?>
+                    <?php if ($denmark_present): ?>
+                        <button class="secondary_button category_button" data-country="denmark">Denmark</button>
+                    <?php endif; ?>
+                    <?php if ($norway_present): ?>
+                        <button class="secondary_button category_button" data-country="norway">Norway</button>
+                    <?php endif; ?>
+                    <?php if ($finland_present): ?>
+                        <button class="secondary_button category_button" data-country="finland">Finland</button>
+                    <?php endif; ?>
                 </div>
                 <div style="min-height:525px;" class="person-cards-wrapper">
-                <?php 
+                    <?php 
                     $row_count = 0;
                     if( have_rows('talent_influencers_list') ):
                         while( have_rows('talent_influencers_list') ) : the_row();
@@ -141,7 +170,7 @@ Template Name: Talent Page
                                 
                                 <div class="front_page">
                                     <p class="mb-0 bold_1"><?php echo $full_name; ?></p>
-                                    <p><?php echo $role; ?></p>
+                                    <p class="mb-0"><?php echo $role; ?></p>
                                 </div>
 
                                 <div class="back_page">
@@ -169,14 +198,14 @@ Template Name: Talent Page
                         endwhile;                            
                     else :
                     endif;
-                ?>
-            </div>
-
-            <?php if ($row_count > 8): ?>
-                <div class="mt-3 w-100 d-flex justify-content-center">
-                    <button class="secondary_button blue_">Load More</button>
+                    ?>
                 </div>
-            <?php endif; ?>
+
+                <?php if ($row_count > 8): ?>
+                    <div class="mt-3 w-100 d-flex justify-content-center">
+                        <button class="secondary_button blue_">Load More</button>
+                    </div>
+                <?php endif; ?>
 
             </div>
 
