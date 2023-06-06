@@ -456,6 +456,7 @@ button.submit_button {
   height: 24px;
 }
 
+
 /* ========= TALENT PAGE ========= */
 .why_us_section.work_area_section {
   background-color: var(--bg-primary);
@@ -576,7 +577,13 @@ button.submit_button {
     font-size: 55px;
   }
 }
-
+.video_animation iframe {
+  transition: scale 0.25s ease-in-out;
+  scale: 1;
+}
+.video_animation:hover iframe{
+  scale: 1.06;
+}
 
 .profiles_grid {
   display: grid;

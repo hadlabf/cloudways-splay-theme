@@ -1,5 +1,5 @@
 
-<div class="section_secondary">
+<div class="section_secondary not_fullsize">
     <div class="content">
         <h1 class="adieu_bold sp_header"><?php echo the_field('home_contact_header'); ?></h1>
         <p class="sp_text"><?php echo the_field('home_contact_text'); ?></p>

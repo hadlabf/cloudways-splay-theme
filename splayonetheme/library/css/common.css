@@ -41,6 +41,8 @@ Version: 1.0.0
   --f-md: 18px;
   --f-lg: 20px;
   --f-xl: 22px;
+  --f-xxl: 28px;
+  --f-xxxl: 35px;
   --f-h4: 40px;
   --f-h3: 74px;
   --f-h2: 97px;
@@ -87,7 +89,7 @@ Version: 1.0.0
 @media (max-width: 725px) {
   :root {
     /* DONE */
-    --f-h4: 28px;
+    --f-h4: 30px;
     --f-h3: 42px;
     --f-h2: 60px;
     --f-h1: 74px;  
@@ -106,6 +108,9 @@ Version: 1.0.0
     --f-md: 16px;
     --f-lg: 18px;
     --f-xl: 20px;
+    --f-xxl: 26px;
+    --f-xxxl: 28px;
+
   }
 }
 @media (max-width: 400px) {
@@ -116,6 +121,8 @@ Version: 1.0.0
     --f-md: 16px;
     --f-lg: 17px;
     --f-xl: 18.5px;
+    --f-xxl: 20px;
+    --f-xxxl: 22px;
     --f-h4: 24px;
     --f-h3: 36px;
     --f-h2: 50px;
@@ -176,6 +183,10 @@ a, a:hover, a:focus, a:active  {
   font-size: var(--f-h4);
   font-weight: 500;
 }
+.medium_title {
+  font-size: var(--f-xxl);
+  font-family: "Adieu-Light";
+}
 .small_title {
   font-size: var(--f-lg);
   font-family: "Adieu-Light";
@@ -223,6 +234,20 @@ img {
   width: 100%;
   height: auto;
 }
+img.vertical_img {
+  height: 100%;
+  width: auto;
+}
+img.horizontal_img {
+  width: 100%;
+  height: fit-content;
+}
+.section_secondary img.horizontal_img {
+  max-width: 60%;
+}
+.section_secondary img.vertical_img {
+  max-height: 550px;
+}
 .text_ellipsis_3, .text_ellipsis_4 {
   display: -webkit-box !important;
   -webkit-box-orient: vertical;
@@ -237,12 +262,23 @@ img {
   -webkit-line-clamp: 4;
 }
 
+@media (max-width: 900px) {
+  .section_secondary img.horizontal_img {
+    max-width: 50%;
+  }
+  .section_secondary img.vertical_img {
+    max-height: 450px;
+  }
+}
 @media (max-width: 500px) {
   .text_ellipsis_4 {
     -webkit-line-clamp: 6;
   }
   .gap_lg {
     gap: 75px;
+  }
+  .section_secondary img.vertical_img {
+    max-height: 400px;
   }
 }
 strong {
@@ -346,6 +382,8 @@ button:focus, button:active {
     gap: var(--s5);
     color: var(--color-secondary);
     margin: var(--s6) auto;
+  }
+  .section_secondary.not_fullsize .content {
     max-width: 1024px;
   }
   .section_secondary .sp_header{
@@ -599,7 +637,7 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
 }
 .talk_to_container a {
   font-family: "Adieu-Light";
-  font-size: 35px;
+  font-size: var(--f-xxxl);
   text-decoration: underline;
   margin-bottom: 0 !important;
   padding-left: var(--s2);
@@ -608,4 +646,11 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
   height: 30px;
   width: auto;
   padding-top: 6px;
+}
+.talk_to_container.sm_ img {
+  height: 18px;
+  padding-top: 2px;
+}
+.talk_to_container.sm_ a {
+  font-size: var(--f-lg);
 }

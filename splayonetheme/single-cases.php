@@ -65,8 +65,6 @@ if( !empty( $vimeo_id ) ): ?>
 <?php get_template_part('includes/section', 'kpi', $channel_stats );?>
 
 <!-- 4. VIDEOS -->
-
-
 <?php if( have_rows('case_videos_list')  ) : ?>
 <div class="content padding_top_lg">
 	<div class="row">
@@ -75,8 +73,8 @@ if( !empty( $vimeo_id ) ): ?>
 			$video_list_title = get_sub_field('case_videos_list_title');
 		?>
 			<div class="col text-center">
-				<div>
-					<div style="padding:43.06% 0 0 0;position:relative;width:100%;max-width:100vw;">
+				<div class="video_animation">
+					<div style="padding:43.06% 0 0 0;position:relative;width:100%;max-width:100vw;border:1px solid black;">
 						<iframe src="https://player.vimeo.com/video/<?php echo esc_html($video_list_vimeo_id); ?>?autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;controls=0&amp;showinfo=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="REEL_WEB_2023_v2"></iframe>
 					</div>
 				</div>
@@ -101,7 +99,42 @@ if( !empty( $vimeo_id ) ): ?>
 
 <img src="<?php echo $large_image["url"];?>" />
 
-<!-- 6. PROFILES -->
+<!-- 6. LINKED SECTION -->
+<?php 
+	$linked_title = get_field('case_linked_section_title');
+	$linked_text = get_field('case_linked_section_text');
+	$linked_label = get_field('case_linked_section_link_label');
+	$linked_link = get_field('case_linked_section_link_url');
+	$linked_image = get_field('case_linked_section_image');
+	$image_size = getimagesize($linked_image['url']);
+
+?>
+<?php if( !empty($linked_title) && !empty($linked_text) ): ?>
+<div class="section_secondary">
+	<div class="content">
+		<div class="d-flex flex-row align-items-center">
+			<?php if ( !empty($linked_image) ) : ?>
+				<img class="mr-5 <?php if ($image_size[1] > $image_size[0]) : echo "h-100 w-auto vertical_img"; else : echo "horizontal_img"; endif;?>" src="<?php echo $linked_image['url'];?>" alt="<?php echo $linked_title; ?>">
+			<?php endif; ?>
+			<div style="justify-content:space-evenly;" class="d-flex flex-column text-left <?php if ( !empty($linked_image) && $image_size[1] > $image_size[0] ) : echo "py-5"; endif;?>">
+				<div class="py-5">
+					<p class="medium_title"><?php echo $linked_title; ?></p>
+					<div class="text_1"><?php echo $linked_text; ?></div>
+				</div>
+				<?php if ( !empty($linked_link) && !empty($linked_label) ) : ?>
+					<div class="py-5 talk_to_container sm_">
+						<img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-white.png"/>
+						<a target="_blank" href="<?php echo esc_url($linked_link); ?>" class="cta_link"><?php echo $linked_label; ?></a>
+					</div>
+				<?php endif; ?>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<?php endif;?>
+
+<!-- 7. PROFILES -->
 <?php if( have_rows('case_profile_list') ): ?>
 <div class="content section_padding_3">
 	<p class="subtitle_1 adieu_light"><?php echo $profile_header; ?></p>
