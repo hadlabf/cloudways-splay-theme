@@ -198,7 +198,7 @@ Version: 1.0.0
   transition: opacity 0.25s ease-in;
 }
 .people_card p, .people_card a {
-  font-size: var(--f-xs);
+  font-size: var(--f-sm);
   color: var(--color-secondary);
 }
 

@@ -117,124 +117,134 @@ Template Name: Talent Page
             </div>
 
 <!-- SECTION: TALENTS -->
-<?php
-$norway_present = false;
-$sweden_present = false;
-$denmark_present = false;
-$finland_present = false;
-
-if (have_rows('talent_influencers_list')) :
-    while (have_rows('talent_influencers_list')) : the_row();
+<?php 
+if( have_rows('talent_influencers_list') ):
+    $influencers = array(
+        'sw' => array(),
+        'denmark' => array(),
+        'norway' => array(),
+        'finland' => array(),
+    );
+    while( have_rows('talent_influencers_list') ) : the_row();
+        $full_name = get_sub_field('talent_influencers_full_name');
+        $role = get_sub_field('talent_influencers_role');
         $country = get_sub_field('talent_influencers_country');
-        if ($country === 'norway') {
-            $norway_present = true;
-        } elseif ($country === 'sweden') {
-            $sweden_present = true;
-        } elseif ($country === 'denmark') {
-            $denmark_present = true;
-        } elseif ($country === 'finland') {
-            $finland_present = true;
+        $profile_picture = get_sub_field('talent_people_profile_picture');
+        $influencer_links = array();
+        if( have_rows('talent_influencers_link_list') ):
+            while( have_rows('talent_influencers_link_list') ) : the_row();
+                $influencer_link = get_sub_field('talent_influencers_link_list_url');
+                $influencer_link_label = get_sub_field('talent_influencers_link_list_label');
+                $influencer_links[] = array(
+                    'url' => $influencer_link,
+                    'label' => $influencer_link_label,
+                );
+            endwhile;
+        endif;
+        $influencer = array(
+            'full_name' => $full_name,
+            'role' => $role,
+            'country' => $country,
+            'profile_picture' => $profile_picture,
+            'links' => $influencer_links,
+        );
+        if (count($influencers[$country]) < 8) {
+            $influencers[$country][] = $influencer;
         }
-    endwhile;
+    endwhile;                            
 endif;
 ?>
-            <div class="content section_padding_1">
-                <h1 class="large_title adieu_black">Influencers</h1>
-                <p class="text_1"><?php echo the_field('talent_people_section_description'); ?> </p>
-                <div class="category_filtering_buttons">
-                    <?php if ($sweden_present): ?>
-                        <button class="secondary_button category_button active" data-country="sweden">Sweden</button>
-                    <?php endif; ?>
-                    <?php if ($denmark_present): ?>
-                        <button class="secondary_button category_button" data-country="denmark">Denmark</button>
-                    <?php endif; ?>
-                    <?php if ($norway_present): ?>
-                        <button class="secondary_button category_button" data-country="norway">Norway</button>
-                    <?php endif; ?>
-                    <?php if ($finland_present): ?>
-                        <button class="secondary_button category_button" data-country="finland">Finland</button>
-                    <?php endif; ?>
-                </div>
-                <div style="min-height:525px;" class="person-cards-wrapper">
-                    <?php 
-                    $row_count = 0;
-                    if( have_rows('talent_influencers_list') ):
-                        while( have_rows('talent_influencers_list') ) : the_row();
-                            $full_name = get_sub_field('talent_influencers_full_name');
-                            $role = get_sub_field('talent_influencers_role');
-                            $country = get_sub_field('talent_influencers_country');
-                            $profile_picture = get_sub_field('talent_people_profile_picture');
-                            ?>
-                            <div class="col-lg-3 col-md-4 col-sm-6 col-6 people_card person-card <?php echo $country;?>">
-                                <img class="people_img" src="<?php echo $profile_picture['url'];?>" />
-                                
-                                <div class="front_page">
-                                    <p class="mb-0 bold_1"><?php echo $full_name; ?></p>
-                                    <p class="mb-0"><?php echo $role; ?></p>
-                                </div>
+<div class="content section_padding_1">
+    <h1 class="large_title adieu_black">Influencers</h1>
+    <p class="text_1"><?php echo the_field('talent_people_section_description'); ?> </p>
+    <div class="category_filtering_buttons">
+        <?php if (count($influencers['sweden']) > 0): ?>
+            <button class="secondary_button category_button active" data-country="sweden">Sweden</button>
+        <?php endif; ?>
+        <?php if (count($influencers['denmark']) > 0): ?>
+            <button class="secondary_button category_button" data-country="denmark">Denmark</button>
+        <?php endif; ?>
+        <?php if (count($influencers['norway']) > 0): ?>
+            <button class="secondary_button category_button" data-country="norway">Norway</button>
+        <?php endif; ?>
+        <?php if (count($influencers['finland']) > 0): ?>
+            <button class="secondary_button category_button" data-country="finland">Finland</button>
+        <?php endif; ?>
+    </div>
+    <div class="person-cards-wrapper">
+        <?php foreach ($influencers as $country => $country_influencers): ?>
+            <div class="person-cards  <?php echo $country; ?>">
+                <?php foreach ($country_influencers as $influencer): ?>
+                    <div class="people_card col-lg-3 col-md-4 col-sm-6 col-6  <?php echo $country; ?>">
+                        <img class="people_img" src="<?php echo $influencer['profile_picture']['url'];?>" />
+                        
+                        <div class="front_page">
+                            <p class="mb-0 bold_1"><?php echo $influencer['full_name']; ?></p>
+                            <p class="mb-0"><?php echo $influencer['role']; ?></p>
+                        </div>
 
-                                <div class="back_page">
-                                    <div>
-                                        <p class="mb-0 bold_1"><?php echo $full_name; ?></p>
-                                        <p><?php echo $role; ?></p>
-                                    </div>
-                                    <div class="d-flex flex-column">
-                                        <?php 
-                                        if( have_rows('talent_influencers_link_list') ):
-                                            while( have_rows('talent_influencers_link_list') ) : the_row();
-                                                $influencer_link = get_sub_field('talent_influencers_link_list_url');
-                                                $influencer_link_label = get_sub_field('talent_influencers_link_list_label');
-                                                ?>
-                                                <a target="_blank" href="<?php echo esc_url($influencer_link);?>">
-                                                    <?php echo $influencer_link_label; ?>
-                                                </a>
-                                        <?php endwhile; endif; ?>
-                                    </div>
-                                </div>
-                                
+                        <div class="back_page">
+                            <div>
+                                <p class="mb-0 bold_1"><?php echo $influencer['full_name']; ?></p>
                             </div>
-                            <?php
-                            $row_count++;
-                        endwhile;                            
-                    else :
-                    endif;
-                    ?>
-                </div>
-
-                <?php if ($row_count > 8): ?>
-                    <div class="mt-3 w-100 d-flex justify-content-center">
-                        <button class="secondary_button blue_">Load More</button>
+                            <div class="d-flex flex-column">
+                                <?php foreach ($influencer['links'] as $link): ?>
+                                    <a target="_blank" href="<?php echo esc_url($link['url']); ?>">
+                                        <?php echo $link['label']; ?>
+                                    </a>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+                <?php if (count($country_influencers) > 8): ?>
+                    <div class="load-more">
+                        <button class="secondary_button blue_" data-country="<?php echo $country; ?>">Load More</button>
                     </div>
                 <?php endif; ?>
-
             </div>
+        <?php endforeach; ?>
+    </div>
+
+    <script>
+    jQuery(function($) {
+        // Function to filter person cards based on the selected country
+        function filterPersonCards(country) {
+            $('.person-cards-wrapper .people_card').hide();
+            $('.person-cards-wrapper .people_card.' + country).show();
+        }
+
+        // Set the initial filter to Sweden
+        filterPersonCards('sweden');
+
+        // Attach click event to the country buttons
+        $('.category_filtering_buttons .category_button').on('click', function() {
+            // Remove the active class from all buttons and add it to the clicked button
+            $('.category_filtering_buttons .category_button').removeClass('active');
+            $(this).addClass('active');
+
+            // Get the selected country from the data attribute
+            var selectedCountry = $(this).data('country');
+
+            // Filter the person cards based on the selected country
+            filterPersonCards(selectedCountry);
+        });
+
+        // Attach click event to the "load more" buttons
+        $('.person-cards-wrapper .load-more button').on('click', function() {
+            // Get the country from the data attribute
+            var country = $(this).data('country');
+
+            // Show all of the influencers for the selected country
+            $('.person-cards-wrapper .person-card.' + country).show();
+
+            // Hide the "load more" button
+            $(this).parent().hide();
+        });
+    });
+    </script>
 
         </div>
-        <script>
-        jQuery(function($) {
-            // Function to filter person cards based on the selected country
-            function filterPersonCards(country) {
-                $('.person-cards-wrapper .person-card').hide();
-                $('.person-cards-wrapper .person-card.' + country).show();
-            }
-
-            // Set the initial filter to Sweden
-            filterPersonCards('sweden');
-
-            // Attach click event to the country buttons
-            $('.category_filtering_buttons .category_button').on('click', function() {
-                // Remove the active class from all buttons and add it to the clicked button
-                $('.category_filtering_buttons .category_button').removeClass('active');
-                $(this).addClass('active');
-
-                // Get the selected country from the data attribute
-                var selectedCountry = $(this).data('country');
-
-                // Filter the person cards based on the selected country
-                filterPersonCards(selectedCountry);
-            });
-        });
-        </script>
         
     </section>
 <?php  
