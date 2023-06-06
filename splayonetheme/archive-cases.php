@@ -1,19 +1,20 @@
 <?php get_header(); ?>
-    <section>
-    <div class="page_container top_page_padding pb-5">
-    <div class="content">
-        <h1 class="page_title">Work</h1>
-        <div class="category_filtering_buttons">
-            <button class="secondary_button category_button active" data-category="category-case-sweden">Sweden</button>
-            <button class="secondary_button category_button" data-category="category-case-finland">Finland</button>
-            <button class="secondary_button category_button" data-category="category-case-norway">Norway</button>
-            <button class="secondary_button category_button" data-category="category-case-denmark">Denmark</button>
+<section>
+    <div class="page_container top_page_padding">
+        <div class="content">
+            <h1 class="page_title">Work</h1>
+            <div class="category_filtering_buttons">
+                <button class="secondary_button category_button active" data-category="category-case-sweden">Sweden</button>
+                <button class="secondary_button category_button" data-category="category-case-finland">Finland</button>
+                <button class="secondary_button category_button" data-category="category-case-norway">Norway</button>
+                <button class="secondary_button category_button" data-category="category-case-denmark">Denmark</button>
+            </div>
+            <div class="case_archive">
+                <!-- Case items will be dynamically loaded here (find html in functions.php) -->
+            </div>
         </div>
-        <div class="case_archive">
-            <!-- Case items will be dynamically loaded here (find html in functions.php) -->
-        </div>
+        <?php get_template_part('includes/section', 'contact' ); ?>
     </div>
-</div>
 
 <script>
 jQuery(function($) {

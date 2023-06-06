@@ -372,7 +372,6 @@ button:focus, button:active {
     width: 100vw;
     background-color: var(--bg-secondary);
     padding: var(--lg) 0;
-    margin-bottom: var(--lg);
   }
   .section_secondary .content {
     display: flex;
