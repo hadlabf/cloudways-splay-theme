@@ -167,6 +167,9 @@ a, a:hover, a:focus, a:active  {
   text-decoration: underline !important;
   color: inherit;
 }
+.text_sm, .text_sm p {
+  font-size: var(--f-sm);
+}
 .text_1, .text_1 p {
   font-size: var(--f-md);
 }

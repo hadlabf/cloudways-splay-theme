@@ -14,12 +14,12 @@
         <div>
             <?php if ( !empty($args['data']['email']) ) : ?>
                 <a target="_blank" href="mailto:<?php echo $args['data']['email'];?>">
-                    <p class="mb-0"><?php echo $args['data']['email']; ?></p>
+                    <p class="mb-0 text_sm"><?php echo $args['data']['email']; ?></p>
                 </a>
             <?php endif; ?>
             <?php if ( !empty($args['data']['phone']) ) : ?>
                 <a target="_blank" href="tel:<?php echo $args['data']['phone'];?>">
-                    <p><?php echo $args['data']['phone']; ?></p>
+                    <p class="text_sm"><?php echo $args['data']['phone']; ?></p>
                 </a>
             <?php endif; ?>
         </div>

@@ -10,8 +10,11 @@
                 <button class="secondary_button category_button" data-category="category-case-denmark">Denmark</button>
                 <button class="secondary_button category_button" data-category="category-case-denmark">Contact</button>
             </div>
-            <div class="case_archive">
+            <div class="case_archive mb-5">
                 <!-- Case items will be dynamically loaded here (find html in functions.php) -->
+            </div>
+            <div class="d-flex justify-content-center">
+                <button class="secondary_button blue_ load_more_button" style="display:none;">Load More</button>
             </div>
         </div>
     </div>
@@ -35,20 +38,33 @@
             // Send AJAX request to the server
             filterPeople(selectedCategory);
         });
+        $('.load_more_button').on('click', function(e) {
+            e.preventDefault();
+            var selectedCategory = $('.category_button.active').data('category');
+            filterPeople(selectedCategory, true);
+        });
 
         // Function to load cases based on selected category
-        function filterPeople(selectedCategory) {
+        function filterPeople(selectedCategory, loadAll = false) {
             // Send AJAX request to the server
             $.ajax({
                 url: '<?php echo admin_url('admin-ajax.php'); ?>',
                 method: 'POST',
                 data: {
                     action: 'filter_people',
-                    category: selectedCategory
+                    category: selectedCategory,
+                    load_all: loadAll
                 },
                 success: function(response) {
                     // Update the case archive container with the retrieved case items
                     $('.case_archive').html(response);
+
+                    // Show or hide the "Load More" button based on the number of posts
+                    if (response.trim() !== '' && !loadAll) {
+                        $('.load_more_button').show();
+                    } else {
+                        $('.load_more_button').hide();
+                    }
                 }
             });
         }
