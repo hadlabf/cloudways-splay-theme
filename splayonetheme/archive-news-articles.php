@@ -25,7 +25,7 @@
                                 $date = get_field('news_date');
                                 $link = get_field('news_link');
                         ?>
-					<div style="margin-bottom: 15px;" class="col-3">
+					<div style="margin-bottom: 15px;" class="col col-sm-6 col-md-4 col-xl-3">
 						<a target="_blank" href="<?php echo $link;?>" class="news_article_item">
 							<div>
 								<p class="font-weight-bold adieu_black text_2"><?php echo $date; ?></p>
