@@ -86,6 +86,26 @@ Version: 1.0.0
     padding-top: 30px;
   }
 }
+@media (max-width: 825px) {
+  :root {
+    --f-sm: 15px;
+    --f-md: 16px;
+    --f-lg: 18px;
+    --f-xl: 20px;
+    --f-xxl: 26px;
+    --f-xxxl: 28px;
+
+    --s1: 6px;
+    --s2: 12px;
+    --s3: 18px;
+    --s4: 26px;
+    --s5: 34px;
+    --s6: 40px;
+    --s7: 58px;
+    --lg: 70px;
+    --xl: 90px;
+  }
+}
 @media (max-width: 725px) {
   :root {
     /* DONE */
@@ -104,21 +124,23 @@ Version: 1.0.0
 }
 @media (max-width: 600px) {
   :root {
-    --f-sm: 15px;
-    --f-md: 16px;
-    --f-lg: 18px;
-    --f-xl: 20px;
-    --f-xxl: 26px;
-    --f-xxxl: 28px;
-
+    --s1: 4px;
+    --s2: 8px;
+    --s3: 12px;
+    --s4: 18px;
+    --s5: 28px;
+    --s6: 32px;
+    --s7: 48px;
+    --lg: 58px;
+    --xl: 76px;
   }
 }
 @media (max-width: 400px) {
   :root {
     /* DONE */
     --f-xs: 13px;
-    --f-sm: 15px;
-    --f-md: 16px;
+    --f-sm: 14px;
+    --f-md: 15px;
     --f-lg: 17px;
     --f-xl: 18.5px;
     --f-xxl: 20px;

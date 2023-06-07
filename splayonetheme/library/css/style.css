@@ -652,6 +652,11 @@ button.submit_button {
   justify-content: space-between;
   cursor: pointer;
 }
+@media (max-width: 825px) {
+  .news_list .news_article_item {
+    padding: var(--s3);
+  }
+}
 
 
 
