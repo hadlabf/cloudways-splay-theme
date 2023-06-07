@@ -9,7 +9,7 @@
                 <p class="title_2"><?php echo the_field('home_news_section_title')?></p>
                 
 
-				<div class="news_list row">
+				<div class="news_scrool_feed flex-wrap">
 				<?php 
                         $args = array(
                             'post_type' => 'news-articles',
@@ -20,20 +20,33 @@
                         $query = new WP_Query( $args );
                         if ( $query->have_posts() ) : 
                             while ( $query->have_posts() ) : $query->the_post(); 
-                                $title = get_field('news_title');
-                                $text = get_field('news_text');
-                                $date = get_field('news_date');
-                                $link = get_field('news_link');
+                                $news_title = get_field('news_title');
+                                $news_text = get_field('news_text');
+                                $news_date = get_field('news_date');
+                                $news_image = get_field('news_image');
+                                $news_link = get_field('news_link');
                         ?>
-					<div style="margin-bottom: 15px;" class="col col-sm-6 col-md-4 col-xl-3">
-						<a target="_blank" href="<?php echo $link;?>" class="news_article_item">
-							<div>
-								<p class="font-weight-bold adieu_black text_2"><?php echo $date; ?></p>
-								<p class="bold_1 text_1"><?php echo $title; ?></p>
-							</div>
-							<p class="text_1"><?php echo $text; ?></p>
-						</a>
-					</div>
+                        <div class="news_item">        
+                            <div class="front_page">
+                                <div>
+                                    <p class="font-weight-bold adieu_black text_2"><?php echo $news_date; ?></p>
+                                    <p class="text_2 bold_1 text_ellipsis_3"><?php echo $news_title; ?></p>
+                                </div>
+                                <p class="text_1 text_ellipsis_4"><?php echo $news_text; ?></p>
+                            </div>
+                            <div class="back_page">
+                                
+                                <div class="button_wrapper">
+                                    <div class="h-100 d-flex justify-content-center align-items-center">
+                                        <a href="<?php echo $news_link;?>" target="_blank" class="secondary_button <?php if ( empty($news_image)) : echo "no_image"; endif;?>">Read more</a>
+                                    </div>
+                                </div>
+                                <?php if ( !empty($news_image)) : ?>
+                                    <img src="<?php echo $news_image['url']; ?>" alt="News Image" />
+                                <?php endif; ?>
+                            </div>
+
+                        </div>
 
 				<?php endwhile; endif;?>
 				</div>
