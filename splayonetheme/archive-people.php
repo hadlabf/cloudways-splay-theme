@@ -13,7 +13,7 @@
             <div class="case_archive mb-5">
                 <!-- Case items will be dynamically loaded here (find html in functions.php) -->
             </div>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center py-5">
                 <button class="secondary_button blue_ load_more_button" style="display:none;">Load More</button>
             </div>
         </div>

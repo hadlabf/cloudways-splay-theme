@@ -1,66 +1,47 @@
 </div> <!-- end .page -->
+<?php
+$footer_section_title = get_sub_field('footer_section_title', 'option');
+$footer_section_subtitle = get_field('footer_section_subtitle', 'option');
+$footer_section_list = get_field('footer_section_list', 'option');
+$footer_address_list = get_field('footer_address_list', 'option');
+?>
 <footer class="<?php echo $args['footer_style']; ?> splay_footer">
     <div class="content">
         <div class="row">
             <div class="col col-sm-8">
-                <div class="row mb-4">
-                    <div class="col">
-                        <p class="bold_1">Follow us</p>
-                    </div>
-                    <div class="col d-flex flex-column">
-                        <a target="_blank" href="https://se.linkedin.com/company/splay-one" class="cta_link">LinkedIn</a>
-                        <a target="_blank" href="https://www.instagram.com/splayone/" class="cta_link">Instagram</a>
-                        <a target="_blank" class="cta_link">TikTok</a>
-                        <a target="_blank" class="cta_link">YouTube</a>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col">
-                        <p class="bold_1">Create with us</p>
-                    </div>
-                    <div class="col d-flex flex-column">
-                        <p class="mb-0">For new business enquiries contact</p>
-                        <a target="_blank" class="cta_link">Samin Krijestarac</a>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col">
-                        <p class="bold_1">Work with us</p>
-                    </div>
-                    <div class="col d-flex flex-column">
-                        <p class="mb-0">For career opportunities, visit</p>
-                        <a target="_blank" class="cta_link">Career</a>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col"></div>
-                    <div class="col">
-                        <a target="_blank" class="cta_link mb-5">Privacy policy</a>
-                        <p>We are appart of <a target="_blank" href="https://caybon.com/" class="cta_link">Caybon</a><p>
-                    </div>
-                </div>
-
-
+                <?php if ($footer_section_list): ?>
+                    <?php foreach ($footer_section_list as $section): ?>
+                        <div class="row mb-4">
+                            <div class="col">
+                                <p class="bold_1"><?php echo $section['footer_section_title']; ?></p>
+                                <p class="bold_1"><?php echo $footer_section_title; ?></p>
+                            </div>
+                            <div class="col d-flex flex-column">
+                                <p class="mb-0"><?php echo $section['footer_section_subtitle']; ?></p>
+                                <?php if ($footer_section_list): ?>
+                                    <?php foreach ($section['footer_section_link_list'] as $link): ?>
+                                        <?php if ( !empty($link['footer_section_link_list_url']) ): ?>
+                                            <a target="_blank" class="cta_link" href="<?php echo $link['footer_section_link_list_url']; ?>"><?php echo $link['footer_section_link_list_label']; ?></a>
+                                        <?php endif; ?>
+                                        <?php if ( !empty($link['footer_section_link_list_email']) ): ?>
+                                            <a target="_blank" class="cta_link" href="mailto:<?php echo $link['footer_section_link_list_email']; ?>"><?php echo $link['footer_section_link_list_label']; ?></a>
+                                        <?php endif; ?>
+                                     <?php endforeach; ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
-            
             <div class="col col-sm-4">
-                <p class="mb-0">Birger Jarlsgatan 43</p>
-                <p class="mb-0">11356 Stockholm</p>
-                <p class="mb-3">Sweden</p>
-
-                <p class="mb-0">Karl Johans Gate 41A 0162</p>
-                <p class="mb-0">Oslo</p>
-                <p class="mb-3">Norway</p>
-
-                <p class="mb-0">Mannerheimintie 18A</p>
-                <p class="mb-0">00101 Helsinki</p>
-                <p class="mb-3">Finland</p>
-
-                <p class="mb-0">Bispevej 29</p>
-                <p class="mb-0">11356 Copenhagen</p>
-                <p class="mb-0">Denmark</p>
+                <?php if ($footer_address_list): ?>
+                    <?php foreach ($footer_address_list as $address): ?>
+                        <p class="mb-0"><?php echo $address['footer_address_list_street']; ?></p>
+                        <p class="mb-0"><?php echo $address['footer_address_list_postal_code'] . ' ' . $address['footer_address_list_city']; ?></p>
+                        <p class="mb-3"><?php echo $address['footer_address_list_country']; ?></p>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
-
         </div>
     </div>
 </footer>

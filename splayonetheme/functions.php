@@ -704,5 +704,31 @@ function load_more_news() {
 }
 add_action('wp_ajax_load_more_news', 'load_more_news');
 add_action('wp_ajax_nopriv_load_more_news', 'load_more_news');
+
+
+// CUSTOMIZED FOOTER - Add a custom section to the customizer
+function theme_customizer_options($wp_customize) {
+  // Create a new section for footer options
+  $wp_customize->add_section('footer_section', array(
+      'title' => 'Footer Options',
+      'priority' => 30,
+  ));
+
+  // Add a setting for footer text
+  $wp_customize->add_setting('footer_text', array(
+      'default' => '',
+      'sanitize_callback' => 'sanitize_text_field',
+  ));
+
+  // Add a control for footer text
+  $wp_customize->add_control('footer_text_control', array(
+      'label' => 'Footer Text',
+      'section' => 'footer_section',
+      'settings' => 'footer_text',
+      'type' => 'textarea',
+  ));
+}
+add_action('customize_register', 'theme_customizer_options');
+
 ?>
 
