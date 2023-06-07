@@ -673,7 +673,7 @@ function populate_case_thumbnail_order_column($column, $post_id) {
 }
 add_action('manage_cases_posts_custom_column', 'populate_case_thumbnail_order_column', 10, 2);
 
-// // NEWS ARTICLES ARCHIVE - LOAD MORE POSTS
+// NEWS ARTICLES ARCHIVE - LOAD MORE POSTS
 function load_more_news() {
   $args = array(
       'post_type' => 'news-articles',
