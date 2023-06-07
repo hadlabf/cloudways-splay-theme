@@ -674,36 +674,63 @@ function populate_case_thumbnail_order_column($column, $post_id) {
 add_action('manage_cases_posts_custom_column', 'populate_case_thumbnail_order_column', 10, 2);
 
 // NEWS ARTICLES ARCHIVE - LOAD MORE POSTS
-function load_more_news() {
+function my_theme_scripts() {
+  wp_enqueue_script('load-more', get_template_directory_uri() . '/js/load-more.js', array('jquery'), '1.0.0', true);
+  wp_localize_script('load-more', 'load_more_params', array(
+      'ajax_url' => admin_url('admin-ajax.php'),
+  ));
+}
+add_action('wp_enqueue_scripts', 'my_theme_scripts');
+
+function load_more_news_articles() {
+  $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
   $args = array(
       'post_type' => 'news-articles',
       'posts_per_page' => 8,
-      'orderby' => 'date',
-      'order' => 'DESC',
-      'paged' => $_POST['page']
+      'paged' => $page,
   );
-  $query = new WP_Query( $args );
-  if ( $query->have_posts() ) : 
-      while ( $query->have_posts() ) : $query->the_post(); 
-          $title = get_field('news_title');
-          $text = get_field('news_text');
-          $date = get_field('news_date');
-          $link = get_field('news_link');
-  ?>
-  <div style="margin-bottom: 15px;" class="col-3">
-      <a target="_blank" href="<?php echo $link;?>" class="news_article_item">
-          <div>
-              <p class="font-weight-bold adieu_black text_2"><?php echo $date; ?></p>
-              <p class="bold_1 text_1"><?php echo $title; ?></p>
-          </div>
-          <p class="text_1"><?php echo $text; ?></p>
-      </a>
-  </div>
-  <?php endwhile; endif;
+  $news_articles_query = new WP_Query($args);
+
+  if ($news_articles_query->have_posts()) :
+      while ($news_articles_query->have_posts()) : $news_articles_query->the_post();
+          $news_title = get_field('news_title');
+          $news_text = get_field('news_text');
+          $news_date = get_field('news_date');
+          $news_image = get_field('news_image');
+          $news_link = get_field('news_link');
+          ?>
+              <div class="news_item">
+                  <div class="front_page">
+                      <div>
+                          <p class="font-weight-bold adieu_black text_2"><?php echo $news_date; ?></p>
+                          <p class="text_2 bold_1 text_ellipsis_3"><?php echo $news_title; ?></p>
+                      </div>
+                      <p class="text_1 text_ellipsis_4"><?php echo $news_text; ?></p>
+                  </div>
+                  <div class="back_page">
+                      <div class="button_wrapper">
+                          <div class="h-100 d-flex justify-content-center align-items-center">
+                              <a 
+                              href="<?php echo $news_link; ?>" 
+                              target="_blank" 
+                              class="secondary_button <?php if (empty($news_image)) : echo "no_image"; endif; ?>"
+                              >Read more</a>
+                          </div>
+                      </div>
+                      <?php if (!empty($news_image)) : ?>
+                          <img src="<?php echo $news_image['url']; ?>" alt="News Image" />
+                      <?php endif; ?>
+                  </div>
+              </div>
+          <?php
+      endwhile;
+  endif;
+  wp_reset_postdata();
   wp_die();
 }
-add_action('wp_ajax_load_more_news', 'load_more_news');
-add_action('wp_ajax_nopriv_load_more_news', 'load_more_news');
+add_action('wp_ajax_load_more_news_articles', 'load_more_news_articles');
+add_action('wp_ajax_nopriv_load_more_news_articles', 'load_more_news_articles');
+
 
 
 // CUSTOMIZED FOOTER - Add a custom section to the customizer
