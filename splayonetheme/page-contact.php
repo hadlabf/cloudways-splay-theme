@@ -12,7 +12,7 @@ Template Name: Contact Page
         <h1 class="adieu_light page_title" style="line-height:0.9;"><?php echo get_field('contact_header');?></h1>
     </div>
     <div class="w-50">
-        <form action="" class="contact_form">
+        <form action="" class="contact_form" id="contactform">
             <div class="row d-flex gap-2">
                 <div class="col-sm-6">
                     <div class="form_checkbox">
@@ -40,8 +40,7 @@ Template Name: Contact Page
                 </div>
             </div>
             <div class="form-group">
-                <label class="form-label" for="email">Message</label>
-                <input name="email" id="email" placeholder="<?php echo get_field('contact_message_input_placeholder');?>" class="form-input" type="email" />
+                <textarea class="form-input" rows="5" name="message" id="message" form="contactform" placeholder="<?php echo get_field('contact_message_input_placeholder');?>" class="form-input" type="message" ></textarea>
             </div>
             <div class="row d-flex gap-2">
                 <div class="col">

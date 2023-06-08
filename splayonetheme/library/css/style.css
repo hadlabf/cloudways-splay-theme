@@ -311,11 +311,22 @@ button.submit_button {
   transition: box-shadow 150ms ease-out;
   background: none;
 }
-
-.form-input:focus {
-  box-shadow: 0 2px 0 0 blue;
+textarea.form-input {
+  border: 1px solid #e5e5e5;
+  box-shadow: none;
+  padding: 12px;
 }
-.form-input.filled {
+
+textarea.form-input:focus {
+  border-color: var(--bg-accent2);
+}
+/* textarea.form-input.filled {
+  box-shadow: 0 2px 0 0 lightgreen;
+} */
+.form-input:not(textarea):focus {
+  box-shadow: 0 2px 0 0 var(--bg-accent2);
+}
+.form-input.filled:not(textarea) {
   box-shadow: 0 2px 0 0 lightgreen;
 }
 
