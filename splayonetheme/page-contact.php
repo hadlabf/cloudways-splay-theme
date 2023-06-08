@@ -9,7 +9,7 @@ Template Name: Contact Page
 ?>
 <div class="content contact_page">
     <div class="sticky_content">
-        <h1 class="adieu_regular people_title">Curious <br /> to know more? </h1>
+        <h1 class="adieu_light page_title" style="line-height:0.9;"><?php echo get_field('contact_header');?></h1>
     </div>
     <div class="w-50">
         <form action="" class="contact_form">
@@ -39,6 +39,10 @@ Template Name: Contact Page
                     </div>
                 </div>
             </div>
+            <div class="form-group">
+                <label class="form-label" for="email">Message</label>
+                <input name="email" id="email" placeholder="<?php echo get_field('contact_message_input_placeholder');?>" class="form-input" type="email" />
+            </div>
             <div class="row d-flex gap-2">
                 <div class="col">
                     <div class="form-group">
@@ -58,7 +62,7 @@ Template Name: Contact Page
                 <input name="email" id="email" class="form-input" type="email" />
             </div>
             <div class="d-flex justify-content-end">
-                <button class="primary_button submit_button" type="submit">Submit</button>
+                <button class="primary_button submit_button" type="submit"><?php echo get_field('contact_submit_button_text');?></button>
             </div>
         </form>
                     

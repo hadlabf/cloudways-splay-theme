@@ -688,7 +688,7 @@ function load_more_news_articles() {
 
   $news_args = array(
       'post_type' => 'news-articles', 
-      'posts_per_page' => 8, // Retrieve only 8 posts
+      'posts_per_page' => 8,
       'paged' => $page,
       'meta_query' => array(
           array(
@@ -702,10 +702,10 @@ function load_more_news_articles() {
       'orderby' => 'meta_value',
       'order' => 'ASC', // Display posts in ascending order of dates
   );
-
   $news_articles_query = new WP_Query($news_args);
 
   if ($news_articles_query->have_posts()) :
+    
       while ($news_articles_query->have_posts()) : $news_articles_query->the_post();
           $news_title = get_field('news_title');
           $news_text = get_field('news_text');

@@ -453,7 +453,7 @@ button:focus, button:active {
   .contact_page_footer {
     background-color: var(--bg-accent1);
   }
-  .footer_style_secondary, .contact_page_footer * {
+  .footer_style_secondary, .contact_page_footer {
     color: var(--color-secondary);
     border-top-color: var(--color-secondary);
   }
@@ -472,6 +472,9 @@ button:focus, button:active {
   position:sticky; 
   top:400px;
   width: 50%;
+}
+.sticky_content .page_title {
+  font-size: var(--f-h2);
 }
 
 /* HOVER CARD */

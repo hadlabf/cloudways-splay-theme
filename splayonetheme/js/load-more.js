@@ -22,6 +22,9 @@ jQuery(document).ready(function($) {
                 } else {
                     button.remove();
                 }
+                if (response.trim() === '') {
+                    $('.load-more-button').hide();
+                }
             },
             error: function() {
                 button.text('Load more');
