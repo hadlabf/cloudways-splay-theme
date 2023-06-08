@@ -12,35 +12,17 @@ Template Name: Contact Page
         <h1 class="adieu_light page_title" style="line-height:0.9;"><?php echo get_field('contact_header');?></h1>
     </div>
     <div class="w-50">
+        <?php $placeholder = get_field('contact_message_input_placeholder'); ?>
         <form action="" class="contact_form" id="contactform">
-            <div class="row d-flex gap-2">
-                <div class="col-sm-6">
-                    <div class="form_checkbox">
-                        <input name="tiktok" id="tiktok" type="checkbox" />
-                        <label for="tiktok">TikTok Lecture</label>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form_checkbox">
-                        <input name="event" id="event" type="checkbox" />
-                        <label for="event">Event</label>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form_checkbox">
-                        <input name="collaboration" id="collaboration" type="checkbox" />
-                        <label for="collaboration">Collaboration</label>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                                <div class="form_checkbox">
-                        <input name="other" id="other" type="checkbox" />
-                        <label for="other">Other</label>
-                    </div>
-                </div>
-            </div>
+            <select name="subject" id="subject" form="contactform">
+                <option value="influencers">Influencers</option>
+                <option value="sweden-sales">Sweden Sales</option>
+                <option value="norway-sales">Norway Sales</option>
+                <option value="denmark-sales">Denmark Sales</option>
+                <option value="finland-sales">Finland Sales</option>
+            </select>
             <div class="form-group">
-                <textarea class="form-input" rows="5" name="message" id="message" form="contactform" placeholder="<?php echo get_field('contact_message_input_placeholder');?>" class="form-input" type="message" ></textarea>
+                <textarea class="form-input" rows="5" name="message" id="message" form="contactform" placeholder="<?php if( !empty($placeholder) ): echo $placeholder; else : echo "Write your message here..."; endif;?>" class="form-input" type="message" ></textarea>
             </div>
             <div class="row d-flex gap-2">
                 <div class="col">

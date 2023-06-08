@@ -264,8 +264,8 @@ button.submit_button {
   background-color: var(--bg-accent2) !important;
   border-color: transparent !important;
   color: var(--color-primary) !important;
-  font-size: var(--f-sm) !important;
-  padding: var(--s1) var(--s5);
+  font-size: var(--f-md) !important;
+  padding: 10px var(--s5);
 }
 
 
@@ -291,7 +291,8 @@ button.submit_button {
   top: 0;
   color: var(--color-secondary);
   z-index: 10;
-  font-size: var(--f-md);
+  font-size: var(--f-sm);
+  font-weight: 300;
   transition: transform 150ms ease-out, font-size 150ms ease-out;
 }
 
@@ -300,7 +301,12 @@ button.submit_button {
   font-size: .75em;
   font-size: 14px;
 }
-
+select {
+  background: none;
+  padding: 12px;
+  border: 1px solid var(--color-secondary);
+  min-width: calc(50% - 15px);
+}
 .form-input {
   position: relative;
   padding: 12px 0px 5px 0;
@@ -312,13 +318,17 @@ button.submit_button {
   background: none;
 }
 textarea.form-input {
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--color-secondary);
   box-shadow: none;
   padding: 12px;
 }
 
 textarea.form-input:focus {
   border-color: var(--bg-accent2);
+}
+textarea::placeholder {
+  opacity: 0.8;
+  color: var(--color-secondary);
 }
 /* textarea.form-input.filled {
   box-shadow: 0 2px 0 0 lightgreen;
@@ -327,9 +337,23 @@ textarea.form-input:focus {
   box-shadow: 0 2px 0 0 var(--bg-accent2);
 }
 .form-input.filled:not(textarea) {
-  box-shadow: 0 2px 0 0 lightgreen;
+  box-shadow: 0 2px 0 0 var(--bg-accent2)b7;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border-bottom: 1px solid var(--color-secondary);
+  -webkit-text-fill-color: var(--color-secondary);
+  -webkit-box-shadow: 0 0 0px 1000px var(--bg-accent1) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
 /* ABOUT PAGE ========== */
 .about_header {
   position: relative;
