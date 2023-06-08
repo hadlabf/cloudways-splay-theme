@@ -80,16 +80,17 @@ get_header();
             </div>
         </div>
 
-        <div class="section_secondary not_fullsize">
+        <div class="section_secondary">
             <div class="content">
                 <div class="row">
 
                     <div class="col">
                         <?php $header = get_field('contact_header', 341);?>
-                        <?php if( !empty($header) ): 
-                            echo '<h1 class="adieu_bold sp_header"><?php echo $header;?></h1>';
-                            else : echo '<h1 class="adieu_bold sp_header">Curious to know more?</h1>';
-                        endif;?>
+                        <?php if( !empty($header) ): ?>
+                            <h1 class="adieu_light sp_header text-left"><?php echo $header;?></h1>
+                        <?php else : ?> 
+                            <h1 class="adieu_light sp_header text-left">Curious to know more?</h1>
+                        <?php endif;?>
                     </div>
 
                     <div class="col">
@@ -103,4 +104,4 @@ get_header();
     </div>
 </section>
 
-<?php get_footer(); ?>
+<?php get_footer( null, [ 'footer_style' => 'footer_style_secondary' ] ); ?>
