@@ -411,31 +411,31 @@ button:focus, button:active {
   color: var(--color-secondary);
 }
 .padding_top_xs {
-  padding-top: var(--s3);
+  padding-top: var(--s3) !important;
 }
 .padding_top_sm {
-  padding-top: var(--s5);
+  padding-top: var(--s5) !important;
 }
 .padding_top_lg {
-  padding-top: var(--lg);
+  padding-top: var(--lg) !important;
 }
 .padding_bottom_sm {
-  padding-bottom: var(--s5);
+  padding-bottom: var(--s5) !important;
 }
 .padding_bottom_lg {
-  padding-bottom: var(--lg);
+  padding-bottom: var(--lg) !important;
 }
 .section_padding_1 {
-  padding-top: var(--s6);
-  padding-bottom: var(--xl);
+  padding-top: var(--s6) !important;
+  padding-bottom: var(--xl) !important;
 }
 .section_padding_sm {
-  padding-top: var(--s5);
-  padding-bottom: var(--s5);
+  padding-top: var(--s5) !important;
+  padding-bottom: var(--s5) !important;
 }
 .section_padding_3 {
-  padding-top: var(--lg);
-  padding-bottom: var(--lg);
+  padding-top: var(--lg) !important;
+  padding-bottom: var(--lg) !important;
 }
 /* WIDTHS */
 .w_70 {
