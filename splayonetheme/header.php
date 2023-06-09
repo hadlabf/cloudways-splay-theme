@@ -74,20 +74,24 @@
 		</div>
     </header>
 	<div class="hamburger_menu">
-		<div class="content">
-			<button class="hamburger_menu_toggle close_btn"><img class="close_icon" src="<?php echo get_template_directory_uri(); ?>/images/close-icon-white.png"/></button>
-			<div class="w-100 d-flex flex-row justify-content-between">
+		<div class="content h-100">
+			<div class="hamburger_menu_content w-100 d-flex flex-row justify-content-between">
 				<div class="d-flex flex-column">
-					<nav class="splay_menu">
-						<?php
-						wp_nav_menu( array(
-							'theme_location' => 'ham_nav',
-							'menu_class' => 'ham_menu_wrapper',
-						) );
-						?>
-					</nav>
+					<div class="d-flex justify-content-start">
+						<button class="hamburger_menu_toggle close_btn"><img class="close_icon" src="<?php echo get_template_directory_uri(); ?>/images/close-icon-white.png"/></button>
+					</div>
+					<div class="d-flex flex-column">
+						<nav class="splay_menu">
+							<?php
+							wp_nav_menu( array(
+								'theme_location' => 'ham_nav',
+								'menu_class' => 'ham_menu_wrapper',
+							) );
+							?>
+						</nav>
+					</div>
 				</div>
-				<div class="d-flex align-items-end justify-content-end">
+				<div class="hamburger_menu_footer d-flex align-items-end justify-content-end">
 					<div class="d-flex flex-row align-items-end">
 						<p class="caybon">A part of <img src="<?php echo get_template_directory_uri(); ?>/images/caybon-logo-white.png"/></p>
 					</div>

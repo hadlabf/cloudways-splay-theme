@@ -465,7 +465,7 @@ button:focus, button:active {
     border-bottom: 1px solid var(--color-primary);
   
 }
-body.customize-support {
+body.customize-support, body {
   padding-top: 0 !important;
 }
 
@@ -516,7 +516,6 @@ header {
   display: none;
 }
 .hamburger_menu {
-  padding-top: 38px;
   position: fixed;
   z-index: 100;
   top: 0;
@@ -634,17 +633,21 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
     --f-h2: 60px;
     --f-h1: 74px;  
   }
-  /* Hamburger menu items font */
-  .hamburger_menu_toggle.close_btn, ul.ham_menu_wrapper > li > a {
-    font-size: var(--h3);
-  }
   .top_page_padding {
     padding-top: 20px;
   }
 }
 @media (max-width: 650px) {
-  ul.ham_menu_wrapper > li > a {
+  .hamburger_menu_toggle.close_btn, ul.ham_menu_wrapper > li > a {
     font-size: 50px;
+  }
+  .hamburger_menu_content {
+    flex-direction: column !important;
+    height: 100%;
+  }
+  .hamburger_menu_footer {
+    justify-content: flex-start !important;
+    padding-top: var(--s2);
   }
 }
 @media (max-width: 600px) {
@@ -664,7 +667,7 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
   .splay_menu > .menu-main-menu-container {
     display: none;
   }
-  ul.ham_menu_wrapper > li > a {
+  .hamburger_menu_toggle.close_btn, ul.ham_menu_wrapper > li > a {
     font-size: 40px;
   }
 }
@@ -685,7 +688,7 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
   .top_page_padding {
     padding-top: 20px;
   }
-  ul.ham_menu_wrapper > li > a {
+  .hamburger_menu_toggle.close_btn, ul.ham_menu_wrapper > li > a {
     font-size: 35px;
   }
 }
