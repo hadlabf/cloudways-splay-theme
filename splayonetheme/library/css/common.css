@@ -55,121 +55,7 @@ Version: 1.0.0
   --bg-accent1: #0057FF;
   --bg-accent2: #FFC700;
 }
-@media (max-width: 1424px) {
-  .content {
-    padding: 0 var(--s4);
-  }
-  .top_page_padding {
-    padding-top: 40px;
-  }
-}
-@media (max-width: 1024px) {
-  :root {
-    /* DONE */
-    --f-h3: 60px;
-    --f-h2: 88px;
-    --f-h1: 96px;  
-  }
-  .top_page_padding {
-    padding-top: 35px;
-  }
-}
-@media (max-width: 900px) {
-  :root {
-    /* DONE */
-    --f-h4: 36px;
-    --f-h3: 50px;
-    --f-h2: 74px;
-    --f-h1: 88px;  
-  }
-  .top_page_padding {
-    padding-top: 30px;
-  }
-}
-@media (max-width: 825px) {
-  :root {
-    --f-sm: 15px;
-    --f-md: 16px;
-    --f-lg: 18px;
-    --f-xl: 20px;
-    --f-xxl: 26px;
-    --f-xxxl: 28px;
 
-    --s1: 6px;
-    --s2: 12px;
-    --s3: 18px;
-    --s4: 26px;
-    --s5: 34px;
-    --s6: 40px;
-    --s7: 58px;
-    --lg: 70px;
-    --xl: 90px;
-  }
-}
-@media (max-width: 725px) {
-  :root {
-    /* DONE */
-    --f-h4: 30px;
-    --f-h3: 42px;
-    --f-h2: 60px;
-    --f-h1: 74px;  
-  }
-  /* Hamburger menu items font */
-  .hamburger_menu_toggle.close_btn, ul.ham_menu_wrapper > li > a {
-    font-size: var(--h3);
-  }
-  .top_page_padding {
-    padding-top: 20px;
-  }
-}
-@media (max-width: 650px) {
-  ul.ham_menu_wrapper > li > a {
-    font-size: 50px;
-  }
-}
-@media (max-width: 600px) {
-  :root {
-    --s1: 4px;
-    --s2: 8px;
-    --s3: 12px;
-    --s4: 18px;
-    --s5: 28px;
-    --s6: 32px;
-    --s7: 48px;
-    --lg: 58px;
-    --xl: 76px;
-  }
-}
-@media (max-width: 550px) {
-  .splay_menu > .menu-main-menu-container {
-    display: none;
-  }
-  ul.ham_menu_wrapper > li > a {
-    font-size: 40px;
-  }
-}
-@media (max-width: 400px) {
-  :root {
-    /* DONE */
-    --f-xs: 13px;
-    --f-sm: 14px;
-    --f-md: 15px;
-    --f-lg: 17px;
-    --f-xl: 18.5px;
-    --f-xxl: 20px;
-    --f-xxxl: 22px;
-    --f-h4: 24px;
-    --f-h3: 36px;
-    --f-h2: 40px;
-    --f-h1: 50px;  
-  }
-  .top_page_padding {
-    padding-top: 20px;
-  }
-  ul.ham_menu_wrapper > li > a {
-    font-size: 35px;
-  }
-}
 
 * {
   font-family: 'Poppins', sans-serif;
@@ -688,4 +574,118 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
 }
 .talk_to_container.sm_ a {
   font-size: var(--f-lg);
+}
+
+
+@media (max-width: 1424px) {
+  .content {
+    padding: 0 var(--s4);
+  }
+  .top_page_padding {
+    padding-top: 40px;
+  }
+}
+@media (max-width: 1024px) {
+  :root {
+    /* DONE */
+    --f-h3: 60px;
+    --f-h2: 88px;
+    --f-h1: 96px;  
+  }
+  .top_page_padding {
+    padding-top: 35px;
+  }
+}
+@media (max-width: 900px) {
+  :root {
+    --f-h4: 36px;
+    --f-h3: 50px;
+    --f-h2: 74px;
+    --f-h1: 88px;  
+  }
+  .top_page_padding {
+    padding-top: 30px;
+  }
+}
+@media (max-width: 825px) {
+  :root {
+    --f-sm: 15px;
+    --f-md: 16px;
+    --f-lg: 18px;
+    --f-xl: 20px;
+    --f-xxl: 26px;
+    --f-xxxl: 28px;
+
+    --s1: 6px;
+    --s2: 12px;
+    --s3: 18px;
+    --s4: 26px;
+    --s5: 34px;
+    --s6: 40px;
+    --s7: 58px;
+    --lg: 70px;
+    --xl: 90px;
+  }
+}
+@media (max-width: 725px) {
+  :root {
+    --f-h4: 30px;
+    --f-h3: 42px;
+    --f-h2: 60px;
+    --f-h1: 74px;  
+  }
+  /* Hamburger menu items font */
+  .hamburger_menu_toggle.close_btn, ul.ham_menu_wrapper > li > a {
+    font-size: var(--h3);
+  }
+  .top_page_padding {
+    padding-top: 20px;
+  }
+}
+@media (max-width: 650px) {
+  ul.ham_menu_wrapper > li > a {
+    font-size: 50px;
+  }
+}
+@media (max-width: 600px) {
+  :root {
+    --s1: 4px;
+    --s2: 8px;
+    --s3: 12px;
+    --s4: 18px;
+    --s5: 28px;
+    --s6: 32px;
+    --s7: 48px;
+    --lg: 58px;
+    --xl: 76px;
+  }
+}
+@media (max-width: 550px) {
+  .splay_menu > .menu-main-menu-container {
+    display: none;
+  }
+  ul.ham_menu_wrapper > li > a {
+    font-size: 40px;
+  }
+}
+@media (max-width: 400px) {
+  :root {
+    --f-xs: 13px;
+    --f-sm: 14px;
+    --f-md: 15px;
+    --f-lg: 17px;
+    --f-xl: 18.5px;
+    --f-xxl: 20px;
+    --f-xxxl: 22px;
+    --f-h4: 24px;
+    --f-h3: 36px;
+    --f-h2: 40px;
+    --f-h1: 50px;  
+  }
+  .top_page_padding {
+    padding-top: 20px;
+  }
+  ul.ham_menu_wrapper > li > a {
+    font-size: 35px;
+  }
 }
