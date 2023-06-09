@@ -122,6 +122,11 @@ Version: 1.0.0
     padding-top: 20px;
   }
 }
+@media (max-width: 650px) {
+  ul.ham_menu_wrapper > li > a {
+    font-size: 50px;
+  }
+}
 @media (max-width: 600px) {
   :root {
     --s1: 4px;
@@ -133,6 +138,14 @@ Version: 1.0.0
     --s7: 48px;
     --lg: 58px;
     --xl: 76px;
+  }
+}
+@media (max-width: 550px) {
+  .splay_menu > .menu-main-menu-container {
+    display: none;
+  }
+  ul.ham_menu_wrapper > li > a {
+    font-size: 40px;
   }
 }
 @media (max-width: 400px) {
@@ -147,11 +160,14 @@ Version: 1.0.0
     --f-xxxl: 22px;
     --f-h4: 24px;
     --f-h3: 36px;
-    --f-h2: 50px;
-    --f-h1: 60px;  
+    --f-h2: 40px;
+    --f-h1: 50px;  
   }
   .top_page_padding {
     padding-top: 20px;
+  }
+  ul.ham_menu_wrapper > li > a {
+    font-size: 35px;
   }
 }
 
@@ -197,6 +213,9 @@ a, a:hover, a:focus, a:active  {
 }
 .text_2, .text_2 p {
   font-size: var(--f-xl);
+}
+.thin_1 {
+  font-weight: 200;
 }
 .bold_1 {
   font-weight: 500;
@@ -385,7 +404,7 @@ button:focus, button:active {
   padding-block: var(--s5);
 }
 .highlighted_text {
-  color: var(--bg-accent2);
+  color: var(--bg-accent2) !important;
 }
 @media (max-width: 725px) {
   .category_filtering_buttons .category_button  {
@@ -465,17 +484,6 @@ button:focus, button:active {
     font-size: var(--f-md);
   }
 
-.sticky_content {
-  height:400px; 
-
-  position:-webkit-sticky; 
-  position:sticky; 
-  top:400px;
-  width: 50%;
-}
-.sticky_content .page_title {
-  font-size: var(--f-h2);
-}
 
 /* HOVER CARD */
 .hover_card {

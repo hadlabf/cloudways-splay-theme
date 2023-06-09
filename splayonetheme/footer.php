@@ -17,14 +17,14 @@ $footer_address_list = get_field('footer_address_list', 'option');
                                 <p class="bold_1"><?php echo $footer_section_title; ?></p>
                             </div>
                             <div class="col d-flex flex-column">
-                                <p class="mb-0"><?php echo $section['footer_section_subtitle']; ?></p>
+                                <p class="mb-0 thin_1"><?php echo $section['footer_section_subtitle']; ?></p>
                                 <?php if ($footer_section_list): ?>
                                     <?php foreach ($section['footer_section_link_list'] as $link): ?>
                                         <?php if ( !empty($link['footer_section_link_list_url']) ): ?>
-                                            <a target="_blank" class="cta_link" href="<?php echo $link['footer_section_link_list_url']; ?>"><?php echo $link['footer_section_link_list_label']; ?></a>
+                                            <a target="_blank" class="cta_link thin_1" href="<?php echo $link['footer_section_link_list_url']; ?>"><?php echo $link['footer_section_link_list_label']; ?></a>
                                         <?php endif; ?>
                                         <?php if ( !empty($link['footer_section_link_list_email']) ): ?>
-                                            <a target="_blank" class="cta_link" href="mailto:<?php echo $link['footer_section_link_list_email']; ?>"><?php echo $link['footer_section_link_list_label']; ?></a>
+                                            <a target="_blank" class="cta_link thin_1" href="mailto:<?php echo $link['footer_section_link_list_email']; ?>"><?php echo $link['footer_section_link_list_label']; ?></a>
                                         <?php endif; ?>
                                      <?php endforeach; ?>
                                 <?php endif; ?>
@@ -36,9 +36,9 @@ $footer_address_list = get_field('footer_address_list', 'option');
             <div class="col col-sm-4">
                 <?php if ($footer_address_list): ?>
                     <?php foreach ($footer_address_list as $address): ?>
-                        <p class="mb-0"><?php echo $address['footer_address_list_street']; ?></p>
-                        <p class="mb-0"><?php echo $address['footer_address_list_postal_code'] . ' ' . $address['footer_address_list_city']; ?></p>
-                        <p class="mb-3"><?php echo $address['footer_address_list_country']; ?></p>
+                        <p class="mb-0 thin_1"><?php echo $address['footer_address_list_street']; ?></p>
+                        <p class="mb-0 thin_1"><?php echo $address['footer_address_list_postal_code'] . ' ' . $address['footer_address_list_city']; ?></p>
+                        <p class="mb-3 thin_1"><?php echo $address['footer_address_list_country']; ?></p>
                     <?php endforeach; ?>
                 <?php endif; ?>
             </div>
