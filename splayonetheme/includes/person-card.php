@@ -1,4 +1,4 @@
-<div class="col-lg-3 col-md-4 col-sm-6 col-6 people_card person-card <?php echo $args['class']; ?>">
+<div class="people_card person-card <?php echo $args['class']; ?>">
     <img class="people_img" src="<?php echo $args['data']['profile_picture']['url'];?>" />
     
     <div class="front_page">
@@ -14,7 +14,7 @@
         <div>
             <?php if ( !empty($args['data']['email']) ) : ?>
                 <a target="_blank" href="mailto:<?php echo $args['data']['email'];?>">
-                    <p class="mb-0 text_sm"><?php echo $args['data']['email']; ?></p>
+                    <p class="mb-0 text_sm text_ellipsis"><?php echo $args['data']['email']; ?></p>
                 </a>
             <?php endif; ?>
             <?php if ( !empty($args['data']['phone']) ) : ?>

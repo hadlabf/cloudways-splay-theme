@@ -3,7 +3,7 @@
     <div class="page_container top_page_padding">
         <div class="content">
             <h1 class="page_title">Work</h1>
-            <div class="category_filtering_buttons">
+            <div class="category_filtering_buttons case_filters">
                 <button class="secondary_button category_button active" data-category="category-case-sweden">Sweden</button>
                 <button class="secondary_button category_button" data-category="category-case-finland">Finland</button>
                 <button class="secondary_button category_button" data-category="category-case-norway">Norway</button>

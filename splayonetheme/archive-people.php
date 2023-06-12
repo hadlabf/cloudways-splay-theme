@@ -10,7 +10,7 @@
                 <button class="secondary_button category_button" data-category="category-case-denmark">Denmark</button>
                 <button class="secondary_button category_button" data-category="category-case-denmark">Contact</button>
             </div>
-            <div class="case_archive mb-5">
+            <div class="people_cards_archive mb-5">
                 <!-- Case items will be dynamically loaded here (find html in functions.php) -->
             </div>
             <div class="d-flex justify-content-center py-5">
@@ -57,7 +57,7 @@
                 },
                 success: function(response) {
                     // Update the case archive container with the retrieved case items
-                    $('.case_archive').html(response);
+                    $('.people_cards_archive').html(response);
 
                     // Show or hide the "Load More" button based on the number of posts
                     if (response.trim() !== '' && !loadAll) {
