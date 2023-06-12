@@ -46,7 +46,10 @@
 		<div class="col col-sm-5 text_1 pt-4"><?php echo $text_content; ?></div>
 	</div>
 	<div class="w-100 text-right">
-		<p style="text-decoration:underline;"class="title_2 adieu_light">Read Next <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-white.png"/></p>
+		<div class="talk_to_container sm_">
+			<a target="_blank" href="<?php echo site_url('/contact');?>" class="cta_link pl-0 pr-4">Read Next </a>
+			<img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-black.png"/>
+		</div>
 	</div>
 </div>
 

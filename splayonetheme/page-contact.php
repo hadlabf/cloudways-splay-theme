@@ -50,6 +50,7 @@ Template Name: Contact Page
                     <button class="primary_button submit_button" name="submit" type="submit"><?php echo get_field('contact_submit_button_text');?></button>
                 </div>
             </form>
+            <!-- <form method="post" action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>" class="contact_form" id="contactform"> -->
             <!-- <?php
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $user_email = $_POST['email'];
