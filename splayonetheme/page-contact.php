@@ -17,7 +17,7 @@ Template Name: Contact Page
         <div class="d-flex flex-column w-100">
 
             <?php $placeholder = get_field('contact_message_input_placeholder'); ?>
-            <form action="" class="contact_form" id="contactform">
+            <form method="post" class="contact_form" id="contactform">
                 <select name="subject" id="subject" form="contactform">
                     <option value="influencers">Influencers</option>
                     <option value="sweden-sales">Sweden Sales</option>
@@ -47,9 +47,31 @@ Template Name: Contact Page
                     <input name="email" id="email" class="form-input" type="email" />
                 </div>
                 <div class="d-flex justify-content-end">
-                    <button class="primary_button submit_button" type="submit"><?php echo get_field('contact_submit_button_text');?></button>
+                    <button class="primary_button submit_button" name="submit" type="submit"><?php echo get_field('contact_submit_button_text');?></button>
                 </div>
-            </form>         
+            </form>
+            <!-- <?php
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $user_email = $_POST['email'];
+                $user_name = $_POST['name'];
+                $user_company = $_POST['company'];
+                $message = $_POST['message'];
+                
+                // Email Configuration
+                $to = 'hadla.bergman@gmail.com'; // Your client's email address
+                $subject = 'New Contact Form Submission';
+                $headers = "From: $user_email\r\nReply-To: $user_email\r\n";
+
+                // Send the email
+                $sent = wp_mail($to, $subject, $message, $headers);
+                
+                if ($sent) {
+                    echo '<p>Email sent successfully!</p>';
+                } else {
+                    echo '<p>Failed to send email.</p>';
+                }
+            }
+            ?> -->
             <div class="padding_bottom_lg">
                 <?php  
                     if(have_rows('contacts_list') ):
@@ -100,5 +122,6 @@ Template Name: Contact Page
         </div>
     </div>
 </div>
+
 
 <?php get_footer( null, [ 'footer_style' => 'contact_page_footer' ] ); ?>
