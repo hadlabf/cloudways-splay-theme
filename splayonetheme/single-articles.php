@@ -21,7 +21,7 @@
 
 
 <!-- 2. INTRO -->
-<div class="content">
+<div class="content single_article">
 	<div class="row pb-3">
 		<div class="ml-auto col col-sm-6 text_1 pt-4">
 			<div class="row">
@@ -37,9 +37,9 @@
 	</div>
 	<div class="row pb-5">
 		<div class="col col-sm-6 mr-auto">
-			<h1 style="line-height:1.15;" class="title_1 adieu_light"><?php echo $title; ?></h1>
+			<h1 style="line-height:1.15;" class="title_1 adieu_light pb-3"><?php echo $title; ?></h1>
 			<?php if( !empty( $content_image ) ): ?>
-				<div style="margin-top:50%;">
+				<div class="content_image">
 					<img class="w-100 h-auto" src="<?php  echo $content_image["url"]; ?>" alt="<?php echo esc_attr($content_image['alt']); ?>" />
 				</div>
 			<?php endif; ?>
@@ -53,7 +53,7 @@
 				</div>
 			</div>
 			<?php if( !empty( $foot_text ) ): ?>
-				<div class="pt-5 d-flex justify-content-start">
+				<div class="pt-5 d-flex justify-content-start w-50">
 					<p class="small_title"><?php echo $foot_text; ?></p>
 				</div>
 			<?php endif; ?>

@@ -1,6 +1,6 @@
 <div class="content">
     <div id="intro_section" class="d-flex flex-row align-items-end">
-        <h1 class="adieu_black intro_title">Splay One</h1>
+        <h1 class="adieu_black page_title">Splay One</h1>
     </div>
     <div style="padding:43.06% 0 0 0;position:relative;width:100%;max-width:100%;">
         <?php $vimeo_id = get_field('home_intro_vimeo_id');?>

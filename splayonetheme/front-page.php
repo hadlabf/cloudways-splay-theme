@@ -70,7 +70,7 @@
                     <?php 
                     $client_logo_collage = get_field("home_client_logo_collage");
                     if ( !empty($client_logo_collage) ) : ?>
-                        <img class="w-auto mb-3" style="max-height:180px;" src="<?php echo $client_logo_collage["url"]; ?>" alt="Client Logos" />
+                        <img class="w-auto mb-3 home_case_logo_img" src="<?php echo $client_logo_collage["url"]; ?>" alt="Client Logos" />
                     <?php endif; ?>
                     <a href="<?php echo site_url('/cases');?>" class="secondary_button blue_ mt-5">More work</a>
                 </div>

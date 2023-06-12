@@ -8,7 +8,7 @@ $footer_address_list = get_field('footer_address_list', 'option');
 <footer class="<?php echo $args['footer_style']; ?> splay_footer">
     <div class="content">
         <div class="row">
-            <div class="col col-sm-8">
+            <div class="col col-sm-8 pb-3">
                 <?php if ($footer_section_list): ?>
                     <?php foreach ($footer_section_list as $section): ?>
                         <div class="row mb-4">

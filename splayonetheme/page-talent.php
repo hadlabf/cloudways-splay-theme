@@ -28,7 +28,7 @@ Template Name: Talent Page
                         <script src="https://player.vimeo.com/api/player.js"></script>
                     </div>
                 <?php endif; ?>
-            <div class="content">
+            <div class="content talent_intro">
                 <div class="row pb-5">
                     <div class="col col-sm-6 title_1 adieu_light mr-auto"><?php echo the_field('talent_header'); ?></div>
                     <div class="col col-sm-5 text_1 pt-4"><?php echo the_field('talent_text'); ?></div>
@@ -70,7 +70,7 @@ Template Name: Talent Page
             <div class="content">
                 <div class="row section_padding_sm">
                     <div class="col-11">
-                        <p class="large_title mb-4"><?php echo the_field('talent_contact_cta_text'); ?></p>
+                        <p class="title_1 adieu_light mb-4"><?php echo the_field('talent_contact_cta_text'); ?></p>
                         <div class="talk_to_container">
                             <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-black.png"/>
                             <a target="_blank" href="mailto:<?php echo the_field('talent_contact_person_email');?>" class="cta_link">Talk to <?php echo the_field('talent_contact_person'); ?></a>
@@ -155,7 +155,7 @@ if( have_rows('talent_influencers_list') ):
 endif;
 ?>
 <div class="content section_padding_1">
-    <h1 class="large_title adieu_black">Influencers</h1>
+    <h1 class="title_1 adieu_black">Influencers</h1>
     <p class="text_1"><?php echo the_field('talent_people_section_description'); ?> </p>
     <div class="category_filtering_buttons">
         <?php if (count($influencers['sweden']) > 0): ?>

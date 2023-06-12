@@ -11,7 +11,6 @@ get_header();
         <div class="content">
             <h1 class="page_title">News</h1>
             <div class="section_padding_1">
-                <p class="title_2"><?php echo the_field('home_news_section_title') ?></p>
                 <div class="news_scrool_feed flex-wrap">
                     <?php 
                     $today = date('Y-m-d'); // Get today's date
