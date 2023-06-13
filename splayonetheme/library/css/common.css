@@ -61,7 +61,7 @@ Version: 1.0.0
   font-weight: 300;
 }
 a, a:hover, a:focus, a:active  {
-  text-decoration: none;
+  text-decoration: none !important;
   color: inherit;
   cursor: pointer;
 }
@@ -301,29 +301,31 @@ button:focus, button:active {
 .highlighted_text {
   color: var(--bg-accent2) !important;
 }
-@media (min-width: 1201px) {
+.category_filtering_buttons.case_filters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+@media (min-width: 1101px) {
   .category_filtering_buttons {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
 }
-@media (max-width: 1200px) {
-  .category_filtering_buttons {
+
+
+@media (max-width: 1100px) {
+  .category_filtering_buttons:not(.case_filters) {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
-  .category_filtering_buttons .category_button {
+  .category_filtering_buttons:not(.case_filters) .category_button {
     width: 100%;
   }
 }
-@media (max-width: 1100px) {
-  .category_filtering_buttons:not(.case_filters) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 @media (max-width: 600px) {
-  .category_filtering_buttons {
+  .category_filtering_buttons:not(.case_filters) {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -347,7 +349,7 @@ button:focus, button:active {
     max-width: 1024px;
   }
   .section_secondary .sp_header{
-    font-size: var(--f-h3);
+    font-size: var(--f-h2);
   }
   .section_secondary .sp_text{
     font-size: var(--f-lg);

@@ -45,7 +45,7 @@ Template Name: Contact Page
                     <label class="form-label" for="email">Email</label>
                     <input name="email" id="email" class="form-input" type="email" />
                 </div>
-                <div class="d-flex justify-content-end mt-3">
+                <div class="d-flex justify-content-end mt-5 mb-3">
                     <button class="primary_button submit_button" name="submit" type="submit"><?php echo get_field('contact_submit_button_text');?></button>
                 </div>
             </form>

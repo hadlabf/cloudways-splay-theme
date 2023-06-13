@@ -33,7 +33,7 @@ Template Name: About Page
             </div>
             <div>
                 <div class="work_area_section">
-                    <div class="content work_area_content">
+                    <div class="content work_area_content section_padding_3">
                         <p class="work_area_header adieu_light"><?php echo the_field('about_work_area_title'); ?></p>
                         <p class="w-50 text_1 pb-5"><?php echo the_field('about_work_area_section_description'); ?></p>
                         <div class="work_area_list">
@@ -74,7 +74,7 @@ Template Name: About Page
                                     <p style="margin-top:-16px;" class="subtitle_1 adieu_light"><?php echo the_field('about_clients_title')?></p>
                                 </div>
                                 <div class="col-7">
-                                    <p class="text_2 font-weight-light text_2 mb-5"><?php echo the_field('about_clients_text')?></p>
+                                    <div class="text_2 font-weight-light text_2 mb-5"><?php echo the_field('about_clients_text')?></div>
                                     <div class="talk_to_container">
                                         <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-white.png"/>
                                         <a target="_blank" href="<?php echo site_url('/contact');?>" class="cta_link"><?php echo the_field('about_clients_button'); ?></a>

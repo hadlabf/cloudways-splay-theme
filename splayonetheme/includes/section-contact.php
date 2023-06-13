@@ -12,7 +12,7 @@
             $button = get_field('home_contact_button', 299);
             endif;    
         ?>
-        <h1 class="adieu_bold sp_header"><?php echo $header; ?></h1>
+        <h1 class="page_title"><?php echo $header; ?></h1>
         <p class="sp_text"><?php echo $text; ?></p>
         <?php if( !empty($button) ): ?>
             <div class="d-flex justify-content-center">

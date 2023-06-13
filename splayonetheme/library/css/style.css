@@ -270,8 +270,8 @@ button.submit_button {
   background-color: var(--bg-accent2) !important;
   border-color: transparent !important;
   color: var(--color-primary) !important;
-  font-size: var(--f-md) !important;
-  padding: 10px var(--s5);
+  font-size: var(--f-sm) !important;
+  padding: 8px var(--s3);
 }
 
 
@@ -335,10 +335,27 @@ textarea.form-input:focus {
 textarea::placeholder {
   opacity: 0.8;
   color: var(--color-secondary);
+  font-size: var(--f-xs);
 }
-/* textarea.form-input.filled {
-  box-shadow: 0 2px 0 0 lightgreen;
-} */
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+textarea::placeholder { 
+  opacity: 0.8;
+  color: var(--color-secondary);
+  font-size: var(--f-xs);}
+
+/* Internet Explorer 10-11 */
+textarea:-ms-input-placeholder { 
+  opacity: 0.8;
+  color: var(--color-secondary);
+  font-size: var(--f-xs);}
+
+/* Microsoft Edge */
+textarea::-ms-input-placeholder { 
+  opacity: 0.8;
+  color: var(--color-secondary);
+  font-size: var(--f-xs);
+}
+
 .form-input:not(textarea):focus {
   box-shadow: 0 2px 0 0 var(--bg-accent2);
 }
