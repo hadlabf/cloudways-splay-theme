@@ -3,7 +3,7 @@
     
     <div class="front_page">
         <p class="mb-0 bold_1"><?php echo $args['data']['full_name']; ?></p>
-        <p><?php echo $args['data']['role']; ?></p>
+        <p class="mb-0"><?php echo $args['data']['role']; ?></p>
     </div>
 
     <div class="back_page">

@@ -13,9 +13,6 @@
             <div class="people_cards_archive mb-5">
                 <!-- Case items will be dynamically loaded here (find html in functions.php) -->
             </div>
-            <div class="d-flex justify-content-center py-5">
-                <button class="secondary_button blue_ load_more_button" style="display:none;">Load More</button>
-            </div>
         </div>
     </div>
     <div class="section_secondary not_fullsize">
@@ -38,14 +35,9 @@
             // Send AJAX request to the server
             filterPeople(selectedCategory);
         });
-        $('.load_more_button').on('click', function(e) {
-            e.preventDefault();
-            var selectedCategory = $('.category_button.active').data('category');
-            filterPeople(selectedCategory, true);
-        });
 
         // Function to load cases based on selected category
-        function filterPeople(selectedCategory, loadAll = false) {
+        function filterPeople(selectedCategory) {
             // Send AJAX request to the server
             $.ajax({
                 url: '<?php echo admin_url('admin-ajax.php'); ?>',
@@ -53,18 +45,10 @@
                 data: {
                     action: 'filter_people',
                     category: selectedCategory,
-                    load_all: loadAll
                 },
                 success: function(response) {
                     // Update the case archive container with the retrieved case items
                     $('.people_cards_archive').html(response);
-
-                    // Show or hide the "Load More" button based on the number of posts
-                    if (response.trim() !== '' && !loadAll) {
-                        $('.load_more_button').show();
-                    } else {
-                        $('.load_more_button').hide();
-                    }
                 }
             });
         }

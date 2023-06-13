@@ -560,12 +560,11 @@ add_action('wp_ajax_nopriv_filter_people', 'filter_people');
 function filter_people() {
   // Retrieve selected category and load_all flag from the AJAX request
   $selectedCategory = $_POST['category'];
-  $loadAll = isset($_POST['load_all']) && $_POST['load_all'] == 'true';
 
   // Modify your WP_Query based on the selected category and load_all flag
   $cases_args = array(
       'post_type' => 'people',
-      'posts_per_page' => $loadAll ? -1 : 8,
+      'posts_per_page' => -1,
       'category_name' => $selectedCategory,
   );
   $cases_query = new WP_Query($cases_args);
