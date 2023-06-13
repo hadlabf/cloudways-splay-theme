@@ -504,7 +504,7 @@ body.customize-support, body {
 
 /* MENU */
 .close_icon {
-  height: 36px;
+  height: 32px;
   width: auto;
   transition: scale 0.2s ease-in-out;
   margin-bottom: 18px;
@@ -735,6 +735,10 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
   .section_secondary.not_fullsize .col-10 {
     width: 100% !important;
   }
+  .close_icon {
+    height: 26px;
+    margin-bottom: 10px;
+  }
 }
 @media (max-width: 400px) {
   :root {
@@ -755,5 +759,9 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
   }
   .hamburger_menu_toggle.close_btn, ul.ham_menu_wrapper > li > a {
     font-size: 35px;
+  }
+  .close_icon {
+    height: 24px;
+    margin-bottom: 8px;
   }
 }
