@@ -637,6 +637,9 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
   .top_page_padding {
     padding-top: 30px;
   }
+  .section_padding_3 {
+    padding-top: var(--s4) !important;
+  }
 }
 @media (max-width: 825px) {
   :root {
@@ -704,9 +707,20 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
     --f-h2: 46px;
     --f-h1: 64px;  
   }
+  .pb-5 {
+    padding-bottom: 1rem !important;
+  }
   .w-50 {
     min-width: 75%;
     width: 75%;
+  }
+  .section_padding_3 {
+    padding-top: var(--s1) !important;
+  }
+  .mobile_full {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
   }
 }
 @media (max-width: 550px) {

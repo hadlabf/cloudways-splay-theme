@@ -40,16 +40,16 @@ if( !empty( $vimeo_id ) ): ?>
 	<div class="content section_padding_3">
 		<h1 class="title_1 adieu_bold pb-5"><?php echo $name?></h1>
 		<div class="d-flex flex-row row">
-			<div class="d-flex flex-column col-4">
+			<div class="mobile_full d-flex flex-column col-4">
 				<p class="text_1 bold_1 mb-1">Client:</p>
 				<p class="text_1 bold_1"><?php echo $customer; ?></p>
 			</div>
-			<div class="d-flex flex-column col-8">
+			<div class="mobile_full d-flex flex-column col-8">
 				<p class="text_1 bold_1 mb-1">Services:</p>
-				<div class="d-flex flex-row">
+				<div class="d-flex flex-row flex-wrap mb-3">
 					<?php if(have_rows('case_service_tag_list') ):
 							while( have_rows('case_service_tag_list') ) : the_row(); ?>
-								<p class="text_1 bold_1 service_tag"><?php echo the_sub_field('case_service_tag'); ?></p>
+								<p class="text_1 bold_1 service_tag mb-0"><?php echo the_sub_field('case_service_tag'); ?></p>
 							<?php                         
 							endwhile;                            
 						endif;

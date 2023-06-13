@@ -221,19 +221,12 @@ Version: 1.0.0
 }
 /* =======================================*/
 /* ============ PAGE: CONTACT ============*/
-.absolute_line {
-  width: 1px;
-  height: 70%;
-  position: absolute;
-  background-color: var(--color-secondary);
-  top: var(--s5);
-  left: 0;
-}
+
 .sticky_content {
   height:400px; 
   position:-webkit-sticky; 
   position:sticky; 
-  top: 400px;
+  top: 60%;
   width: calc(50% - 40px);
 }
 .sticky_content .page_title {
@@ -652,6 +645,7 @@ select:-webkit-autofill:focus {
 }
 .case_single_page .service_tag {
   padding-right: var(--s2);
+  white-space: nowrap;
 }
 .case_single_page .service_tag:after {
   content: "|";
@@ -705,10 +699,10 @@ select:-webkit-autofill:focus {
     gap: 8px;
   }
   .kpi_1 {
-    font-size: 85px;
+    font-size: var(--f-h1);
   }
   .kpi_2 {
-    font-size: 55px;
+    font-size: var(--f-h2);
   }
 }
 @media (max-width: 650px) {

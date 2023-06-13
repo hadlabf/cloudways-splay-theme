@@ -13,7 +13,6 @@ Template Name: Contact Page
         <h1 class="adieu_light page_title"><?php echo get_field('contact_header');?></h1>
     </div>
     <div class="contact_content">
-        <div class="absolute_line"></div>
         <div class="d-flex flex-column w-100">
 
             <?php $placeholder = get_field('contact_message_input_placeholder'); ?>
@@ -78,7 +77,7 @@ Template Name: Contact Page
                     if(have_rows('contacts_list') ):
                         while( have_rows('contacts_list') ) : the_row();
                         ?>
-                        <div class="row mb-4 contact_info_rows">
+                        <div class="row mx-0 mb-4 contact_info_rows">
                             <div class="col col-sm-6 col-md-5 mr-auto pl-0">
                                 <div class="contact_item">
                                     <p style="font-weight:400;"><?php echo the_sub_field('contact_list_country'); ?></p>
@@ -123,6 +122,3 @@ Template Name: Contact Page
         </div>
     </div>
 </div>
-
-
-<?php get_footer( null, [ 'footer_style' => 'contact_page_footer' ] ); ?>
