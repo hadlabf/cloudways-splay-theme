@@ -91,7 +91,7 @@ a, a:hover, a:focus, a:active  {
   color: inherit;
 }
 .text_sm, .text_sm p {
-  font-size: var(--f-sm);
+  font-size: var(--f-sm) !important;
 }
 .text_1, .text_1 p {
   font-size: var(--f-md);

@@ -83,6 +83,9 @@ Version: 1.0.0
   color: var(--color-secondary);
   border-color: var(--color-secondary);
 }
+.news_item .secondary_button:not(.no_image):hover {
+  background-color: #ffffff35 !important;
+}
 .news_item .secondary_button:hover {
   background-color: var(--bg-accent1);
 }

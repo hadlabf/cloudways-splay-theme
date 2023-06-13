@@ -93,11 +93,9 @@ if( !empty( $vimeo_id ) ): ?>
             	<img class="h-100 w-auto" src="<?php  echo $image["url"]; ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
             <?php endforeach; endif;?>
 		</div>
-		<div class="text_2 section_padding_1 w_70"><?php echo $text;?></div>
+		<div class="text_1 section_padding_1 w_70"><?php echo $text;?></div>
 	</div>
 </div>
-
-<img src="<?php echo $large_image["url"];?>" />
 
 <!-- 6. LINKED SECTION -->
 <?php 
@@ -134,12 +132,14 @@ if( !empty( $vimeo_id ) ): ?>
 </div>
 <?php endif;?>
 
+<img src="<?php echo $large_image["url"];?>" />
+
 <!-- 7. PROFILES -->
 <?php if( have_rows('case_profile_list') ): ?>
 <div class="content section_padding_3">
 	<p class="subtitle_1 adieu_light"><?php echo $profile_header; ?></p>
-	<p class="text_1 w_70"><?php echo $profile_description; ?></p>
-	<div class="pt-5 profiles_grid">	
+	<p class="text_1 w-50"><?php echo $profile_description; ?></p>
+	<div class="pt-4 profiles_grid">	
 		<?php while( have_rows('case_profile_list') ) : the_row();
 			$full_name = get_sub_field('case_profile_full_name');
 			$link = get_sub_field('case_profile_link_url');
@@ -159,7 +159,7 @@ if( !empty( $vimeo_id ) ): ?>
 	</div>
 	<div class="talk_to_container">
 		<img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-black.png"/>
-		<a target="_blank" href="<?php echo site_url('/influencers');?>" class="cta_link"><?php echo $profile_section_link; ?></a>
+		<a target="_blank" href="<?php echo site_url('/influencers');?>" class="cta_link text_sm"><?php echo $profile_section_link; ?></a>
 	</div>
 </div>
 <?php endif;?>
