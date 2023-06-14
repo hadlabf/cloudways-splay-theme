@@ -36,7 +36,7 @@ if( !empty( $vimeo_id ) ): ?>
 <?php endif; ?>
 
 <!-- 2. INTRO -->
-<div class="case_single_page border_bottom_primary">
+<div class="case_single_page">
 	<div class="content section_padding_3">
 		<h1 class="title_1 adieu_bold pb-5"><?php echo $name?></h1>
 		<div class="d-flex flex-row row">
@@ -87,7 +87,7 @@ if( !empty( $vimeo_id ) ): ?>
 
 <!-- 5. VERTICAL IMAGES -->
 <?php if ( !empty($text) ||  !empty($vertical_images) ) : ?>
-	<div class="content padding_top_lg padding_bottom_lg">
+	<div class="content padding_bottom_lg">
 		<div class="d-flex flex-column">
 		<?php if( $vertical_images ) : ?>
 			<div class="vertical_image_wrapper d-flex flex-row justify-content-between <?php if ( !empty($text) ) : echo "padding_bottom_sm"; endif; ?>">
@@ -163,7 +163,7 @@ if( !empty( $vimeo_id ) ): ?>
 			</div>
 		<?php endwhile; ?>
 	</div>
-	<div class="talk_to_container">
+	<div class="py-4 talk_to_container sm_">
 		<img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-black.png"/>
 		<a target="_blank" href="<?php echo site_url('/influencers');?>" class="cta_link text_sm"><?php echo $profile_section_link; ?></a>
 	</div>

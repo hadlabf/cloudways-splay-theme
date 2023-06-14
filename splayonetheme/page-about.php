@@ -71,7 +71,7 @@ Template Name: About Page
                             </div>
                             <div class="row">
                                 <div class="col-5">
-                                    <p style="margin-top:-16px;" class="subtitle_1 adieu_light"><?php echo the_field('about_clients_title')?></p>
+                                    <p class="subtitle_1 adieu_light"><?php echo the_field('about_clients_title')?></p>
                                 </div>
                                 <div class="col-7">
                                     <div class="text_2 font-weight-light text_2 mb-5"><?php echo the_field('about_clients_text')?></div>
