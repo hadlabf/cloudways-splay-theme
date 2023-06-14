@@ -689,6 +689,19 @@ select:-webkit-autofill:focus {
   margin-top: -12px;
   font-family: "Adieu-Light";
 }
+.linked_section_text_content {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.linked_section_img {
+  border: 1px solid var(--color-secondary);
+  aspect-ratio: 1/1;
+  width: 450px;
+  max-width: 30%;
+  min-width: 250px;
+  margin-right: 60px;
+  margin-top: 12px;
+}
 .kpi_1 {
   font-size: 180px;
 }
@@ -718,6 +731,9 @@ select:-webkit-autofill:focus {
   .case_archive .case_item .gap_lg {
     gap: 8px;
   }
+  .linked_section_img {
+    margin-right: 40px
+  }
   .kpi_1 {
     font-size: var(--f-h1);
   }
@@ -731,6 +747,30 @@ select:-webkit-autofill:focus {
   }
   .case_archive .case_item .gap_lg {
     gap: 12px;
+  }
+  .linked_section_img {
+    margin-right: 20px
+  }
+}
+@media (max-width: 500px) {
+  .linked_section.flex-row {
+    flex-direction: column !important;
+  }
+  .linked_section .pb-5, .linked_section .pt-5 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .linked_section .talk_to_container{
+    padding-top: var(--s7) !important;
+  }
+  .linked_section_text_content {
+    margin-top: var(--s5);
+  }
+  .linked_section_img {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-top: 0;
   }
 }
 .video_animation iframe {

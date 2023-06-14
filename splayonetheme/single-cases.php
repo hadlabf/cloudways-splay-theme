@@ -104,28 +104,28 @@ if( !empty( $vimeo_id ) ): ?>
 	$linked_label = get_field('case_linked_section_link_label');
 	$linked_link = get_field('case_linked_section_link_url');
 	$linked_image = get_field('case_linked_section_image');
-	$image_size = getimagesize($linked_image['url']);
-
 ?>
 <?php if( !empty($linked_title) && !empty($linked_text) ): ?>
 <div class="section_secondary">
 	<div class="content">
-		<div class="d-flex flex-row align-items-center">
+		<div class="linked_section d-flex flex-row align-items-start">
 			<?php if ( !empty($linked_image) ) : ?>
-				<img class="mr-5 <?php if ($image_size[1] > $image_size[0]) : echo "h-100 w-auto vertical_img"; else : echo "horizontal_img"; endif;?>" src="<?php echo $linked_image['url'];?>" alt="<?php echo $linked_title; ?>">
+				<img class="linked_section_img" src="<?php echo $linked_image['url'];?>" alt="<?php echo $linked_title; ?>">
 			<?php endif; ?>
-			<div style="justify-content:space-evenly;" class="d-flex flex-column text-left <?php if ( !empty($linked_image) && $image_size[1] > $image_size[0] ) : echo "py-5"; endif;?>">
-				<div class="py-5">
-					<p class="medium_title"><?php echo $linked_title; ?></p>
-					<div class="text_1"><?php echo $linked_text; ?></div>
-				</div>
-				<?php if ( !empty($linked_link) && !empty($linked_label) ) : ?>
-					<div class="py-5 talk_to_container sm_">
-						<img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-white.png"/>
-						<a target="_blank" href="<?php echo esc_url($linked_link); ?>" class="cta_link"><?php echo $linked_label; ?></a>
+			<div class="linked_section_text_content">
+				<div style="justify-content:space-evenly;" class="d-flex flex-column text-left">
+					<div class="pb-5">
+						<p class="medium_title"><?php echo $linked_title; ?></p>
+						<div class="text_1"><?php echo $linked_text; ?></div>
 					</div>
-				<?php endif; ?>
-				
+					<?php if ( !empty($linked_link) && !empty($linked_label) ) : ?>
+						<div class="pt-5 talk_to_container sm_">
+							<img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-white.png"/>
+							<a target="_blank" href="<?php echo esc_url($linked_link); ?>" class="cta_link"><?php echo $linked_label; ?></a>
+						</div>
+					<?php endif; ?>
+					
+				</div>
 			</div>
 		</div>
 	</div>

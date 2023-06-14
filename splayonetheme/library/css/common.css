@@ -158,14 +158,6 @@ img {
   width: 100%;
   height: auto;
 }
-img.vertical_img {
-  height: 100%;
-  width: auto;
-}
-img.horizontal_img {
-  width: 100%;
-  height: fit-content;
-}
 .section_secondary img.horizontal_img {
   max-width: 60%;
 }
@@ -738,6 +730,11 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
   .close_icon {
     height: 26px;
     margin-bottom: 10px;
+  }
+}
+@media (max-width: 500px) {
+  .section_secondary {
+    padding: var(--s6) 0;
   }
 }
 @media (max-width: 400px) {
