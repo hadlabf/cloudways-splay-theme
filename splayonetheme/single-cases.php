@@ -86,16 +86,22 @@ if( !empty( $vimeo_id ) ): ?>
 <?php endif;?>
 
 <!-- 5. VERTICAL IMAGES -->
-<div class="content padding_top_lg">
-	<div class="d-flex flex-column">
-		<div class="vertical_image_wrapper d-flex flex-row justify-content-between">
-			<?php if( $vertical_images ) : foreach( $vertical_images as $image ): ?>
-            	<img class="h-100 w-auto" src="<?php  echo $image["url"]; ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-            <?php endforeach; endif;?>
+<?php if ( !empty($text) ||  !empty($vertical_images) ) : ?>
+	<div class="content padding_top_lg padding_bottom_lg">
+		<div class="d-flex flex-column">
+		<?php if( $vertical_images ) : ?>
+			<div class="vertical_image_wrapper d-flex flex-row justify-content-between <?php if ( !empty($text) ) : echo "padding_bottom_sm"; endif; ?>">
+				<?php foreach( $vertical_images as $image ): ?>
+					<img class="h-100 w-auto" src="<?php  echo $image["url"]; ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+				<?php endforeach;?>
+			</div>
+			<?php endif;?>
+			<?php if ( !empty($text) ) : ?>
+				<div class="text_1 w_70"><?php echo $text;?></div>
+			<?php endif; ?>
 		</div>
-		<div class="text_1 section_padding_1 w_70"><?php echo $text;?></div>
 	</div>
-</div>
+<?php endif; ?>
 
 <!-- 6. LINKED SECTION -->
 <?php 
