@@ -177,7 +177,7 @@ if( !empty( $vimeo_id ) ): ?>
 		<?php endwhile; ?>
 	</div>
 	<div class="py-4 talk_to_container sm_">
-		<img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-black.png"/>
+		<img src="<?php echo get_template_directory_uri(); ?>/images/arrow-thin-icon-black.png"/>
 		<a href="<?php echo site_url('/influencers');?>" class="cta_link text_sm"><?php if ( !empty($profile_section_link) ) : echo $profile_section_link; else : echo "Check out our influencers"; endif; ?></a>
 	</div>
 </div>

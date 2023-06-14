@@ -1,4 +1,3 @@
-<?php get_header(); ?>
 <?php 
 	$header_image = get_field('article_header_image');
 	$title = get_field('article_title');
@@ -49,7 +48,7 @@
 			<div class="w-100 pt-5">
 				<div class="talk_to_container sm_ justify-content-end">
 					<a target="_blank" href="<?php echo site_url('/contact');?>" class="cta_link pl-0 pr-4">Read Next </a>
-					<img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-black.png"/>
+					<img src="<?php echo get_template_directory_uri(); ?>/images/arrow-thin-icon-white.png"/>
 				</div>
 			</div>
 			<?php if( !empty( $foot_text ) ): ?>

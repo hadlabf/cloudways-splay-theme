@@ -869,6 +869,12 @@ select:-webkit-autofill:focus {
 }
 
 /********** PAGE SINGLE ARTICLES **********/
+.single_article {
+  background-color: var(--bg-secondary);
+}
+.single_article * {
+  color: var(--color-secondary);
+}
 .single_article .content_image {
   margin-top: 50%;
 }
