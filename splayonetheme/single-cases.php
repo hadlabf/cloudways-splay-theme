@@ -62,7 +62,7 @@ if( !empty( $vimeo_id ) ): ?>
 </div>
 
 <!-- 3. KPI -->
-<?php get_template_part('includes/section', 'kpi', $channel_stats );?>
+<?php get_template_part('includes/section', 'kpi' );?>
 
 <!-- 4. VIDEOS -->
 <?php if( have_rows('case_videos_list')  ) : ?>
