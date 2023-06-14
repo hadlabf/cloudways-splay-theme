@@ -14,10 +14,11 @@
 	$description = get_field('case_description');
 	$vertical_images = get_field('case_vertical_images');
 	$text = get_field('case_section_text');
-	$large_image = get_field('case_large_image');
 	$profile_header = get_field('case_profile_section_header');
 	$profile_description = get_field('case_profile_section_description');
 	$profile_section_link = get_field('case_profile_section_link_text');
+	$large_image = get_field('case_large_image');
+	$large_video_id = get_field('case_large_video_vimeo_id');
 ?>
 
 <!-- 1. HEADER -->
@@ -139,7 +140,18 @@ if( !empty( $vimeo_id ) ): ?>
 </div>
 <?php endif;?>
 
-<img src="<?php echo $large_image["url"];?>" />
+<?php if( !empty($large_video_id) || !empty($large_image) ): ?>
+	<?php if( !empty($large_image) ): ?>
+		<img src="<?php echo $large_image["url"];?>" />
+	<?php endif;?>
+	<?php if( !empty($large_video_id) ): ?>
+		<div>
+			<div style="padding:43.06% 0 0 0;position:relative;width:100%;max-width:100vw;">
+				<iframe src="https://player.vimeo.com/video/<?php echo esc_html($large_video_id); ?>?autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;controls=0&amp;showinfo=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="REEL_WEB_2023_v2"></iframe>
+			</div>
+		</div>
+	<?php endif;?>
+<?php endif;?>
 
 <!-- 7. PROFILES -->
 <?php if( have_rows('case_profile_list') ): ?>
@@ -166,7 +178,7 @@ if( !empty( $vimeo_id ) ): ?>
 	</div>
 	<div class="py-4 talk_to_container sm_">
 		<img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-black.png"/>
-		<a target="_blank" href="<?php echo site_url('/influencers');?>" class="cta_link text_sm"><?php echo $profile_section_link; ?></a>
+		<a href="<?php echo site_url('/influencers');?>" class="cta_link text_sm"><?php if ( !empty($profile_section_link) ) : echo $profile_section_link; else : echo "Check out our influencers"; endif; ?></a>
 	</div>
 </div>
 <?php endif;?>
