@@ -487,9 +487,12 @@ button:focus, button:active {
   color: var(--color-secondary);
 }
 
+.border_primary_y {
+  border-bottom: 1px solid var(--color-primary);
+  border-top: 1px solid var(--color-primary);
+}
 .border_primary {
-    border-bottom: 1px solid var(--color-primary);
-    border-top: 1px solid var(--color-primary);
+  border: 1px solid var(--color-primary);
 }
 body.customize-support, body {
   padding-top: 0 !important;

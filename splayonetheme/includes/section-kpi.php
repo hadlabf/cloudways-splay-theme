@@ -5,7 +5,7 @@
 ?>
 <?php if ( !empty($large_value) || have_rows('case_kpi_list') ) : ?>
 	<div class="padding_bottom_lg">
-		<div class="border_primary">
+		<div class="border_primary_y">
 			<div class="content section_padding_3">
 				
 				<?php if (!empty($large_value)) : ?>

@@ -66,21 +66,22 @@ if( !empty( $vimeo_id ) ): ?>
 
 <!-- 4. VIDEOS -->
 <?php if( have_rows('case_videos_list')  ) : ?>
-<div class="content padding_top_lg">
-	<div class="row">
+<div class="content padding_bottom_lg">
+	<div class="d-flex flex-row justify-content-center case_video_list">
 		<?php while( have_rows('case_videos_list') ): the_row();
-			$video_list_vimeo_id = get_sub_field('case_videos_list_vimeo_id');
+			$video_list_link = get_sub_field('case_videos_list_link');
+			$video_list_image = get_sub_field('case_videos_list_image');
 			$video_list_title = get_sub_field('case_videos_list_title');
-		?>
-			<div class="col text-center">
-				<div class="video_animation">
-					<div style="padding:43.06% 0 0 0;position:relative;width:100%;max-width:100vw;border:1px solid black;">
-						<iframe src="https://player.vimeo.com/video/<?php echo esc_html($video_list_vimeo_id); ?>?autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;controls=0&amp;showinfo=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="REEL_WEB_2023_v2"></iframe>
-					</div>
+			if( !empty($video_list_image) ) : ?>
+				<div class="case_video_list_item text-center">
+					<a target="_blank" href="<?php echo esc_url($video_list_link); ?>" class="video_animation">
+						<div class="case_video_image_wrapper">
+							<img src="<?php echo esc_url($video_list_image['url']); ?>"/>
+						</div>
+					</a>
+					<p class="text_1 bold_1 pt-3"><?php echo $video_list_title; ?></p>
 				</div>
-				<p class="text_1 bold_1 pt-3"><?php echo $video_list_title; ?></p>
-			</div>
-         <?php endwhile; ?>
+         <?php endif; endwhile; ?>
 	</div>
 </div>
 <?php endif;?>
