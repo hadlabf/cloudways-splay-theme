@@ -869,6 +869,9 @@ select:-webkit-autofill:focus {
 }
 
 /********** PAGE SINGLE ARTICLES **********/
+.hide_head header, .hide_head .hamburger_menu {
+  display: none;
+}
 .single_article {
   background-color: var(--bg-secondary);
 }

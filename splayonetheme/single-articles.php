@@ -1,3 +1,4 @@
+<?php get_header( null, [ 'header_style' => 'hide_head' ] ); ?>
 <?php 
 	$header_image = get_field('article_header_image');
 	$title = get_field('article_title');
