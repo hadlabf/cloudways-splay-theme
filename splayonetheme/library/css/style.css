@@ -576,15 +576,6 @@ select:-webkit-autofill:focus {
   font-style: italic;
 }
 
-/* SELECTED CLIENTS */
-.about_clients_section .cta_link {
-  font-size: var(--f-xl);
-}
-.about_clients_section .talk_to_container img {
-  height: 24px;
-}
-
-
 /* ========= TALENT PAGE ========= */
 .why_us_section.work_area_section {
   background-color: var(--bg-primary);

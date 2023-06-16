@@ -59,6 +59,7 @@ Template Name: About Page
                     </div>
                 </div>
 
+<!-- SECTION: SELECTED CLIENTS -->
                 <div class="section_type_3 about_clients_section">
                     <div class="content">
                         <div class="padding_bottom_lg padding_top_xs">
@@ -75,8 +76,8 @@ Template Name: About Page
                                 </div>
                                 <div class="col-7">
                                     <div class="text_2 font-weight-light text_2 mb-5"><?php echo the_field('about_clients_text')?></div>
-                                    <div class="talk_to_container">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-white.png"/>
+                                    <div class="talk_to_container sm_">
+                                        <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-thin-icon-white.png"/>
                                         <a target="_blank" href="<?php echo site_url('/contact');?>" class="cta_link"><?php echo the_field('about_clients_button'); ?></a>
                                     </div>
                                 </div>

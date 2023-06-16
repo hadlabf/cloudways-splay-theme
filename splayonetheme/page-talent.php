@@ -6,7 +6,7 @@ Template Name: Talent Page
 
 <?php get_header(); ?>
     <section>
-        <div class="page_container pb-5">
+        <div class="page_container pb-5 talent_page">
             
 <!-- SECTION: INTRO -->
             <?php 
@@ -72,7 +72,7 @@ Template Name: Talent Page
                     <div class="col-11">
                         <p class="title_1 adieu_light mb-4"><?php echo the_field('talent_contact_cta_text'); ?></p>
                         <div class="talk_to_container">
-                            <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-black.png"/>
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-thin-icon-black.png"/>
                             <a target="_blank" href="mailto:<?php echo the_field('talent_contact_person_email');?>" class="cta_link">Talk to <?php echo the_field('talent_contact_person'); ?></a>
                         </div>
                     </div>
