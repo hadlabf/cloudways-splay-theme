@@ -697,10 +697,9 @@ select:-webkit-autofill:focus {
   border: 1px solid var(--color-secondary);
   aspect-ratio: 1/1;
   width: 450px;
-  max-width: 30%;
-  min-width: 250px;
-  margin-right: 60px;
-  margin-top: 12px;
+  max-width: 35%;
+  min-width: 35%;
+  margin-right: 100px;
 }
 .kpi_1 {
   font-size: 180px;
@@ -723,6 +722,9 @@ select:-webkit-autofill:focus {
   .kpi_2 {
     font-size: 80px;
   }
+  .linked_section_img {
+    min-width: 250px;
+  }
 }
 @media (max-width: 825px) {
   .case_archive {
@@ -732,7 +734,7 @@ select:-webkit-autofill:focus {
     gap: 8px;
   }
   .linked_section_img {
-    margin-right: 40px
+    margin-right: 60px
   }
   .kpi_1 {
     font-size: var(--f-h1);

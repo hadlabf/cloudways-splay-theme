@@ -111,11 +111,12 @@ a, a:hover, a:focus, a:active  {
 .subtitle_1 {
   font-size: var(--f-h4);
   font-weight: 500;
-  margin-top: -16px;
+  margin-top: calc(var(--s2) * -1);
 }
 .medium_title {
   font-size: var(--f-xxl);
   font-family: "Adieu-Light";
+  margin-top: -12px;
 }
 .small_title {
   font-size: var(--f-lg);

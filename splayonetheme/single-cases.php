@@ -128,7 +128,7 @@ if( !empty( $vimeo_id ) ): ?>
 					</div>
 					<?php if ( !empty($linked_link) && !empty($linked_label) ) : ?>
 						<div class="pt-5 talk_to_container sm_">
-							<img src="<?php echo get_template_directory_uri(); ?>/images/arrow-icon-white.png"/>
+							<img src="<?php echo get_template_directory_uri(); ?>/images/arrow-thin-icon-white.png"/>
 							<a target="_blank" href="<?php echo esc_url($linked_link); ?>" class="cta_link"><?php echo $linked_label; ?></a>
 						</div>
 					<?php endif; ?>
