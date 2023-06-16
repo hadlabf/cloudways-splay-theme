@@ -29,10 +29,10 @@
 		<div class="row padding_bottom_sm">
 			<div class="date_section ml-auto col col-sm-6 text_1 pt-4">
 				<div class="row">
-					<div class="col">
+					<div id="article_date" class="col">
 						<p class="adieu_light text_2"><?php echo $date; ?></p>
 					</div>
-					<div class="col">
+					<div id="article_location" class="col">
 						<p class="adieu_light text_2 mb-0"><?php echo $country; ?></p>
 						<p class="adieu_light text_2"><?php echo $city; ?></p>
 					</div>
@@ -46,7 +46,8 @@
 				<p style="line-height:1.15;" class="title_1 adieu_light pb-3"><?php echo $title; ?></p>
 				<?php if( !empty( $content_image ) ): ?>
 					<div class="content_image">
-						<img style="right:calc(100vw - <?php echo $image_size[1];?>px);" class="w-100 h-auto" src="<?php  echo $content_image["url"]; ?>" alt="<?php echo esc_attr($content_image['alt']); ?>" />
+					<!-- calc((100vw / 2) - 685px) -->
+						<img class="w-100 h-auto" src="<?php  echo $content_image["url"]; ?>" alt="<?php echo esc_attr($content_image['alt']); ?>" />
 					</div>
 				<?php endif; ?>
 			</div>

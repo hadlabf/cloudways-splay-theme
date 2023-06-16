@@ -74,6 +74,7 @@ get_header();
                     wp_reset_postdata();
                     ?>
                 </div>
+                <!-- TODO: Small button -->
                 <div class="w-100 d-flex justify-content-center" style="min-height:100px;">
                     <button class="secondary_button blue_ mt-5 load-more-button" data-page="1">Load more</button>
                 </div>
@@ -94,6 +95,7 @@ get_header();
                     </div>
 
                     <div class="col dark_form">
+                        <!-- TODO: bredare avstånd -->
                     <?php 
                         $placeholder = get_field('contact_message_input_placeholder', 341); 
                         $submit = get_field('contact_submit_button_text', 341); 

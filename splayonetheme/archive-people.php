@@ -19,7 +19,7 @@
         <div class="content">
             <h1 class="adieu_bold sp_header">We are always looking for new workfriends.</h1>
             <div class="d-flex justify-content-center">
-                <a href="<?php echo site_url('/contact');?>" class="primary_button">Join us!</a>
+                <a target="_blank" href="https://careers.splayone.com/" class="primary_button">Join us!</a>
             </div>
         </div>
     </div>

@@ -73,6 +73,7 @@ Template Name: Contact Page
             }
             ?> -->
             <div class="padding_bottom_lg">
+                <!-- TODO: Thaks message efter send, GDPR -->
                 <?php  
                     if(have_rows('contacts_list') ):
                         while( have_rows('contacts_list') ) : the_row();

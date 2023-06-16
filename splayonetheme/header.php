@@ -47,6 +47,7 @@
     endif;
     ?>
     <header>
+		<!-- TODO: Sticky header content -->
 		<div class="content">
 			<div class="row m-0 header_wrapper">
 				<div style="flex-grow:1;" class="d-flex flex-direction-row flex-wrap-nowrap">
