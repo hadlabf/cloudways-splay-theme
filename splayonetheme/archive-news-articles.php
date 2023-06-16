@@ -41,6 +41,7 @@ get_header();
                             $news_date = get_field('news_date');
                             $news_image = get_field('news_image');
                             $news_link = get_field('news_link');
+                            $new_tab = get_field('news_open_in_new_tab');
                             ?>
                                 <div class="news_item">
                                     <div class="front_page">
@@ -54,8 +55,8 @@ get_header();
                                         <div class="button_wrapper">
                                             <div class="h-100 d-flex justify-content-center align-items-center">
                                                 <a 
-                                                href="<?php echo $news_link; ?>" 
-                                                target="_blank" 
+                                                href="<?php echo esc_url($news_link); ?>" 
+                                                target="<?php if ($new_tab) : echo "_blank"; else : echo "_self"; endif;?>" 
                                                 class="secondary_button <?php if (empty($news_image)) : echo "no_image"; endif; ?>"
                                                 >Read more</a>
                                             </div>

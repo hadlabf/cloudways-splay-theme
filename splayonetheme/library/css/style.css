@@ -871,6 +871,9 @@ select:-webkit-autofill:focus {
 .single_article * {
   color: var(--color-secondary);
 }
+.single_article_page .date_section {
+  padding-left: var(--s5);
+}
 .single_article_page .content_image {
   margin-top: 50%;
   position: relative;
