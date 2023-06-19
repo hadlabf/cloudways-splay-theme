@@ -13,7 +13,6 @@ get_header();
             <div class="section_padding_1">
                 <div class="news_scrool_feed flex-wrap">
                     <?php 
-                    $today = date('Y-m-d'); // Get today's date
 
                     $news_args = array(
                         'post_type' => 'news-articles', 
@@ -21,14 +20,13 @@ get_header();
                         'meta_query' => array(
                             array(
                                 'key' => 'news_date', // Custom field key for the news date
-                                'value' => $today, // Compare against today's date
                                 'type' => 'DATE',
-                                'compare' => '>=', // Retrieve posts with dates greater than or equal to today
+                                'compare' => '!=', 
                             ),
                         ),
                         'meta_key' => 'news_date', // Sort by the news date
                         'orderby' => 'meta_value',
-                        'order' => 'ASC', // Display posts in ascending order of dates
+                        'order' => 'DESC', // Display posts in ascending order of dates
                     );
         
                     $news_query = new WP_Query($news_args);

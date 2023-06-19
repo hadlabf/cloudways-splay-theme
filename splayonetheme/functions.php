@@ -656,7 +656,6 @@ add_action('wp_enqueue_scripts', 'my_theme_scripts');
 
 function load_more_news_articles() {
   $page = isset($_POST['page']) ? intval($_POST['page']) : 1;
-  $today = date('Y-m-d'); // Get today's date
 
   $news_args = array(
       'post_type' => 'news-articles', 
@@ -665,14 +664,13 @@ function load_more_news_articles() {
       'meta_query' => array(
           array(
               'key' => 'news_date', // Custom field key for the news date
-              'value' => $today, // Compare against today's date
               'type' => 'DATE',
-              'compare' => '>=', // Retrieve posts with dates greater than or equal to today
+              'compare' => '!=', 
           ),
       ),
       'meta_key' => 'news_date', // Sort by the news date
       'orderby' => 'meta_value',
-      'order' => 'ASC', // Display posts in ascending order of dates
+      'order' => 'DESC', // Display posts in ascending order of dates
   );
   $news_articles_query = new WP_Query($news_args);
 
