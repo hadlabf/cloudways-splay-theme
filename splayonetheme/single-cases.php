@@ -39,8 +39,8 @@ if( !empty( $vimeo_id ) ): ?>
 <!-- 2. INTRO -->
 <div class="case_single_page">
 	<div class="content section_padding_3">
-		<h1 class="title_2 adieu_bold pb-5"><?php echo $name?></h1>
-		<div class="d-flex flex-row row">
+		<h1 class="title_2 adieu_bold pb-5 mt-n4"><?php echo $name?></h1>
+		<div class="d-flex flex-row row pt-3">
 			<div class="mobile_full d-flex flex-column col-4">
 				<p class="text_1 bold_1 mb-1">Client:</p>
 				<p class="text_1 bold_1"><?php echo $customer; ?></p>
@@ -88,16 +88,18 @@ if( !empty( $vimeo_id ) ): ?>
 <?php endif;?>
 
 <!-- 5. VERTICAL IMAGES -->
-<?php if ( !empty($text) ||  !empty($vertical_images) ) : ?>
+<?php if ( !empty($text) ||  have_rows('case_vertical_images_list') ) : ?>
 	<div class="content padding_bottom_lg">
 		<div class="d-flex flex-column">
-		<?php if( $vertical_images ) : ?>
-			<div class="vertical_image_wrapper d-flex flex-row justify-content-between <?php if ( !empty($text) ) : echo "padding_bottom_sm"; endif; ?>">
-				<?php foreach( $vertical_images as $image ): ?>
-					<img class="h-100 w-auto" src="<?php  echo $image["url"]; ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-				<?php endforeach;?>
-			</div>
-			<?php endif;?>
+			<?php while( have_rows('case_videos_list') ): the_row();
+				$vertical_image = get_sub_field('case_vertical_image');
+				$vertical_image_link = get_sub_field('case_vertical_image_link');
+				if( $vertical_image ) : ?>
+					<a href="<?php if ( !empty($vertical_image_link) ) : echo esc_url($vertical_image_link); endif; ?>" class="vertical_image_wrapper d-flex flex-row justify-content-between <?php if ( !empty($text) ) : echo "padding_bottom_sm"; endif; ?>">
+						<img class="h-100 w-auto" src="<?php  echo $vertical_image["url"]; ?>" alt="<?php echo esc_attr($vertical_image['alt']); ?>" />
+					</a>
+				<?php endif;?>
+			<?php endwhile;?>
 			<?php if ( !empty($text) ) : ?>
 				<div class="text_1 w_70"><?php echo $text;?></div>
 			<?php endif; ?>
