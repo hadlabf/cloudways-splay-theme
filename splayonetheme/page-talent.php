@@ -173,9 +173,9 @@ endif;
     </div>
     <div class="person-cards-wrapper">
         <?php foreach ($influencers as $country => $country_influencers): ?>
-            <div class="person-cards  <?php echo $country; ?>">
+            <div class="people_cards_archive  <?php echo $country; ?>">
                 <?php foreach ($country_influencers as $influencer): ?>
-                    <div class="people_card col-lg-3 col-md-4 col-sm-6 col-6  <?php echo $country; ?>">
+                    <div class="people_card w-100  <?php echo $country; ?>">
                         <img class="people_img" src="<?php echo $influencer['profile_picture']['url'];?>" />
                         
                         <div class="front_page">
