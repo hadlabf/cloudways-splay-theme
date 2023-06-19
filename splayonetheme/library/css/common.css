@@ -60,7 +60,7 @@ Version: 1.0.0
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
 }
-a, a:hover, a:focus, a:active  {
+body a, body a:hover, body a:focus, body a:active  {
   text-decoration: none !important;
   color: inherit;
   cursor: pointer;
@@ -86,103 +86,102 @@ a, a:hover, a:focus, a:active  {
   text-transform: uppercase !important;
 }
 
-.cta_link {
+body .cta_link {
   text-decoration: underline !important;
   color: inherit;
 }
-.text_sm, .text_sm p {
+body .text_sm, body .text_sm p {
   font-size: var(--f-sm) !important;
 }
-.text_1, .text_1 p {
+body .text_1, body .text_1 p {
   font-size: var(--f-md);
 }
-.text_2, .text_2 p {
+body .text_2, body .text_2 p {
   font-size: var(--f-xl);
 }
-.thin_1 {
+body .thin_1 {
   font-weight: 200;
 }
-.bold_1 {
+body .bold_1 {
   font-weight: 500;
 }
-.bold_2 {
+body .bold_2 {
   font-weight: 600;
 }
-.subtitle_1 {
+body .subtitle_1 {
   font-size: var(--f-h4);
   font-weight: 500;
   margin-top: calc(var(--s2) * -1);
 }
-.medium_title {
+body .medium_title {
   font-size: var(--f-xxl);
   font-family: "Adieu-Light";
   margin-top: -12px;
 }
-.small_title {
+body .small_title {
   font-size: var(--f-lg);
   font-family: "Adieu-Light";
 }
-.page_title {
+body .page_title {
   font-size: var(--f-h1);
   font-family: "Adieu-Black";
   margin-top: 0;
 }
-.title_1 {
+body .title_1 {
   font-size: var(--f-h3) !important;
 }
-.title_2 {
+body .title_2 {
   font-size: var(--f-h2);
   font-family: "Adieu-Regular";
 }
-.title_3 {
+body .title_3 {
   font-size: var(--f-h4);
   font-family: "Adieu-Regular";
 }
-.adieu_black {
+body .adieu_black {
   font-family: "Adieu-Black";
 }
-.adieu_bold {
+body .adieu_bold {
   font-family: "Adieu-Bold";
 }
-.adieu_regular {
+body .adieu_regular {
   font-family: "Adieu-Regular";
 }
-.adieu_light {
+body .adieu_light {
   font-family: "Adieu-Light";
 }
-.gap_lg {
+body .gap_lg {
   gap: 80px;
 }
-p {
+body p {
   font-size: var(--f-sm);
 }
-img {
+body img {
   width: 100%;
   height: auto;
 }
-.section_secondary img.horizontal_img {
+body .section_secondary img.horizontal_img {
   max-width: 60%;
 }
-.section_secondary img.vertical_img {
+body .section_secondary img.vertical_img {
   max-height: 550px;
 }
-.text_ellipsis {
+body .text_ellipsis {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.text_ellipsis_3, .text_ellipsis_4 {
+body .text_ellipsis_3, body .text_ellipsis_4 {
   display: -webkit-box !important;
   -webkit-box-orient: vertical;
   white-space: normal;
   text-overflow: ellipsis;
   overflow: hidden;
-  -webkit-line-clamp: 1;
 }
-.text_ellipsis_3 {
+body .text_ellipsis_3 {
   -webkit-line-clamp: 3;
 }
-.text_ellipsis_4 {
+body .text_ellipsis_4 {
   -webkit-line-clamp: 4;
 }
 
