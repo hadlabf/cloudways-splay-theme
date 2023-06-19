@@ -60,6 +60,9 @@ Version: 1.0.0
   font-family: 'Poppins', sans-serif;
   font-weight: 300;
 }
+
+/* .splay_form_small_input, .splay_form_wide_input, .splay_form_select, .splay_form_button, .splay_form_textarea, .splay_form_submit_message */
+
 body a, body a:hover, body a:focus, body a:active  {
   text-decoration: none !important;
   color: inherit;

@@ -14,6 +14,7 @@ Template Name: Contact Page
     </div>
     <div class="contact_content">
         <div class="d-flex flex-column w-100">
+            <?php echo do_shortcode('[forminator_form id="1062"]'); ?>
 
             <?php $placeholder = get_field('contact_message_input_placeholder'); ?>
             <form method="post" class="contact_form" id="contactform">
