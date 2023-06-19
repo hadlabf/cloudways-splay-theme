@@ -480,58 +480,18 @@ add_filter('nav_menu_css_class', 'wp_bootstrap_add_active_class', 10, 2 );
 // enqueue styles
 if( !function_exists("wp_bootstrap_theme_styles") ) {  
     function wp_bootstrap_theme_styles() { 
-        // This is the compiled css file from LESS - this means you compile the LESS file locally and put it in the appropriate directory if you want to make any changes to the master bootstrap.css.
-        wp_register_style( 'wpbs', get_template_directory_uri() . '/library/dist/css/styles.f6413c85.min.css', array(), '1.0', 'all' );
-        wp_enqueue_style( 'wpbs' );
-
         wp_enqueue_script('bootstrap-jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), '3.6.0', true);
         wp_enqueue_script('bootstrap-popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js', array(), '1.14.7', false);
         wp_enqueue_script('bootstrap-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js', array(), '4.3.1', false);
-        // For child themes
-        wp_register_style( 'wpbs-style', get_stylesheet_directory_uri() . '/style.css', array(), '1.0', 'all' );
-        wp_enqueue_style( 'wpbs-style' );
+
         wp_register_style( 'splay-common-style', get_stylesheet_directory_uri() . '/library/css/common.css', array(), '1.0', 'all' );
         wp_enqueue_style( 'splay-common-style' );
         wp_register_style( 'splay-main-style', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '1.0', 'all' );
         wp_enqueue_style( 'splay-main-style' );
-        wp_register_script( 'splay-animation', get_template_directory_uri() . '/js/animation.js', array('jquery'),'1.0.0', true  ); 
-        wp_enqueue_script( 'splay-animation' );
     }
 }
 add_action( 'wp_enqueue_scripts', 'wp_bootstrap_theme_styles' );
 
-// enqueue javascript
-if( !function_exists( "wp_bootstrap_theme_js" ) ) {  
-  function wp_bootstrap_theme_js(){
-
-    if ( !is_admin() ){
-      if ( is_singular() AND comments_open() AND ( get_option( 'thread_comments' ) == 1) ) 
-        wp_enqueue_script( 'comment-reply' );
-    }
-
-    // This is the full Bootstrap js distribution file. If you only use a few components that require the js files consider loading them individually instead
-    wp_register_script( 'bootstrap', 
-      get_template_directory_uri() . '/bower_components/bootstrap/dist/js/bootstrap.js', 
-      array('jquery'), 
-      '1.2' );
-
-    wp_register_script( 'wpbs-js', 
-      get_template_directory_uri() . '/library/dist/js/scripts.d1e3d952.min.js',
-      array('bootstrap'), 
-      '1.2' );
-  
-    wp_register_script( 'modernizr', 
-      get_template_directory_uri() . '/bower_components/modernizer/modernizr.js', 
-      array('jquery'), 
-      '1.2' );
-  
-    wp_enqueue_script( 'bootstrap' );
-    wp_enqueue_script( 'wpbs-js' );
-    wp_enqueue_script( 'modernizr' );
-    
-  }
-}
-add_action( 'wp_enqueue_scripts', 'wp_bootstrap_theme_js' );
 
 // Remove <p> tags from around images
 function wp_bootstrap_filter_ptags_on_images( $content ){
@@ -674,6 +634,7 @@ add_action('manage_cases_posts_custom_column', 'populate_case_thumbnail_order_co
 
 // NEWS ARTICLES ARCHIVE - LOAD MORE POSTS
 function my_theme_scripts() {
+  wp_enqueue_script( 'splay-animation', get_template_directory_uri() . '/js/animation.js', array('jquery'),'1.0.0', true  ); 
   wp_enqueue_script('load-more', get_template_directory_uri() . '/js/load-more.js', array('jquery'), '1.0.0', true);
   wp_localize_script('load-more', 'load_more_params', array(
       'ajax_url' => admin_url('admin-ajax.php'),

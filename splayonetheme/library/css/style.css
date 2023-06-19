@@ -916,14 +916,13 @@ select:-webkit-autofill:focus {
     width: 100% !important;
   }
   .date_section {
-    padding-left: 0;
+    padding-left: 15px;
   }
   .date_section .col#article_location {
     margin-left: var(--s5);
   }
   .single_article_page .col.article_column:first-child {
-    flex-direction: row !important;
-    padding-right: 15px;
+    padding-left: 15px;
   }
   .single_article_page .col.article_column:first-child p {
     width: 60%;
