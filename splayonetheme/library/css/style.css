@@ -480,11 +480,16 @@ select:-webkit-autofill:focus {
   border-left: none;
   border-top: none;
   padding: var(--s4);
-  height: 212px;
+  height: 235px;
   overflow: hidden;
 }
 .popup_image_1, .popup_image_2 {
-  display: none;
+  position: relative;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.25s ease-in;
+  height: 100%;
+  width: auto;
 }
 .area_item_wrapper:nth-child(3n+1) .area_item {
   border-left: 1px solid var(--color-secondary);
@@ -505,10 +510,15 @@ select:-webkit-autofill:focus {
   font-family: "Adieu-Light";
 }
 .area_item #description {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  color: transparent;
+  transition: opacity 0.25s ease-in;
 }
 .item_hovered #description {
-  display: block;
+  position: relative;
+  opacity: 1;
+  color: var(--color-primary);
 }
 .item_hovered .area_item {
   background-color: var(--bg-primary);
@@ -526,11 +536,14 @@ select:-webkit-autofill:focus {
   text-align: left;
 
 }
+.area_item_wrapper.popup_active_one .area_item_text_content, .area_item_wrapper.popup_active_one .popup_image_2,
+.area_item_wrapper.popup_active_two .area_item_text_content, .area_item_wrapper.popup_active_two .popup_image_1 {
+  display: none;
+}
 .area_item_wrapper.popup_active_one .popup_image_1,
 .area_item_wrapper.popup_active_two .popup_image_2  {
-  display: block;
-  height: 100%;
-  width: auto;
+  opacity: 1;
+  z-index: 1;
 }
 .area_item_wrapper.popup_active_one .area_item,
 .area_item_wrapper.popup_active_two .area_item  {
@@ -539,7 +552,9 @@ select:-webkit-autofill:focus {
 }
 .area_item_wrapper.popup_active_one .area_item_text_content,
 .area_item_wrapper.popup_active_two .area_item_text_content {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.25s ease-in;
 }
 @media (max-width: 1024px) {
   .about_header_text {
@@ -768,6 +783,10 @@ select:-webkit-autofill:focus {
     margin-right: 0;
     margin-top: 0;
   }
+}
+.case_video_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 .case_video_list_item:not(:first-child) .case_video_image_wrapper {
   margin-left: -1px;

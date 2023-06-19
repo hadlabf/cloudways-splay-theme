@@ -133,6 +133,7 @@ body .title_1 {
 body .title_2 {
   font-size: var(--f-h2);
   font-family: "Adieu-Regular";
+  margin-top: calc(var(--s2) * -1);
 }
 body .title_3 {
   font-size: var(--f-h4);
