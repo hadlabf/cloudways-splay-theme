@@ -26,11 +26,11 @@ get_header();
                         ),
                         'meta_key' => 'news_date', // Sort by the news date
                         'orderby' => 'meta_value',
-                        'order' => 'DESC', // Display posts in ascending order of dates
+                        'order' => 'DESC',
                     );
         
                     $news_query = new WP_Query($news_args);
-            
+                    $count = 0;
 
                     if ($news_query->have_posts()) :
                         while ($news_query->have_posts()) : $news_query->the_post();
@@ -40,6 +40,7 @@ get_header();
                             $news_image = get_field('news_image');
                             $news_link = get_field('news_link');
                             $new_tab = get_field('news_open_in_new_tab');
+                            $count++;
                             ?>
                                 <div class="news_item">
                                     <div class="front_page">
@@ -72,10 +73,11 @@ get_header();
                     wp_reset_postdata();
                     ?>
                 </div>
-                <!-- TODO: Small button -->
-                <div class="w-100 d-flex justify-content-center" style="min-height:100px;">
-                    <button class="secondary_button blue_ mt-5 load-more-button" data-page="1">Load more</button>
-                </div>
+                <?php if ( $count > 7 ) : ?>
+                    <div class="w-100 d-flex justify-content-center" style="min-height:100px;">
+                        <button class="secondary_button blue_ mt-5 load-more-button py-1" data-page="1">Load more</button>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
 
@@ -83,7 +85,7 @@ get_header();
             <div class="content">
                 <div class="row">
 
-                    <div class="col">
+                    <div class="col pr-5">
                         <?php $header = get_field('contact_header', 341);?>
                         <?php if( !empty($header) ): ?>
                             <h1 class="adieu_light sp_header text-left"><?php echo $header;?></h1>
@@ -92,8 +94,7 @@ get_header();
                         <?php endif;?>
                     </div>
 
-                    <div class="col dark_form">
-                        <!-- TODO: bredare avstånd -->
+                    <div class="col pl-5 dark_form">
                     <?php 
                         $placeholder = get_field('contact_message_input_placeholder', 341); 
                         $submit = get_field('contact_submit_button_text', 341); 

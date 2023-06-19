@@ -10,7 +10,7 @@
             <div class="thumbnail_container d-flex flex-row flex-wrap">
                 <?php
                     $cases_args = array(
-                        'post_type' => 'cases', // Profiles post type slug
+                        'post_type' => 'cases', // Cases post type slug
                         'posts_per_page' => 5,
                         'meta_key' => 'case_thumbnail_order',
                         'orderby' => 'meta_value_num',
