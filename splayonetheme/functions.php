@@ -480,9 +480,21 @@ add_filter('nav_menu_css_class', 'wp_bootstrap_add_active_class', 10, 2 );
 // enqueue styles
 if( !function_exists("wp_bootstrap_theme_styles") ) {  
     function wp_bootstrap_theme_styles() { 
-        wp_enqueue_script('bootstrap-jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), '3.6.0', true);
-        wp_enqueue_script('bootstrap-popper', 'https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js', array(), '1.14.7', false);
-        wp_enqueue_script('bootstrap-bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js', array(), '4.3.1', false);
+        wp_register_script('bootstrap4', 'https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js', array(), '4.3.1', true); // Bootstrap v4
+        wp_enqueue_script('bootstrap4');
+        wp_script_add_data( 'bootstrap4', array( 'integrity', 'crossorigin' ) , array( 'sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', 'anonymous' ) );
+        
+        wp_register_script('jquery3', 'https://code.jquery.com/jquery-3.3.1.slim.min.js', array(), '3.3.1', true); // jQuery v3
+        wp_enqueue_script('jquery3');
+        wp_script_add_data( 'jquery3', array( 'integrity', 'crossorigin' ) , array( 'sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', 'anonymous' ) );
+
+        wp_register_script('popper1', 'https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js', array(), '1.14.7', true); // Popper v1
+        wp_enqueue_script('popper1');
+        wp_script_add_data( 'popper1', array( 'integrity', 'crossorigin' ) , array( 'sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', 'anonymous' ) );
+        
+        // wp_register_style('bootstrap4-styles', 'https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css', array(), '4.3.1', true);
+        // wp_enqueue_style( 'bootstrap4-styles' );
+        // wp_style_add_data( 'bootstrap4-styles', array( 'integrity', 'crossorigin' ) , array( 'sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', 'anonymous' ) );
 
         wp_register_style( 'splay-common-style', get_stylesheet_directory_uri() . '/library/css/common.css', array(), '1.0', 'all' );
         wp_enqueue_style( 'splay-common-style' );
@@ -730,6 +742,42 @@ function theme_customizer_options($wp_customize) {
   ));
 }
 add_action('customize_register', 'theme_customizer_options');
+
+// LOAD FORM
+// The following Ajax handler is inside a loaded PHP file,
+// such as a plugin, or in this sample, the functions.php file.
+
+add_action('wp_ajax_my_get_support', 'ajax_my_get_support');
+
+/**
+ * Ajax handler that gernates the form with all 
+ * required JS files and CSS rules.
+ */
+function ajax_my_get_support() {
+  // Forminator needs the DOING_AJAX flag to 
+  // correctly enqueue everything.
+  if ( ! defined( 'DOING_AJAX' ) ) {
+    define( 'DOING_AJAX', true );
+  }
+  if ( ! defined( 'WP_ADMIN' ) ) {
+    define( 'WP_ADMIN', true );
+  }
+
+  ob_start();
+  echo do_shortcode('[forminator_form id="1062"]');
+
+  // Add the JS files and inline styles, etc.
+  // Since this is an ajax request, this should only 
+  // output Forminator-related code.
+  print_head_scripts();
+  do_action( 'wp_footer' );
+  print_late_styles();
+  print_footer_scripts();
+
+  $code = ob_get_clean();
+
+  wp_send_json_success( $code );
+}
 
 ?>
 

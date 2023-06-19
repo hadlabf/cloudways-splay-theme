@@ -46,16 +46,8 @@ $footer_address_list = get_field('footer_address_list', 'option');
     </div>
 </footer>
 						
-		<!--[if lt IE 7 ]>
-  			<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-  			<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-		<![endif]-->
-		
 		<?php wp_footer(); // js scripts are inserted using this function ?>
 
-		<!-- remove this for production -->
-
-		<script src="//localhost:35729/livereload.js"></script>
 
 	</body>
 

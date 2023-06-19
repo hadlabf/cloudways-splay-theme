@@ -21,3 +21,15 @@ function getActiveButtonData() {
   return null; // No active button found
 }
 
+(function() {
+  // The button with the CSS class "get-support" loads the form.
+  jQuery('.get-support').on('click', load_support_form);
+
+  // The form is displayed in a div tag with the CSS class "support-form".
+  function load_support_form() {
+    jQuery.get('/wp-admin/admin-ajax.php?action=my_get_support')
+    .then(function(response) {
+      jQuery('.splay_contact_form_wrapper').html(response.data);
+    });
+  }
+})();
