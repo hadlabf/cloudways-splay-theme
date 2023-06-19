@@ -1,5 +1,5 @@
 {
-  "name": "wp_bootstrap",
+  "name": "cloudways-splay-theme",
   "version": "3.2.0",
   "author": "Hadla Bergman <hadla.bergman@gmail.com>",
   "homepage": "https://github.com/hadlabf/cloudways-splay-theme",
@@ -20,15 +20,5 @@
     "node": ">= 0.10.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-clean": "~0.5.0",
-    "grunt-contrib-jshint": "~0.6.4",
-    "grunt-contrib-uglify": "~0.2.4",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-less": "~0.8.1",
-    "grunt-wp-version": "~0.1.0",
-    "grunt-grunticon": "^1.2.9",
-    "grunt-svgstore": "^0.3.6",
-    "grunt-wp-assets": "^0.2.6"
   }
 }
