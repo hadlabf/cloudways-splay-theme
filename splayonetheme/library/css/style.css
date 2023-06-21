@@ -247,8 +247,8 @@ Version: 1.0.0
   width: calc(50% + 41px);
   padding-left: 40px;
 }
-.contact_page_header {
-  background-color: var(--bg-accent1);
+.contact_page_header, .contact_page_header .sticky_header {
+  background-color: var(--bg-accent1) !important;
 }
 .contact_page_header .head_nav_items a{
   color: var(--color-secondary);

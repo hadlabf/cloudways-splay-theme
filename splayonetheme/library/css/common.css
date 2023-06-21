@@ -62,7 +62,15 @@ Version: 1.0.0
 }
 
 /* .splay_form_small_input, .splay_form_wide_input, .splay_form_select, .splay_form_button, .splay_form_textarea, .splay_form_submit_message */
-
+header {
+  height: 80px;
+}
+header .sticky_header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: var(--bg-primary);
+}
 body a, body a:hover, body a:focus, body a:active  {
   text-decoration: none !important;
   color: inherit;

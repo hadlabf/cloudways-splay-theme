@@ -47,29 +47,30 @@
     endif;
     ?>
     <header>
-		<!-- TODO: Sticky header content -->
-		<div class="content">
-			<div class="row m-0 header_wrapper">
-				<div style="flex-grow:1;" class="d-flex flex-direction-row flex-wrap-nowrap">
-					<div class="menu_icon_wrapper">
-						<button class="hamburger_menu_toggle">
-							<img class="menu_icon" src="<?php echo get_template_directory_uri(); ?>/images/menu-icon-<?php echo $color;?>.png"/>
-						</button>
+		<div class="sticky_header">
+			<div class="content">
+				<div class="row m-0 header_wrapper">
+					<div style="flex-grow:1;" class="d-flex flex-direction-row flex-wrap-nowrap">
+						<div class="menu_icon_wrapper">
+							<button class="hamburger_menu_toggle">
+								<img class="menu_icon" src="<?php echo get_template_directory_uri(); ?>/images/menu-icon-<?php echo $color;?>.png"/>
+							</button>
+						</div>
+						<nav class="splay_menu pl-5">
+							<?php
+								wp_nav_menu( array(
+									'theme_location' => 'main_nav',
+									'menu_class' => 'main_menu_wrapper head_nav_items',
+								) );
+							?>
+						</nav>
+					
 					</div>
-					<nav class="splay_menu pl-5">
-						<?php
-							wp_nav_menu( array(
-								'theme_location' => 'main_nav',
-								'menu_class' => 'main_menu_wrapper head_nav_items',
-							) );
-						?>
-					</nav>
-				
-				</div>
-				<div class="menu_icon_wrapper">
-					<a class="" href="<?php echo site_url('/');?>">
-						<img class="menu_icon" src="<?php echo get_template_directory_uri(); ?>/images/logo-<?php echo $color;?>.png"/>
-					</a>
+					<div class="menu_icon_wrapper">
+						<a class="" href="<?php echo site_url('/');?>">
+							<img class="menu_icon" src="<?php echo get_template_directory_uri(); ?>/images/logo-<?php echo $color;?>.png"/>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
