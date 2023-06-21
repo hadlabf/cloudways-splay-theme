@@ -69,6 +69,7 @@ header .sticky_header {
   width: 100%;
   position: fixed;
   top: 0;
+  z-index: 10;
   background-color: var(--bg-primary);
 }
 body a, body a:hover, body a:focus, body a:active  {
@@ -394,7 +395,7 @@ button:focus, button:active {
     background-color: var(--bg-secondary);
   }
   .contact_page_footer {
-    background-color: var(--bg-accent1);
+    display: none;
   }
   .footer_style_secondary, .contact_page_footer {
     color: var(--color-secondary);
