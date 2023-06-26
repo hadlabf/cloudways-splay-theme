@@ -91,15 +91,17 @@ if( !empty( $vimeo_id ) ): ?>
 <?php if ( !empty($text) ||  have_rows('case_vertical_images_list') ) : ?>
 	<div class="content padding_bottom_lg">
 		<div class="d-flex flex-column">
+			<div class="d-flex flex-row justify-content-between">
 			<?php while( have_rows('case_vertical_images_list') ): the_row();
 				$vertical_image = get_sub_field('case_vertical_image');
 				$vertical_image_link = get_sub_field('case_vertical_image_link');
 				if( $vertical_image ) : ?>
 					<a href="<?php if ( !empty($vertical_image_link) ) : echo esc_url($vertical_image_link); endif; ?>" class="vertical_image_wrapper d-flex flex-row justify-content-between <?php if ( !empty($text) ) : echo "padding_bottom_sm"; endif; ?>">
-						<img class="h-100 w-auto" src="<?php  echo $vertical_image["url"]; ?>" alt="<?php echo esc_attr($vertical_image['alt']); ?>" />
+						<img src="<?php  echo $vertical_image["url"]; ?>" alt="<?php echo esc_attr($vertical_image['alt']); ?>" />
 					</a>
-				<?php endif;?>
-			<?php endwhile;?>
+					<?php endif;?>
+					<?php endwhile;?>
+			</div>
 			<?php if ( !empty($text) ) : ?>
 				<div class="text_1 w_70"><?php echo $text;?></div>
 			<?php endif; ?>
