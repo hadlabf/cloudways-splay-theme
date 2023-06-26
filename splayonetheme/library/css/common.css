@@ -63,7 +63,7 @@ Version: 1.0.0
 
 /* .splay_form_small_input, .splay_form_wide_input, .splay_form_select, .splay_form_button, .splay_form_textarea, .splay_form_submit_message */
 header {
-  height: 80px;
+  height: 74px;
 }
 header .sticky_header {
   width: 100%;
@@ -647,6 +647,13 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
     --s7: 50px;
     --lg: 60px;
   }
+  header {
+    height: 62px;
+  }
+  .talk_to_container.sm_ img {
+    height: 13px;
+    padding-top: 2px;
+  }
 }
 @media (max-width: 725px) {
   :root {
@@ -695,6 +702,9 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
     --f-h2: 46px;
     --f-h1: 64px;  
   }
+  header {
+    height: 50px;
+  }
   .pb-5 {
     padding-bottom: 1rem !important;
   }
@@ -703,7 +713,7 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
     width: 75%;
   }
   .section_padding_3 {
-    padding-top: var(--s1) !important;
+    padding-top: var(--s3) !important;
   }
   .mobile_full {
     width: 100%;
@@ -754,5 +764,9 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
   .close_icon {
     height: 24px;
     margin-bottom: 8px;
+  }
+  .talk_to_container.sm_ img {
+    height: 11px;
+    padding-top: 1.5px;
   }
 }

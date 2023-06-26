@@ -39,7 +39,7 @@ if( !empty( $vimeo_id ) ): ?>
 <!-- 2. INTRO -->
 <div class="case_single_page">
 	<div class="content section_padding_3">
-		<h1 class="title_2 adieu_bold pb-5 mt-n4"><?php echo $name?></h1>
+		<h1 class="title_2 adieu_bold pb-5"><?php echo $name?></h1>
 		<div class="d-flex flex-row row pt-3">
 			<div class="mobile_full d-flex flex-column col-4">
 				<p class="text_1 bold_1 mb-1">Client:</p>
