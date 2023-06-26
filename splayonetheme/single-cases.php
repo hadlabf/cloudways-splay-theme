@@ -91,7 +91,7 @@ if( !empty( $vimeo_id ) ): ?>
 <?php if ( !empty($text) ||  have_rows('case_vertical_images_list') ) : ?>
 	<div class="content padding_bottom_lg">
 		<div class="d-flex flex-column">
-			<?php while( have_rows('case_videos_list') ): the_row();
+			<?php while( have_rows('case_vertical_images_list') ): the_row();
 				$vertical_image = get_sub_field('case_vertical_image');
 				$vertical_image_link = get_sub_field('case_vertical_image_link');
 				if( $vertical_image ) : ?>
