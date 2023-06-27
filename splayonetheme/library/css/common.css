@@ -708,6 +708,9 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
   header {
     height: 50px;
   }
+  body > p > strong {
+    font-weight: 500 !important;
+  }
   .pb-5 {
     padding-bottom: 1rem !important;
   }

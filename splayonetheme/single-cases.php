@@ -30,8 +30,8 @@
 <?php 
 if( !empty( $vimeo_id ) ): ?>
 	<div>
-		<div style="padding:43.06% 0 0 0;position:relative;width:100%;max-width:100vw;">
-			<iframe src="https://player.vimeo.com/video/<?php echo esc_html($vimeo_id); ?>?autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;controls=0&amp;showinfo=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="REEL_WEB_2023_v2"></iframe>
+		<div class="vimeo_video_container">
+			<iframe id="vimeo_video_fullscreen" src="https://player.vimeo.com/video/<?php echo esc_html($vimeo_id); ?>?autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;controls=0&amp;showinfo=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;quality=1080p" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="REEL_WEB_2023_v2"></iframe>
 		</div>
 	</div>
 <?php endif; ?>
@@ -66,6 +66,7 @@ if( !empty( $vimeo_id ) ): ?>
 <?php get_template_part('includes/section', 'kpi' );?>
 
 <!-- 4. VIDEOS -->
+<!-- TOTOD: SEPARATE THEM ON TWO ROWS WITH TITLE BELOW ON SECOND ROW AND LOOP TWICE -->
 <?php if( have_rows('case_videos_list')  ) : ?>
 <div class="content padding_bottom_lg">
 	<div class="justify-content-center case_video_list">
