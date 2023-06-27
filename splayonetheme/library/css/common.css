@@ -434,6 +434,9 @@ body button:focus, body button:active {
 .padding_bottom_sm {
   padding-bottom: var(--s5) !important;
 }
+.padding_bottom_md {
+  padding-bottom: var(--s7) !important;
+}
 .padding_bottom_lg {
   padding-bottom: var(--lg) !important;
 }
@@ -719,6 +722,12 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
     width: 100%;
     min-width: 100%;
     max-width: 100%;
+  }
+  .padding_bottom_sm {
+    padding-bottom: var(--s4);
+  }
+  .padding_bottom_md {
+    padding-bottom: var(--s5);
   }
 }
 @media (max-width: 550px) {
