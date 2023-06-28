@@ -810,8 +810,9 @@ select:-webkit-autofill:focus {
 .case_video_list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  margin-left: 1px;
 }
-.case_video_list_item:not(:first-child) .case_video_image_wrapper {
+.case_video_list_item .case_video_image_wrapper {
   margin-left: -1px;
 }
 .case_video_image_wrapper {
