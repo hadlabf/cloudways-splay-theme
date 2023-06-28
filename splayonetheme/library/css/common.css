@@ -522,7 +522,6 @@ header {
 .hamburger_menu_toggle {
   background: transparent;
   border: none;
-
 }
 .hamburger_menu_toggle.close_btn, ul.ham_menu_wrapper > li > a {
   font-size: 60px;

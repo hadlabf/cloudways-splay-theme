@@ -935,7 +935,14 @@ select:-webkit-autofill:focus {
 .single_article_page .content_image {
   margin-left: calc((100vw - 1340px) / -2);
 }
-
+.go_back_button_wrapper {
+  position: absolute;
+  top: 80px;
+  right: 0;
+}
+.go_back_button {
+  font-size: 50px;
+}
 
 .single_article_page .article_column:first-child {
   padding-right: var(--s5);
