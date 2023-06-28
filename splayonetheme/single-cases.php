@@ -66,7 +66,6 @@ if( !empty( $vimeo_id ) ): ?>
 <?php get_template_part('includes/section', 'kpi' );?>
 
 <!-- 4. VIDEOS -->
-<!-- TOTOD: SEPARATE THEM ON TWO ROWS WITH TITLE BELOW ON SECOND ROW AND LOOP TWICE -->
 <?php if( have_rows('case_videos_list')  ) : ?>
 <div class="content padding_bottom_lg">
 	<div class="justify-content-center case_video_list">

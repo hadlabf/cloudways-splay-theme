@@ -38,7 +38,7 @@ get_header();
                             $news_text = get_field('news_text');
                             $news_date = get_field('news_date');
                             $news_image = get_field('news_image');
-                            $news_link = get_field('news_link');
+                            $news_link = get_field('news_link_url');
                             $new_tab = get_field('news_open_in_new_tab');
                             $count++;
                             ?>
