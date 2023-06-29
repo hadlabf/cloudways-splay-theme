@@ -148,9 +148,8 @@ if( have_rows('talent_influencers_list') ):
             'profile_picture' => $profile_picture,
             'links' => $influencer_links,
         );
-        if (count($influencers[$country]) < 8) {
-            $influencers[$country][] = $influencer;
-        }
+        $influencers[$country][] = $influencer;
+        
     endwhile;                            
 endif;
 ?>
@@ -173,9 +172,12 @@ endif;
     </div>
     <div class="person-cards-wrapper">
         <?php foreach ($influencers as $country => $country_influencers): ?>
-            <div class="people_cards_archive  <?php echo $country; ?>">
-                <?php foreach ($country_influencers as $influencer): ?>
-                    <div class="people_card w-100  <?php echo $country; ?>">
+            <div style="display:<?php if($country === "sw") : echo "grid;"; endif; ?> none;" class="people_cards_archive  <?php echo $country; ?>">
+                <?php 
+                $itemCount = 0;
+                foreach ($country_influencers as $influencer): 
+                ?>
+                    <div class="people_card  <?php if($itemCount > 7): echo "d-none"; endif; ?> <?php echo $country; ?>">
                         <img class="people_img" src="<?php echo $influencer['profile_picture']['url'];?>" />
                         
                         <div class="front_page">
@@ -196,13 +198,19 @@ endif;
                             </div>
                         </div>
                     </div>
-                <?php endforeach; ?>
-                <?php if (count($country_influencers) > 8): ?>
-                    <div class="load-more">
+                <?php 
+                $itemCount++;
+                endforeach; 
+                ?>
+            </div>
+            <?php if (count($influencers[$country]) > 8): ?>
+                <?php echo count($influencers[$country]); ?>
+                <div class="w-100 d-flex justify-content-center">
+                    <div class="load-more padding_top_sm">
                         <button class="secondary_button blue_" data-country="<?php echo $country; ?>">Load More</button>
                     </div>
-                <?php endif; ?>
-            </div>
+                </div>
+            <?php endif; ?>
         <?php endforeach; ?>
     </div>
 
@@ -210,8 +218,8 @@ endif;
     jQuery(function($) {
         // Function to filter person cards based on the selected country
         function filterPersonCards(country) {
-            $('.person-cards-wrapper .people_card').hide();
-            $('.person-cards-wrapper .people_card.' + country).show();
+            $('.person-cards-wrapper .people_cards_archive').hide();
+            $('.person-cards-wrapper .people_cards_archive.' + country).show();
         }
 
         // Set the initial filter to Sweden
@@ -222,6 +230,8 @@ endif;
             // Remove the active class from all buttons and add it to the clicked button
             $('.category_filtering_buttons .category_button').removeClass('active');
             $(this).addClass('active');
+            $('.person-cards-wrapper .people_cards_archive').removeClass('load_all_cards');
+            $('.person-cards-wrapper .load-more button').parent().show();
 
             // Get the selected country from the data attribute
             var selectedCountry = $(this).data('country');
@@ -236,7 +246,7 @@ endif;
             var country = $(this).data('country');
 
             // Show all of the influencers for the selected country
-            $('.person-cards-wrapper .person-card.' + country).show();
+            $('.person-cards-wrapper .people_cards_archive.' + country).addClass('load_all_cards');
 
             // Hide the "load more" button
             $(this).parent().hide();
