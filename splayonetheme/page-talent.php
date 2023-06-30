@@ -172,45 +172,46 @@ endif;
     </div>
     <div class="person-cards-wrapper">
         <?php foreach ($influencers as $country => $country_influencers): ?>
-            <div style="display:<?php if($country === "sw") : echo "grid;"; endif; ?> none;" class="people_cards_archive  <?php echo $country; ?>">
-                <?php 
-                $itemCount = 0;
-                foreach ($country_influencers as $influencer): 
-                ?>
-                    <div class="people_card  <?php if($itemCount > 7): echo "d-none"; endif; ?> <?php echo $country; ?>">
-                        <img class="people_img" src="<?php echo $influencer['profile_picture']['url'];?>" />
-                        
-                        <div class="front_page">
-                            <p class="mb-0 bold_1"><?php echo $influencer['full_name']; ?></p>
-                            <p class="mb-0"><?php echo $influencer['role']; ?></p>
-                        </div>
-
-                        <div class="back_page">
-                            <div>
+            <div style="display:<?php if($country === "sw") : echo "block;"; endif; ?> none;" class="people_cards_country_section <?php echo $country; ?>">
+                <div class="people_cards_archive  <?php echo $country; ?>">
+                    <?php 
+                    $itemCount = 0;
+                    foreach ($country_influencers as $influencer): 
+                    ?>
+                        <div class="people_card  <?php if($itemCount > 7): echo "d-none"; endif; ?> <?php echo $country; ?>">
+                            <img class="people_img" src="<?php echo $influencer['profile_picture']['url'];?>" />
+                            
+                            <div class="front_page">
                                 <p class="mb-0 bold_1"><?php echo $influencer['full_name']; ?></p>
+                                <p class="mb-0"><?php echo $influencer['role']; ?></p>
                             </div>
-                            <div class="d-flex flex-column">
-                                <?php foreach ($influencer['links'] as $link): ?>
-                                    <a target="_blank" href="<?php echo esc_url($link['url']); ?>">
-                                        <?php echo $link['label']; ?>
-                                    </a>
-                                <?php endforeach; ?>
+
+                            <div class="back_page">
+                                <div>
+                                    <p class="mb-0 bold_1"><?php echo $influencer['full_name']; ?></p>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <?php foreach ($influencer['links'] as $link): ?>
+                                        <a target="_blank" href="<?php echo esc_url($link['url']); ?>">
+                                            <?php echo $link['label']; ?>
+                                        </a>
+                                    <?php endforeach; ?>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php 
-                $itemCount++;
-                endforeach; 
-                ?>
-            </div>
-            <?php if (count($influencers[$country]) > 8): ?>
-                <?php echo count($influencers[$country]); ?>
-                <div class="w-100 d-flex justify-content-center">
-                    <div class="load-more padding_top_sm">
-                        <button class="secondary_button blue_" data-country="<?php echo $country; ?>">Load More</button>
-                    </div>
+                    <?php 
+                    $itemCount++;
+                    endforeach; 
+                    ?>
                 </div>
-            <?php endif; ?>
+                <?php if (count($influencers[$country]) > 8): ?>
+                    <div class="w-100 d-flex justify-content-center">
+                        <div class="load-more padding_top_sm">
+                            <button class="secondary_button blue_" data-country="<?php echo $country; ?>">Load More</button>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            </div>
         <?php endforeach; ?>
     </div>
 
@@ -218,8 +219,8 @@ endif;
     jQuery(function($) {
         // Function to filter person cards based on the selected country
         function filterPersonCards(country) {
-            $('.person-cards-wrapper .people_cards_archive').hide();
-            $('.person-cards-wrapper .people_cards_archive.' + country).show();
+            $('.person-cards-wrapper .people_cards_country_section').hide();
+            $('.person-cards-wrapper .people_cards_country_section.' + country).show();
         }
 
         // Set the initial filter to Sweden
