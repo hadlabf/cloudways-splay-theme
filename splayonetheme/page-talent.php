@@ -29,7 +29,7 @@ Template Name: Talent Page
                     </div>
                 <?php endif; ?>
             <div class="content talent_intro">
-                <div class="row pb-5">
+                <div class="row padding_bottom_sm">
                     <div class="col col-sm-6 title_1 adieu_light mr-auto"><?php echo the_field('talent_header'); ?></div>
                     <div class="col col-sm-5 text_1 pt-4"><?php echo the_field('talent_text'); ?></div>
                 </div>
@@ -42,7 +42,7 @@ Template Name: Talent Page
             <div class="why_us_section work_area_section content">
                 <div class="work_area_content">
                     <p class="work_area_header adieu_light"><?php echo the_field('talent_why_us_title'); ?></p>
-                    <p class="w-50 text_1 pb-5"><?php echo the_field('talent_why_us_section_description'); ?></p>
+                    <p class="w-50 text_1 padding_bottom_sm"><?php echo the_field('talent_why_us_section_description'); ?></p>
                     <div class="work_area_list">
                         <?php  
                             $popup_image_1 = get_field('talent_popup_image_1');
@@ -192,7 +192,7 @@ endif;
                                 </div>
                                 <div class="d-flex flex-column">
                                     <?php foreach ($influencer['links'] as $link): ?>
-                                        <a target="_blank" href="<?php echo esc_url($link['url']); ?>">
+                                        <a class="secondary_link" target="_blank" href="<?php echo esc_url($link['url']); ?>">
                                             <?php echo $link['label']; ?>
                                         </a>
                                     <?php endforeach; ?>
