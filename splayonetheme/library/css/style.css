@@ -490,7 +490,6 @@ select:-webkit-autofill:focus {
   flex-wrap: wrap;
 }
 .area_item {
-  border: 1px solid var(--color-secondary);
   border-left: none;
   border-top: none;
   padding: var(--s4);
@@ -505,12 +504,15 @@ select:-webkit-autofill:focus {
   height: 100%;
   width: auto;
 }
-.area_item_wrapper:nth-child(3n+1) .area_item {
-  border-left: 1px solid var(--color-secondary);
+.work_area_list {
+  border: 0.5px solid var(--color-secondary)
 }
-.area_item_wrapper:nth-child(-n+3) .area_item {
-  border-top: 1px solid var(--color-secondary);
+
+.area_item_wrapper {
+  width: calc(100% / 3);
+  border: 0.5px solid var(--color-secondary)
 }
+
 .area_item_text_content {
   height: 100%;
   display: flex;
@@ -585,6 +587,9 @@ select:-webkit-autofill:focus {
   }
 }
 @media (max-width: 1024px) {
+  .area_item_wrapper:not(.podcast_items) {
+    width: 50%;
+  }
   .about_header_text {
     font-size: 100px;
   }
@@ -629,11 +634,12 @@ select:-webkit-autofill:focus {
 .why_us_section.work_area_section {
   background-color: var(--bg-primary);
 }
+.why_us_section.work_area_section .work_area_list,
+.why_us_section.work_area_section .work_area_list .area_item_wrapper {
+  border-color: var(--color-primary) !important;
+}
 .why_us_section.work_area_section * {
   color: var(--color-primary);
-}
-.why_us_section.work_area_section .area_item {
-  border-color: var(--color-primary);
 }
 .why_us_section.work_area_section .item_hovered .area_item {
   background-color: var(--bg-accent1);
@@ -656,15 +662,6 @@ select:-webkit-autofill:focus {
   margin-bottom: var(--s4);
 }
 
-.podcast_items  {
-  border: 0.5px solid var(--color-secondary)
-}
-.podcast_items .area_item_wrapper {
-  width: calc(100% / 3);
-  border: 0.5px solid var(--color-secondary)
-}
-
-
 .podcast_items .hover_card .front_page {
   display: flex;
   flex-direction: column;
@@ -672,6 +669,7 @@ select:-webkit-autofill:focus {
   justify-content: center;
   font-size: var(--f-xs);
 }
+
 @media (max-width: 725px) {
   .talent_intro .col.col-sm-6 {
     max-width: 40% !important;

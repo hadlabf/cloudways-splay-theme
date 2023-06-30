@@ -89,7 +89,7 @@ Template Name: Talent Page
                 <div class="content">
                     <p class="mt-4 text_2"><?php echo $podcast_description; ?></p>
                     <div class="padding_top_sm padding_bottom_lg">
-                        <div class="podcast_items w-100 d-flex flex-row flex-wrap">
+                        <div class="podcast_items work_area_list">
                         <?php 
                             if(have_rows('talent_podcast_list') ):
                                 while( have_rows('talent_podcast_list') ) : the_row();
