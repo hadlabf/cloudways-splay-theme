@@ -36,7 +36,7 @@ Template Name: About Page
                     <!-- TODO: (This is done?) animation som podcast section -->
                     <div class="content work_area_content section_padding_3">
                         <p class="work_area_header adieu_light"><?php echo the_field('about_work_area_title'); ?></p>
-                        <p class="w-50 text_1 pb-5"><?php echo the_field('about_work_area_section_description'); ?></p>
+                        <p class="w-50 text_1 padding_bottom_sm mb-0 work_area_description"><?php echo the_field('about_work_area_section_description'); ?></p>
                         <div class="work_area_list">
                             <?php  
                                 $popup_image_1 = get_field('about_work_area_image_1');

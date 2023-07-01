@@ -5,7 +5,7 @@ $topic = $args['topic'];
 $description = $args['description'];
 ?>
 
-<div class="col-6 col-sm-4 p-0 area_item_wrapper">
+<div class="area_item_wrapper">
     <div class="area_item">
         <div class="area_item_text_content">
             <p id="topic"><?php echo $topic; ?></p>

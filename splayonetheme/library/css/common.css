@@ -154,6 +154,7 @@ body .title_2 {
   font-size: var(--f-h2);
   font-family: "Adieu-Regular";
   margin-top: calc(var(--s2) * -1);
+  line-height: 1.1;
 }
 body .title_3 {
   font-size: var(--f-h4);
@@ -664,6 +665,10 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
     height: 13px;
     padding-top: 2px;
   }
+  .talent_page .talk_to_container img {
+    height: 20px;
+    padding-top: 4px;
+}
 }
 @media (max-width: 725px) {
   :root {
@@ -677,6 +682,9 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
   }
 }
 @media (max-width: 650px) {
+  :root {
+    --f-xs: 13px;
+  }
   .hamburger_menu_toggle.close_btn, ul.ham_menu_wrapper > li > a {
     font-size: 50px;
   }
@@ -739,6 +747,13 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
   .padding_bottom_md {
     padding-bottom: var(--s5);
   }
+  body .title_1 {
+    line-height: 1.2;
+  }
+  .talent_page .talk_to_container img {
+    height: 16px;
+    padding-top: 2px;
+}
 }
 @media (max-width: 550px) {
   .splay_menu > .menu-main-menu-container {
@@ -756,6 +771,9 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
   }
 }
 @media (max-width: 500px) {
+  :root {
+    --f-h2: 40px;
+  }
   .section_secondary {
     padding: var(--s6) 0;
   }
@@ -770,8 +788,8 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
     --f-lg: 16px;
     --f-xl: 17px;
     --f-h4: 24px;
-    --f-h3: 32px;
-    --f-h2: 40px;
+    --f-h3: 28px;
+    --f-h2: 34px;
     --f-h1: 50px;  
   }
   .top_page_padding {

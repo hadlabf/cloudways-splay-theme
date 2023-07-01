@@ -42,7 +42,7 @@ Template Name: Talent Page
             <div class="why_us_section work_area_section content">
                 <div class="work_area_content">
                     <p class="work_area_header adieu_light"><?php echo the_field('talent_why_us_title'); ?></p>
-                    <p class="w-50 text_1 padding_bottom_sm"><?php echo the_field('talent_why_us_section_description'); ?></p>
+                    <p class="w-50 text_1 padding_bottom_sm mb-0 work_area_description"><?php echo the_field('talent_why_us_section_description'); ?></p>
                     <div class="work_area_list">
                         <?php  
                             $popup_image_1 = get_field('talent_popup_image_1');
@@ -102,8 +102,8 @@ Template Name: Talent Page
                                 <a target="_blank" href="<?php echo $link;?>" class="area_item_wrapper">
                                     <div class="hover_card ">
                                         <div class="front_page">
-                                            <p class="text_1 mb-1"><?php echo $author; ?></p>
-                                             <p class="small_title"><?php echo $name; ?></p>
+                                            <p class="text_1 mb-1 text-center"><?php echo $author; ?></p>
+                                             <p class="small_title text-center"><?php echo $name; ?></p>
                                         </div>
                                         <img class="back_page" src="<?php echo $image['url'];?>" />
                                     </div>
