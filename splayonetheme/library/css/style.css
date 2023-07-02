@@ -60,7 +60,7 @@ Version: 1.0.0
 }
 @media (max-width: 825px) and (min-width: 601px) {
   .thumbnail_container > .w-50 {
-    width: calc(50% - var(--s2)) !important;
+    width: calc(50% - var(--s4) / 2) !important;
     gap: 12px;
   }
 }
@@ -75,7 +75,6 @@ Version: 1.0.0
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   width: 100%;
-  margin-bottom: var(--s3);
 }
 
 .news_item .secondary_button:not(.no_image) {

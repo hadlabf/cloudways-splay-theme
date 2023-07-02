@@ -102,7 +102,7 @@
                 ?>
                 <div class="content padding_bottom_sm">
                     <p class="title_3">News</p>
-                    <div class="news_scrool_feed in_home_">
+                    <div class="news_scrool_feed in_home_ padding_bottom_sm">
                         <?php
                         while ($news_query->have_posts()) {
                             $news_query->the_post();

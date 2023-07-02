@@ -612,7 +612,8 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
 
 @media (max-width: 1424px) {
   .content {
-    padding: 0 var(--s4);
+    padding-left: var(--s4);
+    padding-right: var(--s4);
   }
   .top_page_padding {
     padding-top: 40px;

@@ -212,7 +212,7 @@
     margin: var(--s6) auto;
     max-width: 1024px;
   }
-  .section_secondary .sp_header{
+  .section_secondary .sp_header {
     font-size: var(--f-h3);
   }
   .section_secondary .sp_text{
