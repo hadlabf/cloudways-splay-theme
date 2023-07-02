@@ -85,16 +85,16 @@ get_header();
             <div class="content">
                 <div class="row">
 
-                    <div class="col pr-5">
+                    <div class="col-12 col-md-6 pr-md-5 d-flex align-items-end contact_form_section_title">
                         <?php $header = get_field('contact_header', 341);?>
                         <?php if( !empty($header) ): ?>
-                            <h1 class="adieu_light sp_header text-left"><?php echo $header;?></h1>
+                            <h1 class="adieu_light title_2 text-left"><?php echo $header;?></h1>
                         <?php else : ?> 
-                            <h1 class="adieu_light sp_header text-left">Curious to know more?</h1>
+                            <h1 class="adieu_light title_2 text-left">Curious to know more?</h1>
                         <?php endif;?>
                     </div>
 
-                    <div class="col pl-5 dark_form">
+                    <div class="col-12 col-md-6 pl-md-5 dark_form">
                     <?php 
                         $placeholder = get_field('contact_message_input_placeholder', 341); 
                         $submit = get_field('contact_submit_button_text', 341); 

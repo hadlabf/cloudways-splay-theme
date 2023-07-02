@@ -340,9 +340,6 @@ body button:focus, body button:active {
   .section_secondary.not_fullsize .content {
     max-width: 1024px;
   }
-  .section_secondary .sp_header{
-    font-size: var(--f-h2);
-  }
   .section_secondary .sp_text{
     font-size: var(--f-lg);
   }

@@ -77,6 +77,12 @@ Version: 1.0.0
   width: 100%;
 }
 
+@media (min-width: 768px) {
+  .contact_form_section_title {
+  /* To style forminator alignment */
+    padding-bottom: 70px;
+  }
+}
 .news_item .secondary_button:not(.no_image) {
   background: transparent;
   color: var(--color-secondary);
