@@ -46,9 +46,9 @@ get_header();
                                     <div class="front_page">
                                         <div>
                                             <p class="font-weight-bold adieu_black text_2"><?php echo $news_date; ?></p>
-                                            <p class="text_2 bold_1 text_ellipsis_3"><?php echo $news_title; ?></p>
+                                            <p class="text_2 bold_1 text_ellipsis_3 mb-0"><?php echo $news_title; ?></p>
                                         </div>
-                                        <p class="text_1 text_ellipsis_4"><?php echo $news_text; ?></p>
+                                        <p class="text_1 text_ellipsis_4 mb-0"><?php echo $news_text; ?></p>
                                     </div>
                                     <div class="back_page">
                                         <div class="button_wrapper">
