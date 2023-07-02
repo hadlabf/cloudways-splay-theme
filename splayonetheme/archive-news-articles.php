@@ -100,7 +100,7 @@ get_header();
                             $submit = get_field('contact_submit_button_text', 341); 
                         ?>
                     
-                    <div class="splay_contact_form_wrapper text-start">
+                    <div class="splay_contact_form_wrapper text-left">
                             <?php echo do_shortcode('[forminator_form id="1062"]'); ?>
                         </div>
 
