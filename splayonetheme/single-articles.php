@@ -7,7 +7,7 @@
 	$city = get_field('article_city');
 	$text_content = get_field('article_text_content');
 	$content_image = get_field('article_content_image');
-	$read_next_url = get_field('article_specify_next_url');
+	$read_next_specified_url = get_field('article_specify_next_url');
 	$button_text = get_field('article_button_link_text');
 	$button_url = get_field('article_button_link_url');
 	$foot_text = get_field('article_foot_text');
@@ -62,7 +62,62 @@
 					<div class="text_1 pt-4"><?php echo $text_content; ?></div>
 					<div class="w-100 pt-5">
 						<div class="talk_to_container sm_ justify-content-end">
-							<a href="<?php echo esc_url($read_next_url);?>"class="cta_link pl-0 pr-4">Read Next</a>
+						<?php
+							$current_post = get_queried_object();
+							$current_date = $current_post->post_date;
+							
+							$args = array(
+								'post_type' => 'articles',
+								'posts_per_page' => 1,
+								'post_status' => 'publish',
+								'orderby' => array(
+									'date' => 'DESC',
+									'time' => 'DESC',
+								),
+								'date_query' => array(
+									array(
+										'before' => $current_date,
+										'inclusive' => false,
+									),
+								),
+							);
+							$older_post_query = new WP_Query($args);
+							
+							if ($older_post_query->have_posts()) {
+								$older_post_query->the_post();
+								$older_post_url = get_permalink();
+							} else {
+								// If there are no older posts, redirect to the most recent post.
+								$args = array(
+									'post_type' => 'articles',
+									'posts_per_page' => 1,
+									'post_status' => 'publish',
+									'orderby' => 'date',
+									'order' => 'DESC',
+								);
+								$recent_post_query = new WP_Query($args);
+							
+								if ($recent_post_query->have_posts()) {
+									$recent_post_query->the_post();
+									$older_post_url = get_permalink();
+								} else {
+									// If there are no articles at all, you can redirect to the archive page or any fallback URL.
+									$older_post_url = get_post_type_archive_link('articles');
+								}
+							
+								wp_reset_postdata();
+							}
+
+								if ( !empty($read_next_specified_url) ) {
+									$read_next_url = $read_next_specified_url;
+									$link_title = "Read recommended article";
+								} else {
+									$read_next_url = $older_post_url;
+									$link_title = "Read next article";
+								}
+							
+							?>													
+							<a href="<?php echo esc_url($read_next_url); ?>" id="read-next-post" class="cta_link pl-0 pr-4" title="<?php echo $link_title; ?>">Read Next</a>
 							<img src="<?php echo get_template_directory_uri(); ?>/images/arrow-thin-icon-white.png"/>
 						</div>
 					</div>

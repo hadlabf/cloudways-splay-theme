@@ -777,5 +777,16 @@ function ajax_my_get_support() {
   wp_send_json_success( $code );
 }
 
+function my_get_adjacent_post_where($sql) {
+  global $wpdb, $post;
+  if ($post->post_type == 'articles') {
+      $sql = str_replace("{$wpdb->posts}.post_date", "post_date_gmt", $sql);
+  }
+  return $sql;
+}
+add_filter('get_previous_post_where', 'my_get_adjacent_post_where');
+add_filter('get_next_post_where', 'my_get_adjacent_post_where');
+
+
 ?>
 
