@@ -596,11 +596,11 @@ function filter_cases() {
             $name = get_field('case_name');
             $image = get_field('case_thumbnail');
             ?>
-            <a href="<?php the_permalink();?>" class="case_item pb-3">
+            <a href="<?php the_permalink();?>" class="case_item padding_bottom_sm">
                 <img src="<?php echo $image['url'];?>" alt="<?php echo $name; ?>"/>
                 <div class="d-flex flex-row flex-nowrap align-items-baseline pt-3 gap_lg">
                     <p class="small_title adieu_regular mb-0"><?php echo $customer; ?></p>
-                    <p class="small_title adieu_light"><?php echo $name; ?></p>
+                    <p class="small_title adieu_light mb-0"><?php echo $name; ?></p>
                 </div>
             </a>
             <?php

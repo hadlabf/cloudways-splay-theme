@@ -690,17 +690,81 @@ select:-webkit-autofill:focus {
     font-size: 46px;
   }
 }
+@media (max-width: 340px) {
+  .about_header_text {
+    font-size: 40px;
+  }
+}
 
-/* QUOTE */
+/* SELECTED CLIENTS */
+/* & QUOTE */
+.selected_clients_text_content {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  gap: var(--lg);
+}
+.quote_section {
+  display: grid;
+  grid-template-columns: 1fr var(--grid-30);
+  gap: var(--lg);
+}
 .quote_section p, 
 .quote_section a,
 .quote_text  {
   font-family: "Adieu-Light";
-  font-size: 35px;
+  font-size: var(--f-xxxl);
   margin-bottom: var(--s4);
 }
 .quote_text {
   font-style: italic;
+}
+@media (max-width: 725px) {
+  .quote_section p, 
+  .quote_section a,
+  .quote_text  {
+    font-size: var(--f-xxl);
+  }
+  .selected_clients_text_content {
+    grid-template-columns: 25% 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .quote_section, .selected_clients_text_content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s4);
+  }
+  .grid_child_mobile_small, .grid_child_mobile_large {
+    max-width: 70%;
+  }
+  .grid_child_mobile_small {
+    width: 250px;
+  }
+  .quote_section .grid_child_mobile_small {
+    margin-left: auto;
+  }
+  .selected_clients_text_content .grid_child_mobile_large {
+    max-width: 80%;
+  }
+  .selected_clients_text_content .subtitle_1 {
+    margin-bottom: 0;
+  }
+  .quote_section .grid_child_mobile_small p {
+    margin-bottom: var(--s1);
+  }
+}
+@media (max-width: 500px) {
+  .grid_child_mobile_small, .grid_child_mobile_large {
+    max-width: 100% !important;
+  }
+  .quote_text {
+    width: 320px;
+  }
+  .quote_section p, 
+  .quote_section a,
+  .quote_text  {
+    font-size: var(--f-xl);
+  }
 }
 
 /* ========= TALENT PAGE ========= */
@@ -714,7 +778,7 @@ select:-webkit-autofill:focus {
 .why_us_section.work_area_section * {
   color: var(--color-primary);
 }
-/* Ni hover effect on mobile or tablet */
+/* No hover effect on mobile or tablet */
 @media (min-width: 601px) {
   .why_us_section.work_area_section .item_hovered .area_item {
     background-color: var(--bg-accent1);
@@ -724,18 +788,6 @@ select:-webkit-autofill:focus {
   .why_us_section.work_area_section .item_hovered p {
     color: var(--color-secondary);
   }
-}
-
-
-.get_in_contact_section {
-  padding-top: var(--s5);
-  padding-bottom: var(--s5);
-}
-.get_in_contact_section p,
-.quote_text  {
-  font-family: "Adieu-Light";
-  font-size: 35px;
-  margin-bottom: var(--s4);
 }
 
 .podcast_items .hover_card .front_page {

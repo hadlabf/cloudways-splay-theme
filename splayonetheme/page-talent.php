@@ -71,7 +71,7 @@ Template Name: Talent Page
                 <div class="row section_padding_sm">
                     <div class="col-11">
                         <p class="title_1 adieu_light mb-4"><?php echo the_field('talent_contact_cta_text'); ?></p>
-                        <div class="talk_to_container">
+                        <div class="talk_to_container lg_">
                             <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-thin-icon-black.png"/>
                             <a target="_blank" href="mailto:<?php echo the_field('talent_contact_person_email');?>" class="cta_link">Talk to <?php echo the_field('talent_contact_person'); ?></a>
                         </div>
