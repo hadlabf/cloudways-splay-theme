@@ -82,7 +82,7 @@ Template Name: About Page
                                     <div class="text_2 font-weight-light mb-5"><?php echo the_field('about_clients_text')?></div>
                                     <div class="talk_to_container sm_">
                                         <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-thin-icon-white.png"/>
-                                        <a target="_blank" href="<?php echo site_url('/contact');?>" class="cta_link"><?php echo the_field('about_clients_button'); ?></a>
+                                        <a href="<?php echo site_url('/contact');?>" class="cta_link"><?php echo the_field('about_clients_button'); ?></a>
                                     </div>
                                 </div>
                             </div>

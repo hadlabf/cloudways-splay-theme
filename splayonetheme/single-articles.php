@@ -7,6 +7,7 @@
 	$city = get_field('article_city');
 	$text_content = get_field('article_text_content');
 	$content_image = get_field('article_content_image');
+	$read_next_url = get_field('article_specify_next_url');
 	$button_text = get_field('article_button_link_text');
 	$button_url = get_field('article_button_link_url');
 	$foot_text = get_field('article_foot_text');
@@ -23,7 +24,7 @@
 
 	<div class="go_back_button_wrapper">
 		<div class="content d-flex justify-content-end">
-			<a class="go_back_button close_btn"><img class="close_icon" src="<?php echo get_template_directory_uri(); ?>/images/close-icon-white.png"/></a>
+			<a href="<?php echo site_url('/news-articles');?>" class="go_back_button close_btn"><img class="close_icon" src="<?php echo get_template_directory_uri(); ?>/images/close-icon-white.png"/></a>
 		</div>
 	</div>
 
@@ -61,7 +62,7 @@
 					<div class="text_1 pt-4"><?php echo $text_content; ?></div>
 					<div class="w-100 pt-5">
 						<div class="talk_to_container sm_ justify-content-end">
-							<a target="_blank" href="<?php echo site_url('/contact');?>" class="cta_link pl-0 pr-4">Read Next </a>
+							<a href="<?php echo esc_url($read_next_url);?>"class="cta_link pl-0 pr-4">Read Next</a>
 							<img src="<?php echo get_template_directory_uri(); ?>/images/arrow-thin-icon-white.png"/>
 						</div>
 					</div>
