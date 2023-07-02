@@ -95,46 +95,15 @@ get_header();
                     </div>
 
                     <div class="col-12 col-md-6 pl-md-5 dark_form">
-                    <?php 
-                        $placeholder = get_field('contact_message_input_placeholder', 341); 
-                        $submit = get_field('contact_submit_button_text', 341); 
-                    ?>
-                    <form action="" class="contact_form" id="contactform">
-                        <div class="w-100 d-flex justify-content-start">
-                            <select name="subject" id="subject" form="contactform">
-                                <option value="influencers">Influencers</option>
-                                <option value="sweden-sales">Sweden Sales</option>
-                                <option value="norway-sales">Norway Sales</option>
-                                <option value="denmark-sales">Denmark Sales</option>
-                                <option value="finland-sales">Finland Sales</option>
-                            </select>                    
+                        <?php 
+                            $placeholder = get_field('contact_message_input_placeholder', 341); 
+                            $submit = get_field('contact_submit_button_text', 341); 
+                        ?>
+                    
+                    <div class="splay_contact_form_wrapper text-start">
+                            <?php echo do_shortcode('[forminator_form id="1062"]'); ?>
                         </div>
-                        
-                        <div class="form-group">
-                            <textarea class="form-input" rows="5" name="message" id="message" form="contactform" placeholder="<?php if( !empty($placeholder) ): echo $placeholder; else : echo "Write your message here..."; endif;?>" class="form-input" type="message" ></textarea>
-                        </div>
-                        <div class="row d-flex gap-2">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label class="form-label" for="name">Name</label>
-                                    <input name="name" id="name" class="form-input" type="text" />
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="form-group">
-                                    <label class="form-label" for="company">Company</label>
-                                    <input name="company" id="company" class="form-input" type="text" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="email">Email</label>
-                            <input name="email" id="email" class="form-input" type="email" />
-                        </div>
-                        <div class="d-flex justify-content-end">
-                            <button class="primary_button submit_button" type="submit"><?php if( !empty($submit) ): echo $submit; else : echo "Submit"; endif;?></button>
-                        </div>
-                    </form>
+
                     </div>
                     
                 </div>

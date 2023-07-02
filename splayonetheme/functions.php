@@ -646,7 +646,6 @@ add_action('manage_cases_posts_custom_column', 'populate_case_thumbnail_order_co
 
 // NEWS ARTICLES ARCHIVE - LOAD MORE POSTS
 function my_theme_scripts() {
-  wp_enqueue_script( 'splay-animation', get_template_directory_uri() . '/js/animation.js', array('jquery'),'1.0.0', true  ); 
   wp_enqueue_script('load-more', get_template_directory_uri() . '/js/load-more.js', array('jquery'), '1.0.0', true);
   wp_localize_script('load-more', 'load_more_params', array(
       'ajax_url' => admin_url('admin-ajax.php'),
