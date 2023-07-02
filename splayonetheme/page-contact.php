@@ -8,7 +8,6 @@ Template Name: Contact Page
     get_header( null, [ 'header_style' => 'contact_page_header', 'logo_color' => 'white' ] ); 
 ?>
 <div class="content contact_page">
-
     <div class="sticky_content">
         <h1 class="adieu_light page_title"><?php echo get_field('contact_header');?></h1>
     </div>
@@ -19,7 +18,7 @@ Template Name: Contact Page
             </div>
 
             <?php $placeholder = get_field('contact_message_input_placeholder'); ?>
-            <form method="post" class="contact_form" id="contactform">
+            <!-- <form method="post" class="contact_form" id="contactform">
                 <select name="subject" id="subject" form="contactform">
                     <option value="influencers">Influencers</option>
                     <option value="sweden-sales">Sweden Sales</option>
@@ -51,7 +50,7 @@ Template Name: Contact Page
                 <div class="d-flex justify-content-end mt-5 mb-3">
                     <button class="primary_button submit_button" name="submit" type="submit"><?php echo get_field('contact_submit_button_text');?></button>
                 </div>
-            </form>
+            </form> -->
             <!-- <form method="post" action="<?php echo esc_url($_SERVER['REQUEST_URI']); ?>" class="contact_form" id="contactform"> -->
             <!-- <?php
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
