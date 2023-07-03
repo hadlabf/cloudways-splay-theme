@@ -538,6 +538,9 @@ function filter_people() {
       'post_type' => 'people',
       'posts_per_page' => -1,
       'category_name' => $selectedCategory,
+      'meta_key' => 'people_full_name',
+      'orderby' => 'meta_value',
+      'order' => 'ASC',
   );
   $cases_query = new WP_Query($cases_args);
 

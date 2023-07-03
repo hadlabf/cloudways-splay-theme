@@ -1018,6 +1018,7 @@ body .qc-cmp2-summary-buttons button {
 }
 body .qc-cmp2-summary-buttons button > span {
   font-family: 'Poppins', sans-serif !important;
+  overflow: visible !important;
 }
 body .qc-cmp2-summary-buttons button[mode="secondary"]:hover {
  background-color: var(--bg-primary) !important;
