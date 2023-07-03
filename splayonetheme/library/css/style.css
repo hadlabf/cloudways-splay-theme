@@ -280,18 +280,6 @@ Version: 1.0.0
   height: 100%;
   align-items: flex-end;
 }
-/* .sticky_content {
-  height:400px; 
-  position:-webkit-sticky; 
-  position:sticky; 
-  top: 60%;
-  width: calc(50% - 40px);
-}
-.sticky_content .page_title {
-  font-size: var(--f-h1);
-  line-height: 0.9;
-  padding-right: 80px;
-} */
 .contact_content {
   display: flex;
   flex-direction: row; 

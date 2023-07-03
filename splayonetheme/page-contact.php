@@ -92,4 +92,4 @@ Template Name: Contact Page
         </div>
     </div>
 </div>
-<?php get_footer(); ?>
+<?php get_footer( null, [ 'footer_style' => 'contact_page_footer' ] ); ?>
