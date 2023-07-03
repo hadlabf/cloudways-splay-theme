@@ -617,6 +617,11 @@ ul.ham_menu_wrapper > li.current_page_item > a, ul.ham_menu_wrapper > li.current
     padding-top: 40px;
   }
 }
+@media (max-width: 1225px) {
+  :root {
+    --f-h1: 100px;  
+  }
+}
 @media (max-width: 1024px) {
   :root {
     --f-xxxl: 30px;
@@ -913,7 +918,7 @@ body .forminator-select-dropdown-container--open .forminator-dropdown--default .
   color: var(--color-secondary) !important;
   opacity: 0.7 !important;
 }
-body .dark_form .forminator-select-dropdown-container--open .forminator-dropdown--default .select2-results .select2-results__options .select2-results__option:not(.select2-results__option--selected).select2-results__option--highlighted {
+body:not(.contact_page_header) .forminator-select-dropdown-container--open .forminator-dropdown--default .select2-results .select2-results__options .select2-results__option:not(.select2-results__option--selected).select2-results__option--highlighted {
   background-color: var(--bg-secondary) !important;
 }
 body .forminator-select-dropdown-container--open .forminator-dropdown--default .select2-results .select2-results__options .select2-results__option:not(.select2-results__option--selected).select2-results__option--highlighted::before {
@@ -925,7 +930,10 @@ body .forminator-select-dropdown-container--open .forminator-dropdown--default .
 body .forminator-select-dropdown-container--open .forminator-dropdown--default .select2-results .select2-results__options .select2-results__option.select2-results__option--selected {
   background-color: var(--bg-accent1) !important;
 }
-body .dark_form .forminator-select-dropdown-container--open .forminator-dropdown--default .select2-results .select2-results__options .select2-results__option.select2-results__option--selected {
+body:not(.contact_page_header) .forminator-select-dropdown-container--open .forminator-dropdown--default .select2-results .select2-results__options .select2-results__option.select2-results__option--selected {
+  background-color: var(--bg-secondary) !important;
+}
+body:not(.contact_page_header) .forminator-select-dropdown-container--open .forminator-dropdown--default .select2-results ul.select2-results__options {
   background-color: var(--bg-secondary) !important;
 }
 .forminator-select.forminator-select-dropdown-container--open .forminator-select-dropdown.forminator-dropdown--default {
