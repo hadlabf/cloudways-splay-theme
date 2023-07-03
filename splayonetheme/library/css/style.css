@@ -80,7 +80,7 @@ Version: 1.0.0
 @media (min-width: 768px) {
   .contact_form_section_title {
   /* To style forminator alignment */
-    padding-bottom: 70px;
+    padding-bottom: 175px;
   }
 }
 .news_item .secondary_button:not(.no_image) {

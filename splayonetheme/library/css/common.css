@@ -878,8 +878,26 @@ button.splay_form_button:hover:not([disabled]) {
 body .forminator-select-dropdown-container--open .forminator-dropdown--default {
   background-color: var(--bg-accent1) !important;
 }
-body .dark_form .forminator-select-dropdown-container--open .forminator-dropdown--default {
+body .dark_form .forminator-select-dropdown-container--open .forminator-dropdown--default, 
+body .dark_form .forminator-select-dropdown-container--open .forminator-dropdown--default li {
   background-color: var(--bg-secondary) !important;
+}
+.forminator-ui.forminator-design--default .forminator-checkbox {  
+  color: var(--color-secondary) !important;
+}
+/* Checkbox */
+.forminator-ui.forminator-design--default .forminator-checkbox .forminator-checkbox-label::after {  
+  color: var(--bg-accent2) !important;
+  content: " privacy policy" !important;
+}
+.dark_form .forminator-ui.forminator-design--default .forminator-checkbox .forminator-checkbox-label::after {  
+  color: var(--bg-accent1) !important;
+}
+.dark_form .forminator-ui.forminator-design--default .forminator-is_hover .forminator-textarea {  
+  color: var(--color-secondary) !important;
+}
+.forminator-ui.forminator-custom-form[data-design=default] #checkbox-1 .forminator-error-message label.forminator-checkbox {
+  margin-bottom: 6px;
 }
 
 body .forminator-select-dropdown-container--open .forminator-dropdown--default .select2-results .select2-results__options .select2-results__option {
@@ -923,6 +941,10 @@ body .forminator-ui.forminator-design--default .forminator-error-message {
   line-height: 1.2 !important;
   padding: 0 0!important;
 }
+.dark_form .forminator-ui.forminator-design--default .forminator-is_hover *,
+.dark_form .forminator-ui.forminator-design--default .forminator-is_active * {
+  border-color: var(--color-secondary) !important;
+}
 .dark_form .forminator-ui.forminator-design--default .splay_form_small_input .forminator-is_hover *,
 .dark_form .forminator-ui.forminator-design--default .splay_form_wide_input .forminator-is_hover *,
 .dark_form .forminator-ui.forminator-design--default .splay_form_small_input .forminator-is_active *,
@@ -934,4 +956,32 @@ body .forminator-ui.forminator-design--default .forminator-error-message {
 }
 .forminator-ui.forminator-custom-form[data-design=default] .forminator-response-message {
   padding-left: 0 !important;
+}
+.forminator-ui.forminator-design--default input:-webkit-autofill,
+.forminator-ui.forminator-design--default input:-webkit-autofill:hover,
+.forminator-ui.forminator-design--default input:-webkit-autofill:focus,
+.forminator-ui.forminator-design--default textarea:-webkit-autofill,
+.forminator-ui.forminator-design--default textarea:-webkit-autofill:hover,
+.forminator-ui.forminator-design--default textarea:-webkit-autofill:focus,
+.forminator-ui.forminator-design--default select:-webkit-autofill,
+.forminator-ui.forminator-design--default select:-webkit-autofill:hover,
+.forminator-ui.forminator-design--default select:-webkit-autofill:focus {
+border-bottom: 1px solid var(--color-secondary);
+-webkit-text-fill-color: var(--color-secondary);
+-webkit-box-shadow: 0 0 0px 1000px var(--bg-accent1) inset !important;
+transition: background-color 5000s ease-in-out 0s;
+}
+.dark_form .forminator-ui.forminator-design--default input:-webkit-autofill,
+.dark_form .forminator-ui.forminator-design--default input:-webkit-autofill:hover,
+.dark_form .forminator-ui.forminator-design--default input:-webkit-autofill:focus,
+.dark_form .forminator-ui.forminator-design--default textarea:-webkit-autofill,
+.dark_form .forminator-ui.forminator-design--default textarea:-webkit-autofill:hover,
+.dark_form .forminator-ui.forminator-design--default textarea:-webkit-autofill:focus,
+.dark_form .forminator-ui.forminator-design--default select:-webkit-autofill,
+.dark_form .forminator-ui.forminator-design--default select:-webkit-autofill:hover,
+.dark_form .forminator-ui.forminator-design--default select:-webkit-autofill:focus {
+border-bottom: 1px solid var(--color-secondary);
+-webkit-text-fill-color: var(--color-secondary);
+-webkit-box-shadow: 0 0 0px 1000px var(--bg-secondary) inset !important;
+transition: background-color 5000s ease-in-out 0s;
 }
