@@ -45,6 +45,7 @@ $footer_address_list = get_field('footer_address_list', 'option');
         </div>
     </div>
 </footer>
+<div id="choice-footer-msg"></div>
 						
 		<?php wp_footer(); // js scripts are inserted using this function ?>
 
