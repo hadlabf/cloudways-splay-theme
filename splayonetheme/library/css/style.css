@@ -202,7 +202,8 @@ Version: 1.0.0
   padding: 0;
   background-color: var(--bg-accent1);
   overflow: hidden;
-  aspect-ratio: 1/1.55;
+  /* aspect-ratio: 1/1.55; */
+  aspect-ratio: 335/520;
 }
 .people_card img {
   width: 100%;
