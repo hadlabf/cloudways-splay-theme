@@ -33,3 +33,25 @@ function getActiveButtonData() {
     });
   }
 })();
+
+document.addEventListener("DOMContentLoaded", function() {
+  var container = document.getElementById("people_cards_archive");
+  var images = container.getElementsById("people_image");
+  var spinner = container.querySelector(".spinner");
+
+  // Count the number of images that are not yet loaded
+  var count = images.length;
+
+  // Function to decrement the count and hide the spinner when all images are loaded
+  function imageLoaded() {
+    count--;
+    if (count === 0) {
+      spinner.style.display = "block"; // Hide the spinner when all images are loaded
+    }
+  }
+
+  // Loop through all the images and add a load event listener to each one
+  for (var i = 0; i < images.length; i++) {
+    images[i].addEventListener("load", imageLoaded);
+  }
+});

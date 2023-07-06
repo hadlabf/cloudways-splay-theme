@@ -1,5 +1,5 @@
 <div class="people_card person-card <?php echo $args['class']; ?>">
-    <img class="people_img" src="<?php echo $args['data']['profile_picture']['url'];?>" />
+    <img class="people_img" id="people_image" src="<?php echo $args['data']['profile_picture']['url'];?>" />
     
     <div class="front_page">
         <p class="mb-0 bold_1"><?php echo $args['data']['full_name']; ?></p>
