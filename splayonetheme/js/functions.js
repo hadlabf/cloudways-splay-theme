@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function imageLoaded() {
     count--;
     if (count === 0) {
-      spinner.style.display = "block"; // Hide the spinner when all images are loaded
+      spinner.style.display = "none"; // Hide the spinner when all images are loaded
     }
   }
 

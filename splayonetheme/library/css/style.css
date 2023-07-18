@@ -53,6 +53,11 @@ Version: 1.0.0
 .thumbnail_container > .w-50:nth-child(odd) {
   margin-top: 125px;
 }
+@media (max-width: 900px) {
+  .home_case_logo_img {
+    max-width: 70%;
+  }
+}
 @media (max-width: 825px) {
   .thumbnail_container {
     gap: var(--s4);
