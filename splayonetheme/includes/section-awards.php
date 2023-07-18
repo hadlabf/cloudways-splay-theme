@@ -9,7 +9,7 @@
         <?php 
             $image = get_field('home_award_logo_collage');
             if( !empty($image) ): ?>
-                <img style="max-height:100px;width:auto;" src="<?php echo esc_url($image['url']) ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <img id="splay-awards-image" style="max-height:100px;width:auto;" src="<?php echo esc_url($image['url']) ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
         <?php endif; ?>
     </div>
 </div>

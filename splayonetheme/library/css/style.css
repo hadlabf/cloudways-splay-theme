@@ -19,20 +19,6 @@ Version: 1.0.0
   max-width: 360px;
 }
 
-/* HOME - Awards */
-.award_image_carousel {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: center;
-  gap: var(--s4);
-  margin-top: var(--s6);
-}
-.award_image_carousel img{
-  max-height: 50px;
-  width: auto;
-}
-/* TODO: Images */
 
 /* HOME - Case thumbnails */
 .home_case_logo_img {
@@ -73,6 +59,11 @@ Version: 1.0.0
   .thumbnail_container > .w-50 {
     margin-top: 0 !important;
     width: 100% !important;
+  }
+}
+@media (max-width: 500px) {
+  img#splay-awards-image {
+    display: none;
   }
 }
 .news_scrool_feed {
