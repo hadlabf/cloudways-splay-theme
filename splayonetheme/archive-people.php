@@ -9,7 +9,6 @@
                 <button class="secondary_button category_button" data-category="category-case-norway">Norway</button>
                 <button class="secondary_button category_button" data-category="category-case-denmark">Denmark</button>
             </div>
-            <div class="spinner2"></div>
             <div class="people_cards_archive mb-5">
                 <div class="spinner"></div>
                 <!-- Case items will be dynamically loaded here (find html in functions.php) -->
