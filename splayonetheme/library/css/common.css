@@ -990,7 +990,9 @@ border-bottom: 1px solid var(--color-secondary);
 -webkit-box-shadow: 0 0 0px 1000px var(--bg-secondary) inset !important;
 transition: background-color 5000s ease-in-out 0s;
 }
-
+.forminator-ui#forminator-module-1062.forminator-design--default .forminator-checkbox__label p {
+  color: var(--color-secondary) !important;
+}
 /* Quantcast Choice Customize */
 body .qc-cmp2-container .qc-cmp2-summary-info,
 body .qc-cmp2-container .qc-cmp2-summary-info div,
