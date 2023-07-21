@@ -36,7 +36,7 @@ function getActiveButtonData() {
 
 document.addEventListener("DOMContentLoaded", function() {
   var container = document.getElementById("people_cards_archive");
-  var images = container.getElementsById("people_image");
+  var images = container.querySelectorAll("#people_image img");
   var spinner = container.querySelector(".spinner");
 
   // Count the number of images that are not yet loaded
