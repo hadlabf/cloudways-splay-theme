@@ -173,7 +173,10 @@ endif;
     <div class="person-cards-wrapper">
         <?php foreach ($influencers as $country => $country_influencers): ?>
             <div style="display:<?php if($country === "sw") : echo "block;"; endif; ?> none;" class="people_cards_country_section <?php echo $country; ?>">
-                <div class="people_cards_archive  <?php echo $country; ?>">
+                <div class="people_cards_archive case_archive <?php echo $country; ?>">
+                    <div class="spinner_wrapper">
+                        <div class="spinner"></div>
+                    </div>
                     <?php 
                     $itemCount = 0;
                     foreach ($country_influencers as $influencer): 
