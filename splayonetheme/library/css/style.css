@@ -117,13 +117,16 @@ Version: 1.0.0
 .news_item .back_page .button_wrapper {
   display: none;
 }
+/* In safari the image is off */
+.news_item .back_page img {
+  min-width: calc(100% + 4px) !important;
+}
 
 .news_item:hover .back_page {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 100%;
   opacity: 1;
 }
 .news_item .back_page img {
