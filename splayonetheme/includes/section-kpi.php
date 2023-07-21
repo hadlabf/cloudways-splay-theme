@@ -10,12 +10,12 @@
 				
 				<?php if (!empty($large_value)) : ?>
 					<div class="d-flex flex-column">
-						<p class="text_2 mb-0"><?php echo $large_label;?></p>
+						<p class="text_2 kpi_label mb-0"><?php echo $large_label;?></p>
 						<p style="line-height:1.2;" class="kpi_1"><?php echo $large_value;?></p>
 					</div>
 				<?php endif; ?>
 
-				<div class="d-flex flex-row justify-content-between">
+				<div class="d-flex flex-row justify-content-between kpi_container">
 
 					<?php 
 						if( have_rows('case_kpi_list') ):
@@ -23,8 +23,8 @@
 							$value = get_sub_field('case_kpi_list_value');
 							$label = get_sub_field('case_kpi_list_label');
 							?>
-							<div class="d-flex flex-column">
-								<p class="text_2 mb-0"><?php echo $label; ?></p>
+							<div class="d-flex flex-column kpi_wrapper">
+								<p class="text_2 kpi_label mb-0"><?php echo $label; ?></p>
 								<p class="kpi_2"><?php echo $value; ?></p>
 							</div>
 						<?php
@@ -33,8 +33,8 @@
 					?>
 
 					<?php if (!empty($foot_text)) : ?>
-						<div class="d-flex flex-column justify-content-end pb-4">
-							<p class="text_2"><?php echo $foot_text; ?></p>
+						<div class="d-flex flex-column justify-content-end pb-4 kpi_wrapper">
+							<p class="text_2 kpi_label mb-0"><?php echo $foot_text; ?></p>
 						</div>
 					<?php endif; ?>
 

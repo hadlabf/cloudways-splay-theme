@@ -843,10 +843,26 @@ Version: 1.0.0
 }
 @media (max-width: 1024px) {
   .kpi_1 {
-    font-size: 120px;
+    font-size: 110px;
   }
   .kpi_2 {
-    font-size: 80px;
+    font-size: 70px;
+  }
+  .kpi_label.text_2 {
+    font-size: var(--f-lg);
+  }
+  .linked_section_img {
+    min-width: 250px;
+  }
+}
+@media (max-width: 900px) {
+  .kpi_1 {
+    font-size: ´95px;
+    line-height: 1.3 !important;
+  }
+  .kpi_2 {
+    font-size: 60px;
+    margin-top: -8px;
   }
   .linked_section_img {
     min-width: 250px;
@@ -860,13 +876,25 @@ Version: 1.0.0
     gap: 8px;
   }
   .linked_section_img {
-    margin-right: 60px
+    margin-right: 80px
   }
   .kpi_1 {
-    font-size: var(--f-h1);
+    font-size: 50px;
   }
   .kpi_2 {
     font-size: var(--f-h2);
+  }
+}
+@media (max-width: 725px) {
+  .kpi_1 {
+    font-size: 65px;
+    line-height: 1.4 !important;
+  }
+  .kpi_2 {
+    font-size: 35px;
+  }
+  .kpi_label.text_2 {
+    font-size: var(--f-md);
   }
 }
 @media (max-width: 650px) {
@@ -879,8 +907,30 @@ Version: 1.0.0
   .linked_section_img {
     margin-right: 20px
   }
+  .kpi_wrapper {
+    width: 50%;
+  }
+  .kpi_container {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 600px) {
+  .kpi_1 {
+    font-size: 50px;
+    line-height: 1.5 !important;
+  }
+  .kpi_2 {
+    font-size: 25px;
+  }
+  .kpi_label.text_2 {
+    font-size: var(--f-sm);
+  }
 }
 @media (max-width: 500px) {
+  .kpi_1 {
+    font-size: 40px;
+    line-height: 1.5 !important;
+  }
   .linked_section.flex-row {
     flex-direction: column !important;
   }
@@ -899,6 +949,17 @@ Version: 1.0.0
     max-width: 100%;
     margin-right: 0;
     margin-top: 0;
+  }
+}
+@media (max-width: 400px) {
+  .kpi_1 {
+    font-size: 30px;
+  }
+  .kpi_2 {
+    font-size: 20px;
+  }
+  .kpi_wrapper {
+    width: 100% !important;
   }
 }
 .case_video_list {
