@@ -1032,7 +1032,15 @@ body .qc-cmp2-summary-buttons button[mode="secondary"]:hover {
   font-family: var(--font-primary) !important;
 }
 /* LOADING SPINNER */
-.spinner, .spinner2 {
+.spinner_wrapper {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.spinner {
+  margin-left: auto;
+  margin-right: auto;
   border: 4px solid var(--bg-accent1);
   border-top: 4px solid var(--bg-primary);
   border-radius: 50%;

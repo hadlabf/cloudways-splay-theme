@@ -7,7 +7,7 @@
             <?php get_template_part('includes/section', 'awards' ); ?>
 
             <div class="content">
-            <div class="thumbnail_container d-flex flex-row flex-wrap">
+            <div id="splay-archive" class="thumbnail_container d-flex flex-row flex-wrap">
                 <?php
                     $cases_args = array(
                         'post_type' => 'cases', // Cases post type slug

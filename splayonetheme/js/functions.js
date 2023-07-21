@@ -35,8 +35,8 @@ function getActiveButtonData() {
 })();
 
 document.addEventListener("DOMContentLoaded", function() {
-  var container = document.getElementById("people_cards_archive");
-  var images = container.querySelectorAll("#people_image img");
+  var container = document.getElementsByTagName("body");
+  var images = container.querySelectorAll(".loaded_img_first img");
   var spinner = container.querySelector(".spinner");
 
   // Count the number of images that are not yet loaded
@@ -55,3 +55,4 @@ document.addEventListener("DOMContentLoaded", function() {
     images[i].addEventListener("load", imageLoaded);
   }
 });
+

@@ -628,7 +628,7 @@ function filter_cases() {
             $image = get_field('case_thumbnail');
             ?>
             <a href="<?php the_permalink();?>" class="case_item padding_bottom_sm">
-                <img src="<?php echo $image['url'];?>" alt="<?php echo $name; ?>"/>
+                <img class="loaded_img_first" src="<?php echo $image['url'];?>" alt="<?php echo $name; ?>"/>
                 <div class="d-flex flex-row flex-nowrap align-items-baseline pt-3 gap_lg">
                     <p class="small_title adieu_regular mb-0"><?php echo $customer; ?></p>
                     <p class="small_title adieu_light mb-0"><?php echo $name; ?></p>
