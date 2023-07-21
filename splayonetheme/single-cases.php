@@ -163,7 +163,7 @@ if( !empty( $vimeo_id ) ): ?>
 <div class="content section_padding_3">
 	<p class="subtitle_1 adieu_light"><?php echo $profile_header; ?></p>
 	<p class="text_1 w-50"><?php echo $profile_description; ?></p>
-	<div class="pt-4 profiles_grid">	
+	<div class="profiles_grid">	
 		<?php while( have_rows('case_profile_list') ) : the_row();
 			$full_name = get_sub_field('case_profile_full_name');
 			$link = get_sub_field('case_profile_link_url');

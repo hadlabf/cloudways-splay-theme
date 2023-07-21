@@ -156,7 +156,7 @@ endif;
 <div class="content section_padding_1">
     <h1 class="title_1 adieu_black">Influencers</h1>
     <p class="text_1"><?php echo the_field('talent_people_section_description'); ?> </p>
-    <div class="category_filtering_buttons">
+    <div class="category_filtering_buttons padding_top_xs">
         <?php if (count($influencers['sweden']) > 0): ?>
             <button class="secondary_button category_button active" data-country="sweden">Sweden</button>
         <?php endif; ?>
@@ -173,10 +173,7 @@ endif;
     <div class="person-cards-wrapper">
         <?php foreach ($influencers as $country => $country_influencers): ?>
             <div style="display:<?php if($country === "sw") : echo "block;"; endif; ?> none;" class="people_cards_country_section <?php echo $country; ?>">
-                <div class="people_cards_archive case_archive <?php echo $country; ?>">
-                    <div class="spinner_wrapper">
-                        <div class="spinner"></div>
-                    </div>
+                <div class="people_cards_archive  <?php echo $country; ?>">
                     <?php 
                     $itemCount = 0;
                     foreach ($country_influencers as $influencer): 
