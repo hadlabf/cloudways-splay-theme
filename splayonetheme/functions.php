@@ -524,56 +524,84 @@ function custom_functions_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'custom_functions_enqueue_scripts' );
 
-
-
 add_action('wp_ajax_filter_people', 'filter_people');
 add_action('wp_ajax_nopriv_filter_people', 'filter_people');
 
 function filter_people() {
-  // Retrieve selected category and load_all flag from the AJAX request
-  $selectedCategory = $_POST['category'];
+    // Retrieve selected category and load_all flag from the AJAX request
+    $selectedCategory = $_POST['category'];
 
-  // Modify your WP_Query based on the selected category and load_all flag
-  $cases_args = array(
-      'post_type' => 'people',
-      'posts_per_page' => -1,
-      'category_name' => $selectedCategory,
-      'meta_key' => 'people_full_name',
-      'orderby' => 'meta_value',
-      'order' => 'ASC',
-  );
-  $cases_query = new WP_Query($cases_args);
+    // Modify your WP_Query based on the selected category and load_all flag
+    $cases_args = array(
+        'post_type' => 'people',
+        'posts_per_page' => -1,
+        'category_name' => $selectedCategory,
+        'meta_key' => 'people_full_name',
+        'orderby' => 'meta_value',
+        'order' => 'ASC',
+    );
+    $cases_query = new WP_Query($cases_args);
 
-  // Output the retrieved case items
-  if ($cases_query->have_posts()) {
-      while ($cases_query->have_posts()) {
-          $cases_query->the_post();
-          $full_name = get_field('people_full_name');
-          $role = get_field('people_role');
-          $country = get_field('people_country');
-          $phone = get_field('people_phone');
-          $email = get_field('people_email');
-          $profile_picture = get_field('people_profile_picture');
-          
-          $people_data = array( 
-              'class' => 'featured-home',
-              'data'  => array(
-              'full_name' => $full_name,
-              'role' => $role,
-              'country' => $country,
-              'phone' => $phone,
-              'email' => $email,
-              'profile_picture' => $profile_picture,
-              )
-              );
-              get_template_part('includes/person', 'card', $people_data );
-      }
-      wp_reset_postdata();
-  } else {
-      echo 'No people found in the selected category.';
-  }
-  exit;
+    // Initialize arrays for names starting with 'Å', 'Ä', 'Ö', and regular names
+    $names_åäö = array();
+    $names_regular = array();
+
+    // Output the retrieved case items
+    if ($cases_query->have_posts()) {
+        while ($cases_query->have_posts()) {
+            $cases_query->the_post();
+            $full_name = get_field('people_full_name');
+            $role = get_field('people_role');
+            $country = get_field('people_country');
+            $phone = get_field('people_phone');
+            $email = get_field('people_email');
+            $profile_picture = get_field('people_profile_picture');
+
+            // Prepare the data for each person
+            $person_data = array(
+                'full_name' => $full_name,
+                'role' => $role,
+                'country' => $country,
+                'phone' => $phone,
+                'email' => $email,
+                'profile_picture' => $profile_picture,
+            );
+
+            // Check if the name starts with 'Å', 'Ä', or 'Ö', and add them to $names_åäö
+            if (str_starts_with($full_name, 'Å') || str_starts_with($full_name, 'Ä') || str_starts_with($full_name, 'Ö')) {
+                $names_åäö[] = $person_data;
+            } else {
+                // Add the person data to $names_regular
+                $names_regular[] = $person_data;
+            }
+        }
+        wp_reset_postdata();
+
+        // Custom sorting function to sort based on custom order
+        function custom_sort($a, $b) {
+            $order = 'abcdefghijklmnopqrstuvwxyzåäöÅÄÖ';
+            $a_index = strpos($order, mb_strtolower(mb_substr($a['full_name'], 0, 1, 'UTF-8')), 0);
+            $b_index = strpos($order, mb_strtolower(mb_substr($b['full_name'], 0, 1, 'UTF-8')), 0);
+            return $a_index - $b_index;
+        }
+
+        // Sort the regular names array using the custom_sort function
+        usort($names_regular, 'custom_sort');
+
+        // Merge the two arrays with regular names first and 'Å', 'Ä', 'Ö' names at the end
+        $people_data = array_merge($names_regular, $names_åäö);
+
+        // Output the sorted people data
+        foreach ($people_data as $person) {
+            get_template_part('includes/person', 'card', array('class' => 'featured-home', 'data' => $person));
+        }
+    } else {
+        echo 'No people found in the selected category.';
+    }
+    exit;
 }
+
+
 
 
 add_action('wp_ajax_filter_cases', 'filter_cases');
