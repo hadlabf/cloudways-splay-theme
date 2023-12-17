@@ -35,8 +35,8 @@ function getActiveButtonData() {
 })();
 
 document.addEventListener("DOMContentLoaded", function() {
-  var container = document.getElementsByTagName("body");
-  var images = container.querySelectorAll(".loaded_img_first img");
+  var container = document.body;
+  var images = container.querySelectorAll(".loaded_img_first");
   var spinner = container.querySelector(".spinner");
 
   // Count the number of images that are not yet loaded
