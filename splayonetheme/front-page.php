@@ -116,7 +116,7 @@
                             $news_date = get_post_meta(get_the_ID(), 'news_date', true);
                             $formatted_date = date('m/d/Y', strtotime($news_date));
                             ?>
-                                <div class="news_item">
+                                <div class="news_item news_item_mobile">
                                     
                                     <div class="front_page">
                                         <div>
