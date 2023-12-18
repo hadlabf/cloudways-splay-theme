@@ -182,10 +182,21 @@ Version: 1.0.0
   }
   .news_scrool_feed .news_item{
     aspect-ratio: auto;
-    min-height: 350px;
+    min-height: 390px;
   }
   .news_scrool_feed .news_item .front_page{
     padding: var(--s6);
+  }
+  .news_scrool_feed .front_page .text_2 {
+    font-size: var(--f-xxxl);
+  }
+  .news_scrool_feed .front_page .text_1 {
+    font-size: var(--f-xxl);
+  }
+}
+@media (max-width: 360px) {
+  .news_scrool_feed .news_item{
+    min-height: 350px;
   }
   .news_scrool_feed .front_page .text_2 {
     font-size: var(--f-xxl);
